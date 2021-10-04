@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'adminstrationapp.apps.AdminstrationappConfig',
+    'ticket_handler.apps.TicketHandlerConfig'
 ]
 
 MIDDLEWARE = [
