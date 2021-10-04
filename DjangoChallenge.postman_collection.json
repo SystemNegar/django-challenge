@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "974dd90c-14a8-49d3-817e-6387a22d0895",
+		"name": "DjangoChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "mhdi",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mhdi.gh75@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password1",
+							"value": "123456MMa",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "123456MMa",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/adminstration/register/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminstration",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "mhdi",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456MMa",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/adminstration/login/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminstration",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add an stadium",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "oltraford",
+							"type": "text"
+						},
+						{
+							"key": "capacity",
+							"value": "100000",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "liverpool",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/adminstration/add-stadium/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminstration",
+						"add-stadium",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a match",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "stadium",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "teams",
+							"value": "first:second",
+							"type": "text"
+						},
+						{
+							"key": "match_date",
+							"value": "2020-07-09 12:00:00",
+							"type": "text"
+						},
+						{
+							"key": "match_length",
+							"value": "120",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/adminstration/add-match/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminstration",
+						"add-match",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a Seat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "match",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "team_name",
+							"value": "first",
+							"type": "text"
+						},
+						{
+							"key": "seat_range",
+							"value": "0_100000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/adminstration/add-seat/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminstration",
+						"add-seat",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reserve a seat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "match",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "team_name",
+							"value": "first",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/ticket/reserve-seat/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"ticket",
+						"reserve-seat",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
