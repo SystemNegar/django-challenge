@@ -1,23 +1,45 @@
-# django-challenge
+# DjangoChallenge Project
+This project is divided in two parts:
+1. Adminstration
+2. TicketHandler
+
+# Adminstration
+This part roles are:
+1. To Create and login user
+2. To Check User Authorization
+3. To Add stadium
+4. To Add Matches
+5. To Add matches handler
+
+# TicketHandler
+This part contains views, models and forms
+
+**views**: Adminstration part controller 
+
+**schema**: Validator layer 
+
+**models**: Defines the Tables for the server (Data layer).
 
 
-The volleyball Federation decided to use an online selling platform for the next season, and our company has been chosen for implementing that.
+## Run
 
-# Requirements
+At first we need to build the images for the containers.
+so firstly run:
+```
+sudo -s
+docker-compose build
+docker-compose up
+```
 
-Our system should have REST APIs for the following tasks:
+For the migrations and the admin super user creation run the command below:
 
-- User signup and login
-- Adding a new stadium
-- Defining matches
-- Defining the place of seats for each match
-- Buying seats of a match (There is no need for using a payment gateway)
+`sudo ./run.sh`
 
-# Implementation details
+Now the services are ready.
 
-We don't need a GUI for this system. You can use the Django admin.
-Try to write your code as **reusable** and **readable** as possible. Also, don't forget to **document your code** and clear the reasons for all your decisions in the code.
-Using API documentation tools is a plus.
-Don't forget that many people trying to buy tickets for a match. So try to implement your code in a way that could handle the load. If your solution is not sample enough for implementing fast, you can just describe it in your documents.
+## Test via postman document
 
-Please fork this repository and add your code to that. Don't forget that your commits are so important. So be sure that you're committing your code often with a proper commit message.
+
+Unfortunately beause of the lack of time i couldnt add tests for the project.All the API's are placed in the postman json document.
+you can test the requests via defined requests.
+
