@@ -25,7 +25,7 @@ class SeatManager(models.Model):
     match = models.ForeignKey(Match, on_delete=models.CASCADE)
     team_name = models.CharField(max_length=100)
     seat_range = models.CharField(max_length=100)
-    last_seat_number = models.CharField(max_length=10)
+    last_seat_number = models.CharField(max_length=10, default=0)
 
     def __str__(self):
         return '{0} -> {1}'.format(self.match, self.team_name)
