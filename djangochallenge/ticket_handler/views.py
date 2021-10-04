@@ -9,8 +9,16 @@ from adminstrationapp.models import SeatManager, Match
 from .models import UserSeat
 
 
+def authentication(request):
+    if not request.user.is_authenticated:
+        return HttpResponse(json.dumps({
+            'data': 'token is not valid'
+        }), status=400)
+
+
 def reserve_seat(request):
     if request.method == "POST":
+        authentication(request)
         user = request.user
         
         data = {
