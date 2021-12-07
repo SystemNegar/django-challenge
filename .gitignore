@@ -1,0 +1,24 @@
+.py[co]
+
+.idea/
+
+collect_static/
+
+media/upload/
+media/tmp/*
+
+npm/*
+log/*.log
+*.pyc
+!/npm/*.json
+!/npm/*.js
+
+db.sqlite3
+local_settings.py
+
+# Visual Studio Code
+/.vscode
+
+# Environment
+.env
+/venv
