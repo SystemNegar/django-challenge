@@ -1,0 +1,39 @@
+# PyCharm IDE.
+.idea/
+.vscode/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual envs
+venv
+*.pyc
+
+# Static files and folders
+staticfiles
+static
+*/staticfiles
+*/static
+static/*
+staticfiles/*
+
+# Translation files
+*.pot
+*.mo
+
+# Settings and configs
+selling/settings/local.env
+dump.rdb
+Pipfile.lock
+
+# Git related things
+!.gitkeep
+!.keep
+!.gitignore
+*~
+
+# Migration Files.
+selling/**/migrations/*.py
+!selling/**/migrations/__init__.py
