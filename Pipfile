@@ -7,7 +7,7 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 djangorestframework-jwt = "*"
-psycopg2-binary = "==2.8.*"
+psycopg2-binary = "*"
 
 [dev-packages]
 

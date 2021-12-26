@@ -40,9 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third party packages
     'rest_framework',
     'rest_framework_jwt',
 
+    # Selling apps
+    'selling.apps.match.apps.MatchConfig',
+    'selling.apps.seat.apps.SeatConfig',
+    'selling.apps.stadium.apps.StadiumConfig',
 ]
 
 MIDDLEWARE = [
