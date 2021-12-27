@@ -15,15 +15,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+from rest_framework import permissions
+
 from selling.apps.membership import urls as membership_url
 from selling.apps.stadium import urls as stadium_url
 from selling.apps.match import urls as match_url
 from selling.apps.seat import urls as seat_url
 
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Selling Platform API",
+      default_version='v1',
+   ),
+   public=True,
+   permission_classes=(permissions.AllowAny,),
+)
+
 urlpatterns = [
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('admin/', admin.site.urls),
-    path('user/', include(membership_url)),
-    path('stadium/', include(stadium_url)),
-    path('match/', include(match_url)),
-    path('seat/', include(seat_url)),
+    path('users/', include(membership_url)),
+    path('stadiums/', include(stadium_url)),
+    path('matches/', include(match_url)),
+    path('seats/', include(seat_url)),
 ]

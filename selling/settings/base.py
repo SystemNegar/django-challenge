@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # Third party packages
     'rest_framework',
     'rest_framework_jwt',
+    'drf_yasg',
 
     # Selling apps
     'selling.apps.match.apps.MatchConfig',

@@ -8,6 +8,7 @@ django = "==3.2.*"
 djangorestframework = "*"
 djangorestframework-jwt = "==1.11.*"
 psycopg2-binary = "*"
+drf-yasg = "*"
 
 [dev-packages]
 
