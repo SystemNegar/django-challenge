@@ -10,6 +10,16 @@ class Match(models.Model):
         db_index=True
     )
     stadium = models.ForeignKey(Stadium, on_delete=models.CASCADE)
+    team1 = models.CharField(
+        max_length=255,
+        db_index=True,
+        null=True
+    )
+    team2 = models.CharField(
+        max_length=255,
+        db_index=True,
+        null=True
+    )
     date = models.DateField()
     time = models.TimeField()
     created_at = models.DateTimeField(
