@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 django = "==3.2.*"
 djangorestframework = "*"
-djangorestframework-jwt = "*"
+djangorestframework-jwt = "==1.11.*"
 psycopg2-binary = "*"
 
 [dev-packages]
