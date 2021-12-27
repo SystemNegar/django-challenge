@@ -22,12 +22,13 @@ class Seat(models.Model):
     class Meta:
         unique_together = ['name', 'match']
 
+    def __str__(self):
+        return self.name
+
 
 class BookSeat(models.Model):
     seat = models.ForeignKey(Seat, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    date = models.DateField()
-    time = models.TimeField()
     created_at = models.DateTimeField(
         default=timezone.now,
         db_index=True,
@@ -36,13 +37,13 @@ class BookSeat(models.Model):
         auto_now=True,
         db_index=True,
     )
-    deleted = models.BooleanField(default=False)
+    reserved = models.BooleanField(default=False)
 
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=['seat', 'date', 'time'],
-                condition=Q(deleted=False),
-                name='unique seat per datetime'
+                fields=['seat'],
+                condition=Q(reserved=True),
+                name='unique seat'
             ),
         ]

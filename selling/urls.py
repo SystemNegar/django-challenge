@@ -18,10 +18,12 @@ from django.urls import path, include
 from selling.apps.membership import urls as membership_url
 from selling.apps.stadium import urls as stadium_url
 from selling.apps.match import urls as match_url
+from selling.apps.seat import urls as seat_url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include(membership_url)),
     path('stadium/', include(stadium_url)),
     path('match/', include(match_url)),
+    path('seat/', include(seat_url)),
 ]
