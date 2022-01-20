@@ -133,3 +133,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # definition custom user
 AUTH_USER_MODEL = "accounts.CustomUser"
+
+# Django rest framework configs
+REST_FRAMEWORK = {
+    "EXCEPTION_HANDLER": "commons.errors.custom_exception_handler",
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.TokenAuthentication",
+    ),
+}
