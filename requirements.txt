@@ -36,3 +36,6 @@ environ==1.0
 psycopg2=2.9.3
 django-environ=0.8.1
 django-model-utils=4.2.0
+django-phonenumber-field=6.0.0
+phonenumbers=8.12.41
+PyJWT=2.3.0
