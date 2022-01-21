@@ -3,8 +3,8 @@ from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 
-from commons.mixins import ApiErrorsMixin, ApiResponseDetailMixin
-from commons.schemas import response_schema
+from arman.api.mixins import ApiErrorsMixin, ApiResponseDetailMixin
+from arman.api.schemas import response_schema
 
 from .serializer import UserSignupInputSerializer
 from .services import user_signup

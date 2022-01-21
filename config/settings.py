@@ -43,9 +43,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "drf_yasg",
-    "swagger",
-    "accounts.apps.AccountsConfig",
-    "commons.apps.CommonsConfig",
+    "arman.swagger",
+    "arman.api.apps.ApiConfig",
+    "arman.accounts.apps.AccountsConfig",
 ]
 
 MIDDLEWARE = [
@@ -139,7 +139,7 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 # Django rest framework configs
 REST_FRAMEWORK = {
-    "EXCEPTION_HANDLER": "commons.errors.custom_exception_handler",
+    "EXCEPTION_HANDLER": "arman.api.errors.custom_exception_handler",
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.TokenAuthentication",
     ),
