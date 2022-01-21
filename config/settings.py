@@ -152,3 +152,6 @@ SWAGGER_SETTINGS = {
         "apiKey": {"type": "apiKey", "in": "header", "name": "Authorization"}
     },
 }
+
+
+OTP = {"TOKEN_LENGTH": 5}
