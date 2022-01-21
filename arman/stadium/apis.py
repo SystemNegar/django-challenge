@@ -24,6 +24,13 @@ class StadiumApi(ApiErrorsMixin, ViewSet):
 
         create_stadium(**serializer.validated_data)
 
+        return ApiResponseDetailMixin(
+            data=None,
+            message="Stadium created successfully",
+            status=status.HTTP_201_CREATED,
+            status_message="successful",
+        )
+
     def retrieve(self, request, pk=None):
         pass
 
