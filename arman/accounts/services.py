@@ -1,6 +1,5 @@
 import jwt
 from django.conf import settings as django_settings
-from django.core.exceptions import ValidationError
 from django.utils.crypto import get_random_string
 
 from .models import OTP
@@ -39,7 +38,7 @@ def _send_sms(otp):
 
 def register(phone):
     """
-    register phone number and send otp code
+    Register phone number and send otp code
     :param phone:
     :return:
     """
