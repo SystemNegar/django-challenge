@@ -4,3 +4,7 @@ from rest_framework import serializers
 
 class SignupInputSerializer(serializers.Serializer):
     phone = PhoneNumberField(required=True)
+
+
+class OTPInputSerializer(serializers.Serializer):
+    phone = PhoneNumberField(required=True)
