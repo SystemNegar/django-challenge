@@ -1,8 +1,9 @@
 from django.urls import path
 
-from .apis import SignupApi
+from .apis import OTPApi, SignUpApi
 
 app_name = "accounts"
 urlpatterns = [
-    path("signup/", SignupApi.as_view(), name="signup"),
+    path("signup/", SignUpApi.as_view(), name="signup"),
+    path("otp/", OTPApi.as_view(), name="otp"),
 ]
