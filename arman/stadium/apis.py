@@ -6,27 +6,23 @@ from rest_framework.viewsets import ViewSet
 from arman.api.mixins import ApiErrorsMixin, ApiResponseDetailMixin
 from arman.api.schemas import response_schema
 
-from .services import city_list
+from .serializers import StadiumCreateInputSerializer
+from .services import create_stadium
 
 
-class CityApi(ApiErrorsMixin, ViewSet):
+class StadiumApi(ApiErrorsMixin, ViewSet):
     permission_classes = [IsAuthenticated]
 
     @swagger_auto_schema(
-        operation_description="City List",
+        request_body=StadiumCreateInputSerializer,
+        operation_description="Create Stadium",
         responses=response_schema,
     )
-    def list(self, request):
-        data = city_list()
-        return ApiResponseDetailMixin(
-            data=data,
-            message="City list retrieve successfully",
-            status_message="successful",
-            status=status.HTTP_200_OK,
-        )
-
     def create(self, request):
-        pass
+        serializer = StadiumCreateInputSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        create_stadium(**serializer.validated_data)
 
     def retrieve(self, request, pk=None):
         pass
