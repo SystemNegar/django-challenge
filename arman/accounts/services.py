@@ -1,13 +1,13 @@
 import jwt
 from django.conf import settings as django_settings
 from django.core.exceptions import ValidationError
-from django.db import IntegrityError
 from django.utils.crypto import get_random_string
 
 from .models import OTP
+from .selectors import get_otp_with_phone
 
 
-def _create_otp():
+def _generate_otp():
     """
     Returns a unique random `OTP` for given `TOKEN_LENGTH` in the settings.
     """
@@ -37,16 +37,18 @@ def _send_sms(otp):
     pass
 
 
-def user_signup(phone):
+def register(phone):
     """
-    user signup
+    register phone number and send otp code
     :param phone:
     :return:
     """
-    try:
-        otp = _create_otp()
-        obj, created = OTP.objects.update_or_create(phone=phone, otp=otp)
-    except IntegrityError:
-        raise ValidationError({"phone": "Phone already exists"})
+    otp = _generate_otp()
+    otp_object = get_otp_with_phone(phone)
+    if otp_object.exists():
+        OTP.objects.filter(phone=phone).update(otp=otp)
+    else:
+        OTP.objects.create(phone=phone, otp=otp)
+
     _send_sms(otp)
     return _generate_token(phone=phone, state="verify")
