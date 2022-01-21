@@ -1,12 +1,22 @@
 from django.contrib.auth.models import AbstractUser
-from django.core.validators import RegexValidator
 from django.db import models
-from model_utils.models import UUIDModel
+from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
+from model_utils.models import TimeStampedModel, UUIDModel
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class CustomUser(AbstractUser, UUIDModel):
-    phone_regex = RegexValidator(
-        regex=r"^(0|\+98)?([ ]|-|[()]){0,2}9[0|1|2|3|4|9]([ ]|-|[()]){0,2}(?:[0-9]([ ]|-|[()]){0,2}){8}$",
-        message="invalid phone number",
+    phone = PhoneNumberField(_("Phone"), unique=True, null=True, blank=True)
+
+
+class OTP(TimeStampedModel):
+    phone = PhoneNumberField(_("Phone"), unique=True, null=True, blank=True)
+    otp = models.CharField(max_length=9, blank=True, null=True)
+    register_flag = models.BooleanField(default=False)
+    expired_date = models.DateTimeField(
+        default=timezone.now() + timezone.timedelta(minutes=1)
     )
-    phone = models.CharField(validators=[phone_regex], max_length=17, unique=True)
+
+    def __str__(self):
+        return str(self.otp) + " sent to " + str(self.phone)
