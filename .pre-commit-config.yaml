@@ -19,6 +19,7 @@ repos:
     rev: 5.9.1
     hooks:
       - id: isort
+        args: ["--profile", "black"]
 
 # I commented because I did not have VPN on my local
 #  - repo: https://gitlab.com/pycqa/flake8

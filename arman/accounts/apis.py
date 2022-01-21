@@ -6,8 +6,8 @@ from rest_framework.views import APIView
 from arman.api.mixins import ApiErrorsMixin, ApiResponseDetailMixin
 from arman.api.schemas import response_schema
 
-from .serializers import OTPInputSerializer, SignupInputSerializer
-from .services import register
+from .serializers import LoginInputSerializer, OTPInputSerializer, SignupInputSerializer
+from .services import login, register
 
 
 class SignUpApi(ApiErrorsMixin, APIView):
@@ -23,12 +23,12 @@ class SignUpApi(ApiErrorsMixin, APIView):
         serializer = SignupInputSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        token = register(phone=str(serializer.validated_data["phone"]))
+        register(phone=str(serializer.validated_data["phone"]))
 
         return ApiResponseDetailMixin(
             message="Account registered successfully",
             status=status.HTTP_200_OK,
-            data={"token": token},
+            data=None,
             status_message="successful",
         )
 
@@ -46,11 +46,37 @@ class OTPApi(ApiErrorsMixin, APIView):
         serializer = OTPInputSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        token = register(phone=str(serializer.validated_data["phone"]))
+        register(phone=str(serializer.validated_data["phone"]))
 
         return ApiResponseDetailMixin(
             message="OTP registered successfully",
             status=status.HTTP_200_OK,
-            data={"token": token},
+            data=None,
+            status_message="successful",
+        )
+
+
+class LoginApi(ApiErrorsMixin, APIView):
+    permission_classes = [AllowAny]
+
+    @swagger_auto_schema(
+        request_body=LoginInputSerializer,
+        security=[],
+        operation_description="Login",
+        responses=response_schema,
+    )
+    def post(self, request):
+        serializer = LoginInputSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        data = login(
+            otp=serializer.validated_data["otp"],
+            phone=str(serializer.validated_data["phone"]),
+        )
+
+        return ApiResponseDetailMixin(
+            message="User login successfully",
+            status=status.HTTP_200_OK,
+            data=data,
             status_message="successful",
         )
