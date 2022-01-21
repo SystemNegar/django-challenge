@@ -6,21 +6,21 @@ from rest_framework.views import APIView
 from arman.api.mixins import ApiErrorsMixin, ApiResponseDetailMixin
 from arman.api.schemas import response_schema
 
-from .serializers import UserSignupInputSerializer
+from .serializers import SignupInputSerializer
 from .services import user_signup
 
 
-class UserSignupApi(ApiErrorsMixin, APIView):
+class SignupApi(ApiErrorsMixin, APIView):
     permission_classes = [AllowAny]
 
     @swagger_auto_schema(
-        request_body=UserSignupInputSerializer,
+        request_body=SignupInputSerializer,
         security=[],
         operation_description="User SignUp",
         responses=response_schema,
     )
     def post(self, request):
-        serializer = UserSignupInputSerializer(data=request.data)
+        serializer = SignupInputSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
         token = user_signup(phone=str(serializer.validated_data["phone"]))
