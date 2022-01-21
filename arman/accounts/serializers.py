@@ -8,3 +8,8 @@ class SignupInputSerializer(serializers.Serializer):
 
 class OTPInputSerializer(serializers.Serializer):
     phone = PhoneNumberField(required=True)
+
+
+class LoginInputSerializer(serializers.Serializer):
+    otp = serializers.CharField(required=True)
+    phone = PhoneNumberField(required=True)
