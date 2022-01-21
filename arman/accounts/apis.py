@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from arman.api.mixins import ApiErrorsMixin, ApiResponseDetailMixin
 from arman.api.schemas import response_schema
 
-from .serializer import UserSignupInputSerializer
+from .serializers import UserSignupInputSerializer
 from .services import user_signup
 
 
@@ -23,11 +23,11 @@ class UserSignupApi(ApiErrorsMixin, APIView):
         serializer = UserSignupInputSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        user_signup(**serializer.validated_data)
+        token = user_signup(phone=str(serializer.validated_data["phone"]))
 
         return ApiResponseDetailMixin(
-            message="User registered successfully",
+            message="Account registered successfully",
             status=status.HTTP_200_OK,
-            data=None,
+            data={"token": token},
             status_message="successful",
         )
