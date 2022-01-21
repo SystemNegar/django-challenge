@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "arman.swagger",
     "arman.api.apps.ApiConfig",
     "arman.accounts.apps.AccountsConfig",
+    "arman.city.apps.CityConfig",
     "arman.stadium.apps.StadiumConfig",
 ]
 
