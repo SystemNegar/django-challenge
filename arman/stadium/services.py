@@ -1,12 +1,8 @@
-from .selectors import get_all_city
+from .models import Stadium
 
 
-def city_list():
+def create_stadium(**validate_data):
     try:
-        cities = get_all_city()
-        data = []
-        for city in cities:
-            data.append({"id": city.id, "name": city.name})
-        return data
+        Stadium.objects.create(**validate_data)
     except Exception:
-        raise ValueError("City list is empty")
+        raise ValueError("can't create stadium with given fields")
