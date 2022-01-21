@@ -141,7 +141,7 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 REST_FRAMEWORK = {
     "EXCEPTION_HANDLER": "arman.api.errors.custom_exception_handler",
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
 }
 
@@ -154,4 +154,4 @@ SWAGGER_SETTINGS = {
 }
 
 
-OTP = {"TOKEN_LENGTH": 5}
+OTP = {"TOKEN_LENGTH": 5, "EXPIRATION_TIME": 120}
