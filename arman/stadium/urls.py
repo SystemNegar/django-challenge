@@ -1,13 +1,13 @@
 from rest_framework.routers import DefaultRouter
 
-from .apis import CityApi
+from .apis import StadiumApi
 
 app_name = "stadiums"
 router = DefaultRouter()
 router.register(
-    r"cities",
-    CityApi,
-    basename="cities",
+    r"",
+    StadiumApi,
+    basename="stadiums",
 )
 
 urlpatterns = router.urls
