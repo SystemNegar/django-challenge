@@ -1,23 +1,80 @@
- django-challenge
+# Core API
+
+This project provide core API functionality
+
+## Authors
+
+- [jaafar_habibi](https://github.com/habibi1981)
 
 
-The volleyball Federation decided to use an online selling platform for the next season, and our company has been chosen for implementing that.
+## Environment Variables
 
-# Requirements
+To run this project, you will need to add the following environment variables to your .env file
 
-Our system should have REST APIs for the following tasks:
+`DJANGO_SECRET_KEY`
+`DJANGO_DEBUG`
+`DJANGO_ALLOWED_HOSTS`
 
-- User signup and login
-- Adding a new stadium
-- Defining matches
-- Defining the place of seats for each match
-- Buying seats of a match (There is no need for using a payment gateway)
 
-# Implementation details
+## Getting Up and Running Locally
+### Setting Up Development Environment
 
-We don't need a GUI for this system. You can use the Django admin.
-Try to write your code as **reusable** and **readable** as possible. Also, don't forget to **document your code** and clear the reasons for all your decisions in the code.
-Using API documentation tools is a plus.
-Don't forget that many people trying to buy tickets for a match. So try to implement your code in a way that could handle the load. If your solution is not sample enough for implementing fast, you can just describe it in your documents.
+Make sure to have the following on your host:
+- Python 3.8
+- Postgres
+- virtualenv
 
-Please fork this repository and add your code to that. Don't forget that your commits are so important. So be sure that you're committing your code often with a proper commit message.
+First things first.
+
+1. Clone the repo:
+
+```bash
+  git clone https://github.com/habibi1981/django-challenge.git
+```
+
+2. Create virtualenv:
+
+```bash
+  python3 -m venv env
+```
+
+3. Activate the virtualenv you have just created:
+
+```bash
+  source env/bin/activate
+```
+
+4. Install development dependencies:
+
+```bash
+  pip install -r requirements.txt
+```
+
+5. Create a new PostgreSQL database using createdb:
+
+```bash
+  createdb <what you have entered as the project_slug at setup stage> -U postgres --password <password>
+```
+
+6. Set the environment variables for your database(s):
+
+`POSTGRESQL_ENGINE`
+`POSTGRESQL_DATABASE`
+`POSTGRESQL_USERNAME`
+`POSTGRESQL_PASSWORD`
+`POSTGRESQL_HOST`
+`POSTGRESQL_PORT`
+
+
+---
+7. Apply migrations:
+
+```bash
+  python manage.py migrate
+```
+
+8. If you’re running synchronously, see the application being served through Django development server:
+
+```bash
+  python manage.py runserver 0.0.0.0:8000
+```
