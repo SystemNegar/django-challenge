@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  app:
+    build: 
+      context: .
+    networks: 
+      - net
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app:/app
+    depends_on:
+      - redis
+    command: >
+      sh -c "python app.py"
+
+  redis:
+    image: redis:6.0-alpine
+
+    networks: 
+      - net
+    volumes:
+      - ./cachedata/:/data/
+
+volumes:
+  cachedata:
+    driver: local
+
+networks: 
+  net:
+
+
+  
+
+                              
