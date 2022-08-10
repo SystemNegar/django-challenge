@@ -12,7 +12,7 @@ class StadiumModel(db.Model):
     number_of_segments = db.Column(db.Integer)
     segments = db.Column(db.String(200))
 
-    items = db.relationship('MatchesModel', lazy='dynamic')
+    matches = db.relationship('MatchesModel', lazy='dynamic')
 
     def __init__(self, name, **kwargs):
         self.name = name
