@@ -21,6 +21,16 @@ _parser.add_argument('capacity',
                     required=True,
                     help="capacity cannot be left blank!"
                     )
+_parser.add_argument('number_of_segments',
+                    type=int,
+                    required=True,
+                    help="number_of_segments cannot be left blank!"
+                    )
+_parser.add_argument('segments',
+                    type=str,
+                    required=True,
+                    help="segments cannot be left blank!"
+                    )
 
 
 class Stadium(Resource):

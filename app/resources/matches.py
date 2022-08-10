@@ -2,6 +2,11 @@ from flask_restful import Resource, reqparse
 from flask_jwt_extended import jwt_required, get_jwt
 from resources.user import is_admin
 from models.matches import MatchesModel
+from models.stadium import StadiumModel
+from models.seat_management import set_match_seat, get_match_seats
+
+from ast import literal_eval
+import copy
 
 
 _parser = reqparse.RequestParser()
@@ -30,6 +35,15 @@ _parser.add_argument('stadium_id',
                           )
 class Matches(Resource):
 
+    def convert_row_cap_to_int_and_cache(self,name,stadium_id,data):
+        stadium = StadiumModel.find_by_id(stadium_id)
+        segment_dict = literal_eval(stadium.json()['segments'])
+        change_dict = copy.deepcopy(segment_dict)
+
+        for seg in segment_dict.keys():
+            for row in segment_dict[seg]:
+                change_dict[seg][row] = 2**(segment_dict[seg][row])
+            set_match_seat(name=f"{name}-{data['datetime']}",segment=seg,**change_dict[seg])
     
     def get(self, name):
         if not is_admin():
@@ -49,9 +63,10 @@ class Matches(Resource):
         data = _parser.parse_args()
 
         match = MatchesModel(name, **data)
-
+       
         try:
             match.save_to_db()
+            self.convert_row_cap_to_int_and_cache(name,data['stadium_id'],data)
         except:
             return {"message": "An error occurred inserting the match."}, 500
 
@@ -60,9 +75,6 @@ class Matches(Resource):
     def delete(self, name):
         if not is_admin():
             return {"message": "Not authorized for this action"}, 400 
-        claims = get_jwt()
-        if not claims['is_admin']:
-            return {'message': 'Admin privilege required.'}, 401
 
         match = MatchesModel.find_by_name(name)
         if match:

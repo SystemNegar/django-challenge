@@ -10,7 +10,7 @@ class MatchesModel(db.Model):
     teams = db.Column(db.String(80))
     capacity = db.Column(db.Integer)
     stadium_id = db.Column(db.Integer, db.ForeignKey('stadium.id'))
-    stadium = db.relationship('StadiumModel')
+    # stadium = db.relationship('StadiumModel')
 
     def __init__(self, name, stadium_id, **kwargs):
         self.name = name
