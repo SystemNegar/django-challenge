@@ -38,7 +38,13 @@ def check_username_not_exist(name):
         raise UsernameError
 
 def check_exist_and_get_username_by_id(id):
-        user = UserModel.find_by_id(id)
+    user = UserModel.find_by_id(id)
+    if not user:
+        raise UsernameError            
+    return user
+
+def check_exist_and_get_username_by_name(name):
+        user = UserModel.find_by_username(name)
         if not user:
             raise UsernameError            
         return user
@@ -99,14 +105,16 @@ class User(Resource):
 
 class UserLogin(Resource):
     def post(self):
-        data = _user_parser.parse_args()
+        try:
+            data = _user_parser.parse_args()
+            user = check_exist_and_get_username_by_name(data['username'])
 
-        user = UserModel.find_by_username(data['username'])
+            if user and check_password_hash(user.password, data['password']):
+                additional_claims = {"role": user.role}
+                access_token = create_access_token(identity=user.id, additional_claims=additional_claims, fresh=True) 
+                return {'access_token': access_token}, 200
 
-        if user and check_password_hash(user.password, data['password']):
-            additional_claims = {"role": user.role}
-            access_token = create_access_token(identity=user.id, additional_claims=additional_claims, fresh=True) 
-            refresh_token = create_refresh_token(user.id)
-            return {'access_token': access_token}, 200
-
-        return {"message": "Invalid Credentials!"}, 401
+            return {"message": "Invalid Credentials!"}, 401
+            
+        except UsernameError:
+            return {"message": "Username not found"}, 400
