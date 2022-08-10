@@ -1,7 +1,7 @@
 from flask_restful import Resource, reqparse
 from werkzeug.security import check_password_hash
 from flask_jwt_extended import create_access_token, create_refresh_token
-from flask_jwt_extended import jwt_required, get_jwt
+from flask_jwt_extended import jwt_required, get_jwt,get_jwt_identity
 from models.user import UserModel
 
 
@@ -24,6 +24,9 @@ def is_admin():
     if claims['role']== "admin":
         return True    
     return False
+
+def get_user_identity():
+    return get_jwt_identity()
 
 class UserRegister(Resource):
     def post(self):
@@ -53,10 +56,7 @@ class AdminUserRegister(Resource):
 
 
 class User(Resource):
-    """
-    This resource can be useful when testing our Flask app. We may not want to expose it to public users, but for the
-    sake of demonstration in this course, it can be useful when we are manipulating data regarding the users.
-    """
+
     @classmethod
     def get(cls, user_id: int):
         user = UserModel.find_by_id(user_id)

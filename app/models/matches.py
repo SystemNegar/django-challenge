@@ -1,3 +1,7 @@
+"""
+db model for match table
+
+"""
 from db import db
 
 
@@ -10,16 +14,13 @@ class MatchesModel(db.Model):
     teams = db.Column(db.String(80))
     capacity = db.Column(db.Integer)
     stadium_id = db.Column(db.Integer, db.ForeignKey('stadium.id'))
-    # stadium = db.relationship('StadiumModel')
 
-    def __init__(self, name, stadium_id, **kwargs):
+    def __init__(self, name: str, stadium_id: int, **kwargs):
         self.name = name
         self.stadium_id = stadium_id
         self.datetime = kwargs["datetime"]
         self.capacity = kwargs["capacity"]
         self.teams = kwargs["teams"]
-
-
 
     def json(self):
         return {
@@ -32,11 +33,11 @@ class MatchesModel(db.Model):
         }
 
     @classmethod
-    def find_by_name(cls, name):
+    def find_by_name(cls, name:str):
         return cls.query.filter_by(name=name).first()
-        
+
     @classmethod
-    def find_by_id(cls, id):
+    def find_by_id(cls, id:int):
         return cls.query.filter_by(id=id).first()
     
     @classmethod

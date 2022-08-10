@@ -11,6 +11,9 @@ class UserModel(db.Model):
     password = db.Column(db.String(80))
     role = db.Column(db.String(10))
 
+    # reserves = db.relationship('ReservesModel', lazy='dynamic')
+
+
     def __init__(self, username, password, role="user"):
         self.username = username
         self.password = self._generate_password_hash(password) 
