@@ -1,3 +1,10 @@
+"""
+for reserve seat, we change all row of seats to binary numbers, for example if 
+length of one row is 4 related row number becomes 0b10000, and save this on redis
+for check a seat we and it to related place of seat in row if result becomes zero 
+it means the seat is available and for reserve it we convert this bit from 0 to 1
+then save the related data in sql database
+"""
 from flask_restful import Resource, reqparse
 from flask_jwt_extended import jwt_required
 
@@ -49,7 +56,7 @@ def save_data_on_db(data: dict):
     reserve.save_to_db()
     return reserve.json()['id']
 
-def get_and_check_match_id(match_id: int):
+def check_and_get_match_id(match_id: int):
     match = MatchesModel.find_by_id(match_id)
     if not match:
         raise MatchIdError
@@ -81,7 +88,7 @@ class BuyTickets(Resource):
         try:
             self.data = _parser.parse_args()
 
-            match=get_and_check_match_id(self.data['match_id'])# guard for match id error
+            match=check_and_get_match_id(self.data['match_id'])# guard for match id error
             self.match_name_key=get_match_string(match.json()['name'],match.json()['datetime'])
 
             self.control_guards()

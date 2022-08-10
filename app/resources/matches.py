@@ -1,9 +1,13 @@
 from flask_restful import Resource, reqparse
 from flask_jwt_extended import jwt_required, get_jwt
-from resources.user import is_admin
+
+from resources.user import check_user_is_admin
+
 from models.matches import MatchesModel
 from models.stadium import StadiumModel
 from models.cache_manager import set_match_seat
+
+from exceptions import MatchNameError
 
 from ast import literal_eval
 import copy
@@ -37,9 +41,22 @@ _parser.add_argument('stadium_id',
 def get_match_string(name,datetime):
     return f"{name}-{datetime}"
 
+def check_exist_and_get_match_by_name(name,message=None):
+    match = MatchesModel.find_by_name(name)
+    if not match:
+        raise MatchNameError(message)
+    return match
+
+def check_not_exist_and_get_match_by_name(name,message=None):
+    match = MatchesModel.find_by_name(name)
+    if match:
+        raise MatchNameError(message)
+    return match
+
+
 class Matches(Resource):
 
-    def convert_row_cap_to_int_and_cache(self,name,stadium_id,data):
+    def convert_row_cap_to_int_and_cache(self, name: str, stadium_id: int, data: dict):
         stadium = StadiumModel.find_by_id(stadium_id)
         segment_dict = literal_eval(stadium.json()['segments'])
         change_dict = copy.deepcopy(segment_dict)
@@ -50,55 +67,74 @@ class Matches(Resource):
             set_match_seat(name=get_match_string(name,data['datetime']),segment=seg,**change_dict[seg])
     
     def get(self, name):
-        if not is_admin():
-            return {"message": "Not authorized for this action"}, 400 
-        match = MatchesModel.find_by_name(name)
-        if match:
+        try:
+            check_user_is_admin()
+            match=check_exist_and_get_match_by_name(name)                
             return match.json()
-        return {'message': 'match not found'}, 404
+
+        except PermissionError:
+            return {"message": "Not authorized for this action"}, 400 
+        
+        except MatchNameError as e:
+            return {'message': 'match name not found'}, 404
         
 
     def post(self, name):
-        if not is_admin():
-            return {"message": "Not authorized for this action"}, 400 
-        if MatchesModel.find_by_name(name):
-            return {'message': "An match with name '{}' already exists.".format(name)}, 400
-
-        data = _parser.parse_args()
-
-        match = MatchesModel(name, **data)
-       
         try:
+            check_user_is_admin() 
+            match=check_not_exist_and_get_match_by_name(name)                
+            data = _parser.parse_args()
+
+            match = MatchesModel(name, **data)           
             match.save_to_db()
             self.convert_row_cap_to_int_and_cache(name,data['stadium_id'],data)
-        except:
-            return {"message": "An error occurred inserting the match."}, 500
+            return match.json(), 201
 
-        return match.json(), 201
+        except PermissionError:
+            return {"message": "Not authorized for this action"}, 400
+
+        except MatchNameError:
+            return {'message': "An match with name '{}' already exists.".format(name)}, 400
+
+        except Exception as e:
+            return {"message": f"Exception {e}"}, 400       
 
     def delete(self, name):
-        if not is_admin():
-            return {"message": "Not authorized for this action"}, 400 
-
-        match = MatchesModel.find_by_name(name)
-        if match:
+        try:
+            check_user_is_admin() 
+            match=check_exist_and_get_match_by_name(name)  
             match.delete_from_db()
-            return {'message': 'Item deleted.'}
-        return {'message': 'Item not found.'}, 404
+
+        except PermissionError:
+            return {"message": "Not authorized for this action"}, 400
+
+        except MatchNameError:
+            return {'message': "match name not found"}, 400
+
+        except Exception as e:
+            return {"message": f"Exception {e}"}, 400
 
     def put(self, name):
-        if not is_admin():
-            return {"message": "Not authorized for this action"}, 400 
-        data = _parser.parse_args()
-        match = MatchesModel(name, **data)
-        match.save_to_db()
-        return match.json()
+        try:            
+            check_user_is_admin() 
+            data = _parser.parse_args()
+            match = MatchesModel(name, **data)
+            match.save_to_db()
+            return match.json()
+
+        except PermissionError:
+            return {"message": "Not authorized for this action"}, 400
+
+        except Exception as e:
+            return {"message": f"Exception {e}"}, 400
 
 
 class MatchesList(Resource):
+
     def get(self):
-        if not is_admin():
-            return {"message": "Not authorized for this action"}, 400 
-        
-        return [match.json() for match in MatchesModel.find_all()]
+        try:
+            check_user_is_admin()            
+            return [match.json() for match in MatchesModel.find_all()]
+        except PermissionError:
+            return {"message": "Not authorized for this action"}, 400
 
