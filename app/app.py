@@ -8,6 +8,7 @@ from db import db
 from resources.user import UserRegister, User, UserLogin,AdminUserRegister
 from resources.matches import Matches, MatchesList
 from resources.stadium import Stadium, StadiumList
+from resources.buy_tickets import BuyTickets
 
 
 app = Flask(__name__)
@@ -25,7 +26,7 @@ def create_tables():
 
 jwt = JWTManager(app)
 
-
+api.add_resource(BuyTickets, '/buyticket')
 api.add_resource(Stadium, '/stadium/<string:name>')
 api.add_resource(StadiumList, '/stadium')
 api.add_resource(Matches, '/match/<string:name>')

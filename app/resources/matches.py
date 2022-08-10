@@ -3,7 +3,7 @@ from flask_jwt_extended import jwt_required, get_jwt
 from resources.user import is_admin
 from models.matches import MatchesModel
 from models.stadium import StadiumModel
-from models.seat_management import set_match_seat, get_match_seats
+from models.cache_manager import set_match_seat
 
 from ast import literal_eval
 import copy
@@ -33,6 +33,10 @@ _parser.add_argument('stadium_id',
                           required=True,
                           help="stadium_id cannot be blank."
                           )
+
+def get_match_string(name,datetime):
+    return f"{name}-{datetime}"
+
 class Matches(Resource):
 
     def convert_row_cap_to_int_and_cache(self,name,stadium_id,data):
@@ -43,7 +47,7 @@ class Matches(Resource):
         for seg in segment_dict.keys():
             for row in segment_dict[seg]:
                 change_dict[seg][row] = 2**(segment_dict[seg][row])
-            set_match_seat(name=f"{name}-{data['datetime']}",segment=seg,**change_dict[seg])
+            set_match_seat(name=get_match_string(name,data['datetime']),segment=seg,**change_dict[seg])
     
     def get(self, name):
         if not is_admin():
