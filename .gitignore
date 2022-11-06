@@ -1,3 +1,6 @@
 venv
 *.pyc
 local_settings.py
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
