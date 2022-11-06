@@ -1,9 +1,12 @@
+from cgitb import reset
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
-from booking.models import Stadium, StadiumPlace, PlaceSeats, Match, Team
+from booking.models import Stadium, StadiumPlace, PlaceSeats, Match, Team, Ticket, Invoice
 from booking.serializers import StadiumSerializer, StadiumPlaceSerializer,\
-     PlaceSeatsSerializer, TeamSerializer, MatchSerializer
+     PlaceSeatsSerializer, TeamSerializer, MatchSerializer, TicketSerializer, InvoiceSerilizer,\
+        RetrieveInvoiceSerilizer, BuyInvoiceSerilizer
+
 
 class StadiumListCreateAPI(generics.ListCreateAPIView):
     queryset = Stadium.objects.all()
@@ -64,3 +67,52 @@ class MatchRetrieveUpdateDestroyAPI(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated]
 
 
+class TicketListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Ticket.objects.all()
+    serializer_class = TicketSerializer
+    permission_classes = [IsAuthenticated]
+
+
+class TicketRetrieveUpdateDestroyAPI(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Ticket.objects.all()
+    serializer_class = TicketSerializer
+    permission_classes = [IsAuthenticated]
+
+
+class CreateInvoiceAPI(generics.CreateAPIView):
+    queryset = Invoice.objects.all()
+    serializer_class = InvoiceSerilizer
+    permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def create(self, request, *args, **kwargs):
+        print(request.data)
+        return super().create(request, *args, **kwargs)
+
+
+class RetrieveUpdateInvoiceAPI(generics.RetrieveUpdateAPIView):
+    queryset = Invoice.objects.all()
+    serializer_class = InvoiceSerilizer
+    permission_classes = [IsAuthenticated]
+    serializer_classes = {
+        'GET': RetrieveInvoiceSerilizer,
+        'PUT': InvoiceSerilizer
+    }
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return self.serializer_classes.get(self.request.method)
+        return self.serializer_classes.get(self.request.method)
+
+
+class BuyInvoiceAPI(generics.UpdateAPIView):
+    """
+    
+    """
+    queryset = Invoice.objects.all()
+    serializer_class = BuyInvoiceSerilizer
+    permission_classes = [IsAuthenticated]
+
+    def perform_update(self, serializer):
+        serializer.save(user=self.request.user)
