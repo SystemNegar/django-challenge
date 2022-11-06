@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from booking.models import Stadium, StadiumPlace, PlaceSeats
+from booking.models import Stadium, StadiumPlace, PlaceSeats, Team, Match
 
 
 class MatchSerializer(serializers.ModelSerializer):
@@ -37,4 +37,27 @@ class StadiumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Stadium
         fields = ('id', 'name', 'city', 'address', 'places', 'matches',)
+
+
+class TeamSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Team
+        fields = ('id', 'name',)
+
+
+class TicketSerializer(serializers.ModelSerializer):
+    status = serializers.CharField(read_only=True)
+    last_update_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S', read_only=True)
+
+    class Meta:
+        model = Ticket
+        fields = ('id', 'stadium', 'match', 'status', 'last_update_time', 'row_number', 'seat_number', 'place', 'price')
+    
+    def create(self, validated_data):
+        selected_row_number = validated_data.get('row_number')
+        place_seats = PlaceSeats.objects.get(row_number=selected_row_number)
+        number_of_row_seats_limitation = place_seats.number_of_seats_per_row
+        if validated_data.get('seat_number') > number_of_row_seats_limitation:
+            raise serializers.ValidationError("seledted seats is not existed for this row") 
+        return super().create(validated_data)
 

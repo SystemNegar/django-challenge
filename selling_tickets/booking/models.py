@@ -28,3 +28,24 @@ class PlaceSeats(models.Model):
 
     class Meta:
         unique_together = ['place', 'row_number']
+
+class Team(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Team Name', unique=True)
+
+    def __str__(self) -> str:
+        return self.name
+
+
+class Match(models.Model):
+    stadium = models.ForeignKey('Stadium', on_delete=models.CASCADE, related_name='matches')
+    host_team = models.ForeignKey('Team', on_delete=models.PROTECT, related_name='host_team')
+    guest_team = models.ForeignKey('Team', on_delete=models.PROTECT, related_name='guest_team')
+    start_time = models.DateTimeField()
+
+    def __str__(self) -> str:
+        return "%s VS %s, Date: %s" % (self.host_team, self.guest_team, self.start_time)
+
+    class Meta:
+        unique_together = ['stadium', 'start_time']
+
+
