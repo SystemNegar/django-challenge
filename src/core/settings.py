@@ -10,7 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+from django.utils.translation import gettext_lazy as _
+
 from pathlib import Path
+
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,16 +24,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_kh1q=rv$1y9)wf_(pnub5dlppl5)^13rfr$i*(7z2*h=wq50^'
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'django-insecure-_kh1q=rv$1y9)wf_(pnub5dlppl5)^13rfr$i*(7z2*h=wq50^'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.environ.get("DEBUG", 1)))
 
+# Allowed Hosts
 ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS_ENV = os.environ.get("ALLOWED_HOSTS")
+if ALLOWED_HOSTS_ENV:
+    ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(","))
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -74,9 +83,13 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get("DB_NAME", "ticket_sales_system"),
+        "USER": os.environ.get("DB_USER", "postgres"),
+        "PASSWORD": os.environ.get("DB_PASS", "123456"),
+        "HOST": os.environ.get("DB_HOST", "localhost"),
+        "PORT": int(os.environ.get("DB_PORT", "5432")),
     }
 }
 
@@ -99,25 +112,57 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
+LANGUAGE_CODE = 'fa'
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGES = [
+    ('fa', _('Persian')),
+    ('en', _('English')),
+]
 
-TIME_ZONE = 'UTC'
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+
+TIME_ZONE = os.environ.get("TIME_ZONE", "Asia/Tehran")
 
 USE_I18N = True
 
-USE_TZ = True
+USE_L10N = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = 'static/'
+STATIC_URL = '/statics/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# security configs for production
+if not DEBUG:
+    # Https settings
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_SSL_HOST = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+    # HSTS settings
+    SECURE_HSTS_SECONDS = 31536000  # 1 year
+    SECURE_HSTS_PRELOAD = True
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+    # more security settings
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_BROWSER_XSS_FILTER = True
+    X_FRAME_OPTIONS = "ALLOW"
+    SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
+    USE_X_FORWARDED_HOST = True
+
+    CORS_ALLOW_ALL_ORIGINS = True
+    CORS_ALLOW_CREDENTIALS = True
