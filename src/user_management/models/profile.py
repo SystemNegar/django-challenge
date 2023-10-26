@@ -27,6 +27,7 @@ class Profile(AbstractCreatAtUpdateAt, models.Model):
     gender = models.PositiveSmallIntegerField(
         verbose_name=_('Gender'),
         choices=GenderChoices.choices,
+        blank=True,
         null=True
     )
 
@@ -38,4 +39,8 @@ class Profile(AbstractCreatAtUpdateAt, models.Model):
         ordering = ['user_id']
 
     def __str__(self) -> str:
-        return f'{self.first_name} {self.last_name}'
+        return f"{self.first_name} {self.last_name}" if self.first_name and self.last_name else self.user.__str__()
+
+    @property
+    def get_full_name(self) -> str:
+        return f"{self.first_name} {self.last_name}" if self.first_name and self.last_name else ''

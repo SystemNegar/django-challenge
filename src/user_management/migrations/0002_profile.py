@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, primary_key=True, related_name='user_profile_user', serialize=False, to=settings.AUTH_USER_MODEL, verbose_name='User')),
                 ('first_name', models.CharField(blank=True, max_length=200, verbose_name='First Name')),
                 ('last_name', models.CharField(blank=True, max_length=200, verbose_name='Last Name')),
-                ('gender', models.PositiveSmallIntegerField(null=True, choices=[(None, '---------'), (0, 'Male'), (1, 'Female')], verbose_name='Gender')),
+                ('gender', models.PositiveSmallIntegerField(blank=True, null=True, choices=[(None, '---------'), (0, 'Male'), (1, 'Female')], verbose_name='Gender')),
             ],
             options={
                 'verbose_name': 'Profile',
