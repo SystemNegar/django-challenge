@@ -27,7 +27,7 @@ class UserViewSet(ModelViewSet):
     ViewSet for the 'User' model objects
     """
     serializer_class = UserSerializer
-    queryset = get_user_model().objects.all().order_by('id')
+    queryset = get_user_model().objects.select_related('user_profile_user').all()
     permission_classes = [CustomDjangoModelPermission | UnauthenticatedPost]
     filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ['username', 'is_active', 'is_superuser', 'is_staff']
