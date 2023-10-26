@@ -16,3 +16,9 @@ class LocationChoices(IntegerChoices):
     B = 1, _('B')
     C = 2, _('C')
     VIP = 3, _('VIP')
+
+
+class InvoiceStatusChoices(IntegerChoices):
+    """Enum class for the invoice status fields"""
+    PAID = 0, _('Paid')
+    UNPAID = 1, _('Unpaid')
