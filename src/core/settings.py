@@ -149,6 +149,26 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Auth Settings
 AUTH_USER_MODEL = 'user_management.User'
 
+# Django REST Framework
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+        'rest_framework.permissions.DjangoModelPermissions',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '4/second',
+        'user': '30/second'
+    },
+    'PAGE_SIZE': 20,
+}
+
 # security configs for production
 if not DEBUG:
     # Https settings
