@@ -3,8 +3,8 @@ from django.db import models
 
 
 class AbstractCreatAtUpdateAt(models.Model):
-    create_at = models.DateTimeField(
-        verbose_name=_('Create At'),
+    created_at = models.DateTimeField(
+        verbose_name=_('Created At'),
         auto_now_add=True,
         editable=False
     )

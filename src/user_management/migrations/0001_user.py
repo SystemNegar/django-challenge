@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('password', models.CharField(max_length=128, verbose_name='password')),
                 ('last_login', models.DateTimeField(blank=True, null=True, verbose_name='last login')),
                 ('is_superuser', models.BooleanField(default=False, help_text='Designates that this user has all permissions without explicitly assigning them.', verbose_name='superuser status')),
-                ('create_at', models.DateTimeField(auto_now_add=True, verbose_name='Create At')),
+                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Created At')),
                 ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Updated At')),
                 ('username', models.EmailField(db_index=True, max_length=254, unique=True, verbose_name='Username')),
                 ('is_staff', models.BooleanField(default=False, verbose_name='Is Staff')),

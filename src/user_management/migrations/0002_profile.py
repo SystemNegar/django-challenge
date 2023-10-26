@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Profile',
             fields=[
-                ('create_at', models.DateTimeField(auto_now_add=True, verbose_name='Create At')),
+                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Created At')),
                 ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Updated At')),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, primary_key=True, related_name='user_profile_user', serialize=False, to=settings.AUTH_USER_MODEL, verbose_name='User')),
                 ('first_name', models.CharField(max_length=200, verbose_name='First Name')),
