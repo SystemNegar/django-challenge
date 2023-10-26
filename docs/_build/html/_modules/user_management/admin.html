@@ -137,7 +137,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s1">&#39;profile_user&#39;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="UserAdmin.get_full_name"><a class="viewcode-back" href="../../_rst/user_management.html#user_management.admin.UserAdmin.get_full_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">user_profile_user</span><span class="o">.</span><span class="n">get_full_name</span></div>
+        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">profile_user</span><span class="o">.</span><span class="n">get_full_name</span></div>
 
     <span class="n">get_full_name</span><span class="o">.</span><span class="n">short_description</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s1">&#39;Full Name&#39;</span><span class="p">)</span></div>
 

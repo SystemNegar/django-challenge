@@ -64,7 +64,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#module-extensions.custom_permissions">extensions.custom_permissions module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#extensions.custom_permissions.CustomDjangoModelPermission"><code class="docutils literal notranslate"><span class="pre">CustomDjangoModelPermission</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#extensions.custom_permissions.OwnProfilePermission"><code class="docutils literal notranslate"><span class="pre">OwnProfilePermission</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#extensions.custom_permissions.OwnUserPermission"><code class="docutils literal notranslate"><span class="pre">OwnUserPermission</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#extensions.custom_permissions.UnauthenticatedPost"><code class="docutils literal notranslate"><span class="pre">UnauthenticatedPost</span></code></a></li>
 </ul>
@@ -198,23 +197,11 @@
 <dt class="sig sig-object py" id="extensions.custom_permissions.CustomDjangoModelPermission">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">extensions.custom_permissions.</span></span><span class="sig-name descname"><span class="pre">CustomDjangoModelPermission</span></span><a class="reference internal" href="../_modules/extensions/custom_permissions.html#CustomDjangoModelPermission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#extensions.custom_permissions.CustomDjangoModelPermission" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelPermissions</span></code></p>
+<p>Custom permission class to handle better permission by model permissions</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="extensions.custom_permissions.CustomDjangoModelPermission.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/extensions/custom_permissions.html#CustomDjangoModelPermission.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#extensions.custom_permissions.CustomDjangoModelPermission.__init__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="extensions.custom_permissions.OwnProfilePermission">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">extensions.custom_permissions.</span></span><span class="sig-name descname"><span class="pre">OwnProfilePermission</span></span><a class="reference internal" href="../_modules/extensions/custom_permissions.html#OwnProfilePermission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#extensions.custom_permissions.OwnProfilePermission" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BasePermission</span></code></p>
-<p>Object-level permission to only allow updating his own profile</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="extensions.custom_permissions.OwnProfilePermission.has_object_permission">
-<span class="sig-name descname"><span class="pre">has_object_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/extensions/custom_permissions.html#OwnProfilePermission.has_object_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#extensions.custom_permissions.OwnProfilePermission.has_object_permission" title="Permalink to this definition"></a></dt>
-<dd><p>Return <cite>True</cite> if permission is granted, <cite>False</cite> otherwise.</p>
-</dd></dl>
 
 </dd></dl>
 
@@ -235,6 +222,7 @@
 <dt class="sig sig-object py" id="extensions.custom_permissions.UnauthenticatedPost">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">extensions.custom_permissions.</span></span><span class="sig-name descname"><span class="pre">UnauthenticatedPost</span></span><a class="reference internal" href="../_modules/extensions/custom_permissions.html#UnauthenticatedPost"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#extensions.custom_permissions.UnauthenticatedPost" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BasePermission</span></code></p>
+<p>Allow to unauthenticated user to send the ‘POST’ request</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="extensions.custom_permissions.UnauthenticatedPost.has_permission">
 <span class="sig-name descname"><span class="pre">has_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/extensions/custom_permissions.html#UnauthenticatedPost.has_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#extensions.custom_permissions.UnauthenticatedPost.has_permission" title="Permalink to this definition"></a></dt>
