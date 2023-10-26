@@ -15,13 +15,6 @@ class UnauthenticatedPost(BasePermission):
         return request.method in ['POST']
 
 
-class OwnProfilePermission(BasePermission):
-    """Object-level permission to only allow updating his own profile"""
-    def has_object_permission(self, request, view, obj):
-        # obj here is a Profile instance
-        return obj.profile_user.user_id == request.user.id
-
-
 class OwnUserPermission(BasePermission):
     """Object-level permission to only allow updating his own user"""
     def has_object_permission(self, request, view, obj):

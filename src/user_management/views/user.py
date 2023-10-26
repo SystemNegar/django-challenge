@@ -11,7 +11,6 @@ from rest_framework import status
 from extensions.custom_permissions import (
     CustomDjangoModelPermission,
     UnauthenticatedPost,
-    OwnProfilePermission,
     OwnUserPermission
 )
 
@@ -63,31 +62,31 @@ class UserViewSet(ModelViewSet):
         methods=["get"],
         url_path='user_profile',
         url_name='user_profile',
-        permission_classes=[OwnProfilePermission]
+        permission_classes=[OwnUserPermission]
     )
     def user_profile(self, request, pk=None):
         """
         This will use for getting the current user profile
         :return: The current user profile
         """
-        user_profile = self.get_object().profile_user
-        return Response(data=ProfileSerializer(user_profile).data, status=status.HTTP_200_OK)
+        user = self.get_object()
+        return Response(data=ProfileSerializer(user.profile_user).data, status=status.HTTP_200_OK)
 
     @action(
         detail=True,
         methods=["put"],
         url_path='update_user_profile',
         url_name='update_user_profile',
-        permission_classes=[OwnProfilePermission]
+        permission_classes=[OwnUserPermission]
     )
     def update_user_profile(self, request, pk=None):
         """
         This will use for change the current user profile
         :return: The current user profile
         """
-        user_profile = self.get_object().profile_user
+        user = self.get_object()
         serializer = ProfileSerializer(
-            user_profile,
+            user.profile_user,
             data=request.data,
             many=False,
         )
