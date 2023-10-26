@@ -1,4 +1,4 @@
-from permission import PermissionViewSet
+from .permission import PermissionViewSet
 
 __all__ = [
     'PermissionViewSet',
