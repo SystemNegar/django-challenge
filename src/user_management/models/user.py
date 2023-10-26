@@ -8,6 +8,10 @@ from user_management.managers import UserManager
 
 
 class User(AbstractBaseUser, AbstractCreatAtUpdateAt, PermissionsMixin):
+    """
+    Custom user model to authenticate user by email address,
+    Verification of users by sending an activation link to their email is not implemented.
+    """
     username = models.EmailField(
         verbose_name=_('Username'),
         unique=True,
