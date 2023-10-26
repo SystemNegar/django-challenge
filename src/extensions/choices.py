@@ -8,3 +8,11 @@ class GenderChoices(IntegerChoices):
     FEMALE = 1, _('Female')
 
     __empty__ = '---------'
+
+
+class LocationChoices(IntegerChoices):
+    """Enum class for the location fields"""
+    A = 0, _('A')
+    B = 1, _('B')
+    C = 2, _('C')
+    VIP = 3, _('VIP')
