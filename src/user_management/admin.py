@@ -63,7 +63,7 @@ class UserAdmin(BaseUserAdmin):
     )
 
     def get_queryset(self, request):
-        return self.model.objects.select_related('user_profile_user')
+        return self.model.objects.select_related('profile_user')
 
     def get_full_name(self, obj):
         return obj.user_profile_user.get_full_name

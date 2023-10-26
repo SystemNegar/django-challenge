@@ -12,7 +12,7 @@ class Profile(AbstractCreatAtUpdateAt, models.Model):
         verbose_name=_('User'),
         on_delete=models.CASCADE,
         primary_key=True,
-        related_name='user_profile_user'
+        related_name='profile_user'
     )
     first_name = models.CharField(
         verbose_name=_('First Name'),

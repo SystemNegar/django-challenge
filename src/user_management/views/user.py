@@ -27,7 +27,7 @@ class UserViewSet(ModelViewSet):
     ViewSet for the 'User' model objects
     """
     serializer_class = UserSerializer
-    queryset = get_user_model().objects.select_related('user_profile_user').all()
+    queryset = get_user_model().objects.select_related('profile_user').all()
     permission_classes = [CustomDjangoModelPermission | UnauthenticatedPost]
     filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ['username', 'is_active', 'is_superuser', 'is_staff']
@@ -70,7 +70,7 @@ class UserViewSet(ModelViewSet):
         This will use for getting the current user profile
         :return: The current user profile
         """
-        user_profile = self.get_object().user_profile_user
+        user_profile = self.get_object().profile_user
         return Response(data=ProfileSerializer(user_profile).data, status=status.HTTP_200_OK)
 
     @action(
@@ -85,7 +85,7 @@ class UserViewSet(ModelViewSet):
         This will use for change the current user profile
         :return: The current user profile
         """
-        user_profile = self.get_object().user_profile_user
+        user_profile = self.get_object().profile_user
         serializer = ProfileSerializer(
             user_profile,
             data=request.data,
