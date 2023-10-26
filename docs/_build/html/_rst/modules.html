@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="core package" href="core.html" />
+    <link rel="next" title="api package" href="api.html" />
     <link rel="prev" title="Welcome to Ticketing system’s documentation!" href="../index.html" /> 
 </head>
 
@@ -45,8 +45,12 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">src</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html">api package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">commands package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html">core package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">extensions package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html">user_management package</a></li>
 </ul>
 </li>
 </ul>
@@ -79,6 +83,45 @@
 <h1>src<a class="headerlink" href="#src" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">api package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.tests.html">api.tests package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.tests.html#module-api.tests.test_group">api.tests.test_group module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.tests.html#module-api.tests.test_permission">api.tests.test_permission module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.tests.html#module-api.tests.test_user">api.tests.test_user module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.tests.html#module-api.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-api.apps">api.apps module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#api.apps.ApiConfig"><code class="docutils literal notranslate"><span class="pre">ApiConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#api.apps.ApiConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">ApiConfig.default_auto_field</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#api.apps.ApiConfig.name"><code class="docutils literal notranslate"><span class="pre">ApiConfig.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-api.urls">api.urls module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-api">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">commands package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#module-commands.apps">commands.apps module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="commands.html#commands.apps.CommandsConfig"><code class="docutils literal notranslate"><span class="pre">CommandsConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="commands.html#commands.apps.CommandsConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">CommandsConfig.default_auto_field</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="commands.html#commands.apps.CommandsConfig.name"><code class="docutils literal notranslate"><span class="pre">CommandsConfig.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="commands.html#commands.apps.CommandsConfig.verbose_name"><code class="docutils literal notranslate"><span class="pre">CommandsConfig.verbose_name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#module-commands">Module contents</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="core.html">core package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="core.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#module-core.asgi">core.asgi module</a></li>
@@ -88,8 +131,142 @@
 <li class="toctree-l2"><a class="reference internal" href="core.html#module-core">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="extensions.html">extensions package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html#module-extensions.abstract_models">extensions.abstract_models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extensions.html#extensions.abstract_models.AbstractCreatAtUpdateAt"><code class="docutils literal notranslate"><span class="pre">AbstractCreatAtUpdateAt</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="extensions.html#extensions.abstract_models.AbstractCreatAtUpdateAt.created_at"><code class="docutils literal notranslate"><span class="pre">AbstractCreatAtUpdateAt.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="extensions.html#extensions.abstract_models.AbstractCreatAtUpdateAt.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">AbstractCreatAtUpdateAt.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="extensions.html#extensions.abstract_models.AbstractCreatAtUpdateAt.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">AbstractCreatAtUpdateAt.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="extensions.html#extensions.abstract_models.AbstractCreatAtUpdateAt.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">AbstractCreatAtUpdateAt.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="extensions.html#extensions.abstract_models.AbstractCreatAtUpdateAt.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">AbstractCreatAtUpdateAt.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="extensions.html#extensions.abstract_models.AbstractCreatAtUpdateAt.updated_at"><code class="docutils literal notranslate"><span class="pre">AbstractCreatAtUpdateAt.updated_at</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html#module-extensions.choices">extensions.choices module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extensions.html#extensions.choices.GenderChoices"><code class="docutils literal notranslate"><span class="pre">GenderChoices</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="extensions.html#extensions.choices.GenderChoices.FEMALE"><code class="docutils literal notranslate"><span class="pre">GenderChoices.FEMALE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="extensions.html#extensions.choices.GenderChoices.MALE"><code class="docutils literal notranslate"><span class="pre">GenderChoices.MALE</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html#module-extensions.custom_exception_handlers">extensions.custom_exception_handlers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extensions.html#extensions.custom_exception_handlers.exception_handler"><code class="docutils literal notranslate"><span class="pre">exception_handler()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html#module-extensions.custom_permissions">extensions.custom_permissions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extensions.html#extensions.custom_permissions.CustomDjangoModelPermission"><code class="docutils literal notranslate"><span class="pre">CustomDjangoModelPermission</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="extensions.html#extensions.custom_permissions.CustomDjangoModelPermission.__init__"><code class="docutils literal notranslate"><span class="pre">CustomDjangoModelPermission.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="extensions.html#extensions.custom_permissions.OwnProfilePermission"><code class="docutils literal notranslate"><span class="pre">OwnProfilePermission</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="extensions.html#extensions.custom_permissions.OwnProfilePermission.has_object_permission"><code class="docutils literal notranslate"><span class="pre">OwnProfilePermission.has_object_permission()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="extensions.html#extensions.custom_permissions.OwnUserPermission"><code class="docutils literal notranslate"><span class="pre">OwnUserPermission</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="extensions.html#extensions.custom_permissions.OwnUserPermission.has_object_permission"><code class="docutils literal notranslate"><span class="pre">OwnUserPermission.has_object_permission()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="extensions.html#extensions.custom_permissions.UnauthenticatedPost"><code class="docutils literal notranslate"><span class="pre">UnauthenticatedPost</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="extensions.html#extensions.custom_permissions.UnauthenticatedPost.has_permission"><code class="docutils literal notranslate"><span class="pre">UnauthenticatedPost.has_permission()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html#module-extensions">Module contents</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="manage.html">manage module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="manage.html#manage.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_management.html">user_management package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.models.html">user_management.models package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#module-user_management.models.profile">user_management.models.profile module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#module-user_management.models.user">user_management.models.user module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#module-user_management.models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.serializers.html">user_management.serializers package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#module-user_management.serializers.group">user_management.serializers.group module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#module-user_management.serializers.permission">user_management.serializers.permission module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#module-user_management.serializers.profile">user_management.serializers.profile module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#module-user_management.serializers.user">user_management.serializers.user module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#module-user_management.serializers">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.tests.html">user_management.tests package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#module-user_management.tests.common_functions">user_management.tests.common_functions module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#module-user_management.tests.test_group_model">user_management.tests.test_group_model module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#module-user_management.tests.test_user_model">user_management.tests.test_user_model module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#module-user_management.tests">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.views.html">user_management.views package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#module-user_management.views.group">user_management.views.group module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#module-user_management.views.permission">user_management.views.permission module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#module-user_management.views.user">user_management.views.user module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#module-user_management.views">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html#module-user_management.admin">user_management.admin module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#user_management.admin.ProfileInlineAdmin"><code class="docutils literal notranslate"><span class="pre">ProfileInlineAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.admin.ProfileInlineAdmin.media"><code class="docutils literal notranslate"><span class="pre">ProfileInlineAdmin.media</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.admin.ProfileInlineAdmin.model"><code class="docutils literal notranslate"><span class="pre">ProfileInlineAdmin.model</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#user_management.admin.UserAdmin"><code class="docutils literal notranslate"><span class="pre">UserAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.admin.UserAdmin.actions"><code class="docutils literal notranslate"><span class="pre">UserAdmin.actions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.admin.UserAdmin.add_fieldsets"><code class="docutils literal notranslate"><span class="pre">UserAdmin.add_fieldsets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.admin.UserAdmin.get_full_name"><code class="docutils literal notranslate"><span class="pre">UserAdmin.get_full_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.admin.UserAdmin.get_queryset"><code class="docutils literal notranslate"><span class="pre">UserAdmin.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.admin.UserAdmin.inlines"><code class="docutils literal notranslate"><span class="pre">UserAdmin.inlines</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.admin.UserAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">UserAdmin.list_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.admin.UserAdmin.list_filter"><code class="docutils literal notranslate"><span class="pre">UserAdmin.list_filter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.admin.UserAdmin.media"><code class="docutils literal notranslate"><span class="pre">UserAdmin.media</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.admin.UserAdmin.readonly_fields"><code class="docutils literal notranslate"><span class="pre">UserAdmin.readonly_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.admin.UserAdmin.search_fields"><code class="docutils literal notranslate"><span class="pre">UserAdmin.search_fields</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html#module-user_management.apps">user_management.apps module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#user_management.apps.UserManagementConfig"><code class="docutils literal notranslate"><span class="pre">UserManagementConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.apps.UserManagementConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">UserManagementConfig.default_auto_field</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.apps.UserManagementConfig.name"><code class="docutils literal notranslate"><span class="pre">UserManagementConfig.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.apps.UserManagementConfig.ready"><code class="docutils literal notranslate"><span class="pre">UserManagementConfig.ready()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.apps.UserManagementConfig.verbose_name"><code class="docutils literal notranslate"><span class="pre">UserManagementConfig.verbose_name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html#module-user_management.managers">user_management.managers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#user_management.managers.UserManager"><code class="docutils literal notranslate"><span class="pre">UserManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.managers.UserManager.create_staff"><code class="docutils literal notranslate"><span class="pre">UserManager.create_staff()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.managers.UserManager.create_superuser"><code class="docutils literal notranslate"><span class="pre">UserManager.create_superuser()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.managers.UserManager.create_user"><code class="docutils literal notranslate"><span class="pre">UserManager.create_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.html#user_management.managers.UserManager.use_in_migrations"><code class="docutils literal notranslate"><span class="pre">UserManager.use_in_migrations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html#module-user_management.signals">user_management.signals module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#user_management.signals.creating_profile"><code class="docutils literal notranslate"><span class="pre">creating_profile()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html#module-user_management.urls">user_management.urls module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html#module-user_management">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -101,7 +278,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to Ticketing system’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="core.html" class="btn btn-neutral float-right" title="core package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="api.html" class="btn btn-neutral float-right" title="api package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

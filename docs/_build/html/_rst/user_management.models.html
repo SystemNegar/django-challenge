@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>user_management.models package &mdash; Ticketing system 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="user_management.serializers package" href="user_management.serializers.html" />
+    <link rel="prev" title="user_management package" href="user_management.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ticketing system
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api.html">api package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">commands package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html">core package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">extensions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="user_management.html">user_management package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="user_management.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">user_management.models package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html">user_management.serializers package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html">user_management.tests package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html">user_management.views package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#module-user_management.admin">user_management.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#module-user_management.apps">user_management.apps module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#module-user_management.managers">user_management.managers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#module-user_management.signals">user_management.signals module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#module-user_management.urls">user_management.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#module-user_management">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ticketing system</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+          <li class="breadcrumb-item"><a href="user_management.html">user_management package</a></li>
+      <li class="breadcrumb-item active">user_management.models package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_rst/user_management.models.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="user-management-models-package">
+<h1>user_management.models package<a class="headerlink" href="#user-management-models-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-user_management.models.profile">
+<span id="user-management-models-profile-module"></span><h2>user_management.models.profile module<a class="headerlink" href="#module-user_management.models.profile" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.models.profile.</span></span><span class="sig-name descname"><span class="pre">Profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">created_at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updated_at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gender</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/models/profile.html#Profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.models.profile.Profile" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="extensions.html#extensions.abstract_models.AbstractCreatAtUpdateAt" title="extensions.abstract_models.AbstractCreatAtUpdateAt"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractCreatAtUpdateAt</span></code></a>, <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<p><strong>Database table:</strong> <code class="docutils literal notranslate"><span class="pre">user_management_profiles</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>created_at</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – ایجاد شده در</p></li>
+<li><p><strong>updated_at</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – به روز شده در</p></li>
+<li><p><strong>first_name</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – نام</p></li>
+<li><p><strong>last_name</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – نام خانوادگی</p></li>
+<li><p><strong>gender</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.PositiveSmallIntegerField" title="(in Django v4.2)"><em>PositiveSmallIntegerField</em></a>) – جنسیت</p></li>
+</ul>
+</dd>
+</dl>
+<p>Relationship fields:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> to <a class="reference internal" href="#user_management.models.user.User" title="user_management.models.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a>) – Primary key: کاربر (related name: <a class="reference internal" href="#user_management.models.user.User.profile_user" title="user_management.models.user.User.profile_user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">profile_user</span></code></a>)</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#user_management.models.profile.Profile.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#user_management.models.profile.Profile.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><a class="headerlink" href="#user_management.models.profile.Profile.created_at" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>ایجاد شده در</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.first_name">
+<span class="sig-name descname"><span class="pre">first_name</span></span><a class="headerlink" href="#user_management.models.profile.Profile.first_name" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>نام</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.gender">
+<span class="sig-name descname"><span class="pre">gender</span></span><a class="headerlink" href="#user_management.models.profile.Profile.gender" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.PositiveSmallIntegerField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PositiveSmallIntegerField</span></code></a></p>
+<p>جنسیت</p>
+<p>Choices:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.get_full_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_full_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#user_management.models.profile.Profile.get_full_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.get_gender_display">
+<span class="sig-name descname"><span class="pre">get_gender_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.PositiveSmallIntegerField:</span> <span class="pre">gender&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.profile.Profile.get_gender_display" title="Permalink to this definition"></a></dt>
+<dd><p>Shows the label of the <a class="reference internal" href="#user_management.models.profile.Profile.gender" title="user_management.models.profile.Profile.gender"><code class="xref py py-attr docutils literal notranslate"><span class="pre">gender</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_FOO_display" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_FOO_display()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.get_next_by_created_at">
+<span class="sig-name descname"><span class="pre">get_next_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.profile.Profile.get_next_by_created_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#user_management.models.profile.Profile.created_at" title="user_management.models.profile.Profile.created_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.get_next_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_next_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.profile.Profile.get_next_by_updated_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#user_management.models.profile.Profile.updated_at" title="user_management.models.profile.Profile.updated_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">updated_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.get_previous_by_created_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.profile.Profile.get_previous_by_created_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#user_management.models.profile.Profile.created_at" title="user_management.models.profile.Profile.created_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.get_previous_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.profile.Profile.get_previous_by_updated_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#user_management.models.profile.Profile.updated_at" title="user_management.models.profile.Profile.updated_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">updated_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.last_name">
+<span class="sig-name descname"><span class="pre">last_name</span></span><a class="headerlink" href="#user_management.models.profile.Profile.last_name" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>نام خانوادگی</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#user_management.models.profile.Profile.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.updated_at">
+<span class="sig-name descname"><span class="pre">updated_at</span></span><a class="headerlink" href="#user_management.models.profile.Profile.updated_at" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>به روز شده در</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.user">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#user_management.models.profile.Profile.user" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> to <a class="reference internal" href="#user_management.models.user.User" title="user_management.models.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a></p>
+<p>Primary key: کاربر (related name: <a class="reference internal" href="#user_management.models.user.User.profile_user" title="user_management.models.user.User.profile_user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">profile_user</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.profile.Profile.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#user_management.models.profile.Profile.user_id" title="Permalink to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#user_management.models.profile.Profile.user" title="user_management.models.profile.Profile.user"><code class="xref py py-class docutils literal notranslate"><span class="pre">user</span></code></a> instead.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-user_management.models.user">
+<span id="user-management-models-user-module"></span><h2>user_management.models.user module<a class="headerlink" href="#module-user_management.models.user" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.models.user.User">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.models.user.</span></span><span class="sig-name descname"><span class="pre">User</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_login</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_superuser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created_at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updated_at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_staff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_active</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/models/user.html#User"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.models.user.User" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractBaseUser</span></code>, <a class="reference internal" href="extensions.html#extensions.abstract_models.AbstractCreatAtUpdateAt" title="extensions.abstract_models.AbstractCreatAtUpdateAt"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractCreatAtUpdateAt</span></code></a>, <a class="reference external" href="https://docs.djangoproject.com/en/stable/topics/auth/customizing/#django.contrib.auth.models.PermissionsMixin" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PermissionsMixin</span></code></a></p>
+<p><strong>Database table:</strong> <code class="docutils literal notranslate"><span class="pre">user_management_users</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>password</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – گذرواژه</p></li>
+<li><p><strong>last_login</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – آخرین ورود</p></li>
+<li><p><strong>is_superuser</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – ابرکاربر. نشان می‌دهد که این کاربر همهٔ اجازه‌ها را دارد بدون آنکه به صراحت به او اختصاص داده شده باشد.</p></li>
+<li><p><strong>created_at</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – ایجاد شده در</p></li>
+<li><p><strong>updated_at</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – به روز شده در</p></li>
+<li><p><strong>username</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.EmailField" title="(in Django v4.2)"><em>EmailField</em></a>) – نام کاربری</p></li>
+<li><p><strong>is_staff</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – دسترسی به بخش مدیریت</p></li>
+<li><p><strong>is_active</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – فعال بودن</p></li>
+</ul>
+</dd>
+</dl>
+<p>Relationship fields:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>groups</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/auth/#django.contrib.auth.models.Group" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a>) – گروه‌ها. گروه‌هایی که این کاربر به آنها تعلق دارد. کاربر تمام اجازه‌های مرتبط با این گروه‌ها را دریافت خواهد کرد. (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">user_set</span></code>)</p></li>
+<li><p><strong>user_permissions</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/auth/#django.contrib.auth.models.Permission" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Permission</span></code></a>) – اجازه‌های کاربر. اجازه‌های خاص این کاربر. (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">user_set</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Reverse relationships:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logentry</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogEntry</span></code></a>) – All موارد اتفاقات of this کاربر (related name of <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry.user" title="(in Django v4.2)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p></li>
+<li><p><strong>profile_user</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> from <a class="reference internal" href="#user_management.models.profile.Profile" title="user_management.models.profile.Profile"><code class="xref py py-class docutils literal notranslate"><span class="pre">Profile</span></code></a>) – The profile user of this کاربر (related name of <a class="reference internal" href="#user_management.models.profile.Profile.user" title="user_management.models.profile.Profile.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="user_management.models.user.User.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#user_management.models.user.User.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.EMAIL_FIELD">
+<span class="sig-name descname"><span class="pre">EMAIL_FIELD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'username'</span></em><a class="headerlink" href="#user_management.models.user.User.EMAIL_FIELD" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="user_management.models.user.User.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#user_management.models.user.User.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.REQUIRED_FIELDS">
+<span class="sig-name descname"><span class="pre">REQUIRED_FIELDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#user_management.models.user.User.REQUIRED_FIELDS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.USERNAME_FIELD">
+<span class="sig-name descname"><span class="pre">USERNAME_FIELD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'username'</span></em><a class="headerlink" href="#user_management.models.user.User.USERNAME_FIELD" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><a class="headerlink" href="#user_management.models.user.User.created_at" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>ایجاد شده در</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.user.User.get_next_by_created_at">
+<span class="sig-name descname"><span class="pre">get_next_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.user.User.get_next_by_created_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#user_management.models.user.User.created_at" title="user_management.models.user.User.created_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.user.User.get_next_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_next_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.user.User.get_next_by_updated_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#user_management.models.user.User.updated_at" title="user_management.models.user.User.updated_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">updated_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.user.User.get_previous_by_created_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.user.User.get_previous_by_created_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#user_management.models.user.User.created_at" title="user_management.models.user.User.created_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.user.User.get_previous_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.user.User.get_previous_by_updated_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#user_management.models.user.User.updated_at" title="user_management.models.user.User.updated_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">updated_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.groups">
+<span class="sig-name descname"><span class="pre">groups</span></span><a class="headerlink" href="#user_management.models.user.User.groups" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/auth/#django.contrib.auth.models.Group" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a></p>
+<p>گروه‌ها. گروه‌هایی که این کاربر به آنها تعلق دارد. کاربر تمام اجازه‌های مرتبط با این گروه‌ها را دریافت خواهد کرد. (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">user_set</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#user_management.models.user.User.id" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.is_active">
+<span class="sig-name descname"><span class="pre">is_active</span></span><a class="headerlink" href="#user_management.models.user.User.is_active" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>فعال بودن</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.is_staff">
+<span class="sig-name descname"><span class="pre">is_staff</span></span><a class="headerlink" href="#user_management.models.user.User.is_staff" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>دسترسی به بخش مدیریت</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.is_superuser">
+<span class="sig-name descname"><span class="pre">is_superuser</span></span><a class="headerlink" href="#user_management.models.user.User.is_superuser" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>ابرکاربر. نشان می‌دهد که این کاربر همهٔ اجازه‌ها را دارد بدون آنکه به صراحت به او اختصاص داده شده باشد.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.last_login">
+<span class="sig-name descname"><span class="pre">last_login</span></span><a class="headerlink" href="#user_management.models.user.User.last_login" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>آخرین ورود</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.logentry_set">
+<span class="sig-name descname"><span class="pre">logentry_set</span></span><a class="headerlink" href="#user_management.models.user.User.logentry_set" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogEntry</span></code></a></p>
+<p>All موارد اتفاقات of this کاربر (related name of <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry.user" title="(in Django v4.2)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;user_management.managers.UserManager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#user_management.models.user.User.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#user_management.models.user.User.password" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>گذرواژه</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.profile_user">
+<span class="sig-name descname"><span class="pre">profile_user</span></span><a class="headerlink" href="#user_management.models.user.User.profile_user" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> from <a class="reference internal" href="#user_management.models.profile.Profile" title="user_management.models.profile.Profile"><code class="xref py py-class docutils literal notranslate"><span class="pre">Profile</span></code></a></p>
+<p>The profile user of this کاربر (related name of <a class="reference internal" href="#user_management.models.profile.Profile.user" title="user_management.models.profile.Profile.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.user.User.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/models/user.html#User.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.models.user.User.save" title="Permalink to this definition"></a></dt>
+<dd><p>Save the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The ‘force_insert’ and ‘force_update’ parameters can be used to insist
+that the “save” must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.updated_at">
+<span class="sig-name descname"><span class="pre">updated_at</span></span><a class="headerlink" href="#user_management.models.user.User.updated_at" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>به روز شده در</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.user_permissions">
+<span class="sig-name descname"><span class="pre">user_permissions</span></span><a class="headerlink" href="#user_management.models.user.User.user_permissions" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/auth/#django.contrib.auth.models.Permission" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Permission</span></code></a></p>
+<p>اجازه‌های کاربر. اجازه‌های خاص این کاربر. (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">user_set</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.username">
+<span class="sig-name descname"><span class="pre">username</span></span><a class="headerlink" href="#user_management.models.user.User.username" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.EmailField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmailField</span></code></a></p>
+<p>نام کاربری</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-user_management.models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-user_management.models" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.models.Profile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.models.</span></span><span class="sig-name descname"><span class="pre">Profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">created_at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updated_at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gender</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/models/profile.html#Profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.models.Profile" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="extensions.html#extensions.abstract_models.AbstractCreatAtUpdateAt" title="extensions.abstract_models.AbstractCreatAtUpdateAt"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractCreatAtUpdateAt</span></code></a>, <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<p><strong>Database table:</strong> <code class="docutils literal notranslate"><span class="pre">user_management_profiles</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>created_at</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – ایجاد شده در</p></li>
+<li><p><strong>updated_at</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – به روز شده در</p></li>
+<li><p><strong>first_name</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – نام</p></li>
+<li><p><strong>last_name</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – نام خانوادگی</p></li>
+<li><p><strong>gender</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.PositiveSmallIntegerField" title="(in Django v4.2)"><em>PositiveSmallIntegerField</em></a>) – جنسیت</p></li>
+</ul>
+</dd>
+</dl>
+<p>Relationship fields:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> to <a class="reference internal" href="#user_management.models.user.User" title="user_management.models.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a>) – Primary key: کاربر (related name: <a class="reference internal" href="#user_management.models.user.User.profile_user" title="user_management.models.user.User.profile_user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">profile_user</span></code></a>)</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="user_management.models.Profile.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#user_management.models.Profile.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="user_management.models.Profile.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#user_management.models.Profile.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.Profile.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><a class="headerlink" href="#user_management.models.Profile.created_at" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>ایجاد شده در</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.Profile.first_name">
+<span class="sig-name descname"><span class="pre">first_name</span></span><a class="headerlink" href="#user_management.models.Profile.first_name" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>نام</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.Profile.gender">
+<span class="sig-name descname"><span class="pre">gender</span></span><a class="headerlink" href="#user_management.models.Profile.gender" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.PositiveSmallIntegerField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PositiveSmallIntegerField</span></code></a></p>
+<p>جنسیت</p>
+<p>Choices:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="user_management.models.Profile.get_full_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_full_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#user_management.models.Profile.get_full_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.Profile.get_gender_display">
+<span class="sig-name descname"><span class="pre">get_gender_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.PositiveSmallIntegerField:</span> <span class="pre">gender&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.Profile.get_gender_display" title="Permalink to this definition"></a></dt>
+<dd><p>Shows the label of the <a class="reference internal" href="#user_management.models.Profile.gender" title="user_management.models.Profile.gender"><code class="xref py py-attr docutils literal notranslate"><span class="pre">gender</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_FOO_display" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_FOO_display()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.Profile.get_next_by_created_at">
+<span class="sig-name descname"><span class="pre">get_next_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.Profile.get_next_by_created_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#user_management.models.Profile.created_at" title="user_management.models.Profile.created_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.Profile.get_next_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_next_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.Profile.get_next_by_updated_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#user_management.models.Profile.updated_at" title="user_management.models.Profile.updated_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">updated_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.Profile.get_previous_by_created_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.Profile.get_previous_by_created_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#user_management.models.Profile.created_at" title="user_management.models.Profile.created_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.Profile.get_previous_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.Profile.get_previous_by_updated_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#user_management.models.Profile.updated_at" title="user_management.models.Profile.updated_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">updated_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.Profile.last_name">
+<span class="sig-name descname"><span class="pre">last_name</span></span><a class="headerlink" href="#user_management.models.Profile.last_name" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>نام خانوادگی</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.Profile.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#user_management.models.Profile.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.Profile.updated_at">
+<span class="sig-name descname"><span class="pre">updated_at</span></span><a class="headerlink" href="#user_management.models.Profile.updated_at" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>به روز شده در</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.Profile.user">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#user_management.models.Profile.user" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> to <a class="reference internal" href="#user_management.models.user.User" title="user_management.models.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a></p>
+<p>Primary key: کاربر (related name: <a class="reference internal" href="#user_management.models.user.User.profile_user" title="user_management.models.user.User.profile_user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">profile_user</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.Profile.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#user_management.models.Profile.user_id" title="Permalink to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#user_management.models.Profile.user" title="user_management.models.Profile.user"><code class="xref py py-class docutils literal notranslate"><span class="pre">user</span></code></a> instead.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.models.User">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.models.</span></span><span class="sig-name descname"><span class="pre">User</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_login</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_superuser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created_at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updated_at</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_staff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_active</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/models/user.html#User"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.models.User" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractBaseUser</span></code>, <a class="reference internal" href="extensions.html#extensions.abstract_models.AbstractCreatAtUpdateAt" title="extensions.abstract_models.AbstractCreatAtUpdateAt"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractCreatAtUpdateAt</span></code></a>, <a class="reference external" href="https://docs.djangoproject.com/en/stable/topics/auth/customizing/#django.contrib.auth.models.PermissionsMixin" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PermissionsMixin</span></code></a></p>
+<p><strong>Database table:</strong> <code class="docutils literal notranslate"><span class="pre">user_management_users</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>password</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – گذرواژه</p></li>
+<li><p><strong>last_login</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – آخرین ورود</p></li>
+<li><p><strong>is_superuser</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – ابرکاربر. نشان می‌دهد که این کاربر همهٔ اجازه‌ها را دارد بدون آنکه به صراحت به او اختصاص داده شده باشد.</p></li>
+<li><p><strong>created_at</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – ایجاد شده در</p></li>
+<li><p><strong>updated_at</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – به روز شده در</p></li>
+<li><p><strong>username</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.EmailField" title="(in Django v4.2)"><em>EmailField</em></a>) – نام کاربری</p></li>
+<li><p><strong>is_staff</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – دسترسی به بخش مدیریت</p></li>
+<li><p><strong>is_active</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – فعال بودن</p></li>
+</ul>
+</dd>
+</dl>
+<p>Relationship fields:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>groups</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/auth/#django.contrib.auth.models.Group" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a>) – گروه‌ها. گروه‌هایی که این کاربر به آنها تعلق دارد. کاربر تمام اجازه‌های مرتبط با این گروه‌ها را دریافت خواهد کرد. (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">user_set</span></code>)</p></li>
+<li><p><strong>user_permissions</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/auth/#django.contrib.auth.models.Permission" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Permission</span></code></a>) – اجازه‌های کاربر. اجازه‌های خاص این کاربر. (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">user_set</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Reverse relationships:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logentry</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogEntry</span></code></a>) – All موارد اتفاقات of this کاربر (related name of <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry.user" title="(in Django v4.2)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p></li>
+<li><p><strong>profile_user</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> from <a class="reference internal" href="#user_management.models.profile.Profile" title="user_management.models.profile.Profile"><code class="xref py py-class docutils literal notranslate"><span class="pre">Profile</span></code></a>) – The profile user of this کاربر (related name of <a class="reference internal" href="#user_management.models.profile.Profile.user" title="user_management.models.profile.Profile.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="user_management.models.User.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#user_management.models.User.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.EMAIL_FIELD">
+<span class="sig-name descname"><span class="pre">EMAIL_FIELD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'username'</span></em><a class="headerlink" href="#user_management.models.User.EMAIL_FIELD" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="user_management.models.User.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#user_management.models.User.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.REQUIRED_FIELDS">
+<span class="sig-name descname"><span class="pre">REQUIRED_FIELDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#user_management.models.User.REQUIRED_FIELDS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.USERNAME_FIELD">
+<span class="sig-name descname"><span class="pre">USERNAME_FIELD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'username'</span></em><a class="headerlink" href="#user_management.models.User.USERNAME_FIELD" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><a class="headerlink" href="#user_management.models.User.created_at" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>ایجاد شده در</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.User.get_next_by_created_at">
+<span class="sig-name descname"><span class="pre">get_next_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.User.get_next_by_created_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#user_management.models.User.created_at" title="user_management.models.User.created_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.User.get_next_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_next_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.User.get_next_by_updated_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#user_management.models.User.updated_at" title="user_management.models.User.updated_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">updated_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.User.get_previous_by_created_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_created_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.User.get_previous_by_created_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#user_management.models.User.created_at" title="user_management.models.User.created_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.User.get_previous_by_updated_at">
+<span class="sig-name descname"><span class="pre">get_previous_by_updated_at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">updated_at&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#user_management.models.User.get_previous_by_updated_at" title="Permalink to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#user_management.models.User.updated_at" title="user_management.models.User.updated_at"><code class="xref py py-attr docutils literal notranslate"><span class="pre">updated_at</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.groups">
+<span class="sig-name descname"><span class="pre">groups</span></span><a class="headerlink" href="#user_management.models.User.groups" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/auth/#django.contrib.auth.models.Group" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a></p>
+<p>گروه‌ها. گروه‌هایی که این کاربر به آنها تعلق دارد. کاربر تمام اجازه‌های مرتبط با این گروه‌ها را دریافت خواهد کرد. (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">user_set</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#user_management.models.User.id" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.is_active">
+<span class="sig-name descname"><span class="pre">is_active</span></span><a class="headerlink" href="#user_management.models.User.is_active" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>فعال بودن</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.is_staff">
+<span class="sig-name descname"><span class="pre">is_staff</span></span><a class="headerlink" href="#user_management.models.User.is_staff" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>دسترسی به بخش مدیریت</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.is_superuser">
+<span class="sig-name descname"><span class="pre">is_superuser</span></span><a class="headerlink" href="#user_management.models.User.is_superuser" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>ابرکاربر. نشان می‌دهد که این کاربر همهٔ اجازه‌ها را دارد بدون آنکه به صراحت به او اختصاص داده شده باشد.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.last_login">
+<span class="sig-name descname"><span class="pre">last_login</span></span><a class="headerlink" href="#user_management.models.User.last_login" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>آخرین ورود</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.logentry_set">
+<span class="sig-name descname"><span class="pre">logentry_set</span></span><a class="headerlink" href="#user_management.models.User.logentry_set" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogEntry</span></code></a></p>
+<p>All موارد اتفاقات of this کاربر (related name of <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry.user" title="(in Django v4.2)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;user_management.managers.UserManager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#user_management.models.User.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#user_management.models.User.password" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>گذرواژه</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.profile_user">
+<span class="sig-name descname"><span class="pre">profile_user</span></span><a class="headerlink" href="#user_management.models.User.profile_user" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> from <a class="reference internal" href="#user_management.models.profile.Profile" title="user_management.models.profile.Profile"><code class="xref py py-class docutils literal notranslate"><span class="pre">Profile</span></code></a></p>
+<p>The profile user of this کاربر (related name of <a class="reference internal" href="#user_management.models.profile.Profile.user" title="user_management.models.profile.Profile.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.models.User.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/models/user.html#User.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.models.User.save" title="Permalink to this definition"></a></dt>
+<dd><p>Save the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The ‘force_insert’ and ‘force_update’ parameters can be used to insist
+that the “save” must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.updated_at">
+<span class="sig-name descname"><span class="pre">updated_at</span></span><a class="headerlink" href="#user_management.models.User.updated_at" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>به روز شده در</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.user_permissions">
+<span class="sig-name descname"><span class="pre">user_permissions</span></span><a class="headerlink" href="#user_management.models.User.user_permissions" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/auth/#django.contrib.auth.models.Permission" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Permission</span></code></a></p>
+<p>اجازه‌های کاربر. اجازه‌های خاص این کاربر. (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">user_set</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.username">
+<span class="sig-name descname"><span class="pre">username</span></span><a class="headerlink" href="#user_management.models.User.username" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.EmailField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmailField</span></code></a></p>
+<p>نام کاربری</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="user_management.html" class="btn btn-neutral float-left" title="user_management package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="user_management.serializers.html" class="btn btn-neutral float-right" title="user_management.serializers package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mahdi Namaki.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

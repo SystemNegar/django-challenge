@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>user_management package &mdash; Ticketing system 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="user_management.models package" href="user_management.models.html" />
+    <link rel="prev" title="manage module" href="manage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ticketing system
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api.html">api package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">commands package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html">core package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">extensions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">user_management package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html">user_management.models package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html">user_management.serializers package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html">user_management.tests package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html">user_management.views package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-user_management.admin">user_management.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#user_management.admin.ProfileInlineAdmin"><code class="docutils literal notranslate"><span class="pre">ProfileInlineAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user_management.admin.UserAdmin"><code class="docutils literal notranslate"><span class="pre">UserAdmin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-user_management.apps">user_management.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#user_management.apps.UserManagementConfig"><code class="docutils literal notranslate"><span class="pre">UserManagementConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-user_management.managers">user_management.managers module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#user_management.managers.UserManager"><code class="docutils literal notranslate"><span class="pre">UserManager</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-user_management.signals">user_management.signals module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#user_management.signals.creating_profile"><code class="docutils literal notranslate"><span class="pre">creating_profile()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-user_management.urls">user_management.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-user_management">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ticketing system</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+      <li class="breadcrumb-item active">user_management package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_rst/user_management.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="user-management-package">
+<h1>user_management package<a class="headerlink" href="#user-management-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_management.models.html">user_management.models package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_management.models.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.models.html#module-user_management.models.profile">user_management.models.profile module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile"><code class="docutils literal notranslate"><span class="pre">Profile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Profile.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Profile.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.created_at"><code class="docutils literal notranslate"><span class="pre">Profile.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.first_name"><code class="docutils literal notranslate"><span class="pre">Profile.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.gender"><code class="docutils literal notranslate"><span class="pre">Profile.gender</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.get_full_name"><code class="docutils literal notranslate"><span class="pre">Profile.get_full_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.get_gender_display"><code class="docutils literal notranslate"><span class="pre">Profile.get_gender_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Profile.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Profile.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Profile.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Profile.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.last_name"><code class="docutils literal notranslate"><span class="pre">Profile.last_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.objects"><code class="docutils literal notranslate"><span class="pre">Profile.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.updated_at"><code class="docutils literal notranslate"><span class="pre">Profile.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.user"><code class="docutils literal notranslate"><span class="pre">Profile.user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile.user_id"><code class="docutils literal notranslate"><span class="pre">Profile.user_id</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.models.html#module-user_management.models.user">user_management.models.user module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.models.html#user_management.models.user.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">User.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.EMAIL_FIELD"><code class="docutils literal notranslate"><span class="pre">User.EMAIL_FIELD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">User.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.REQUIRED_FIELDS"><code class="docutils literal notranslate"><span class="pre">User.REQUIRED_FIELDS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.USERNAME_FIELD"><code class="docutils literal notranslate"><span class="pre">User.USERNAME_FIELD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.created_at"><code class="docutils literal notranslate"><span class="pre">User.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">User.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">User.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">User.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">User.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.groups"><code class="docutils literal notranslate"><span class="pre">User.groups</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.id"><code class="docutils literal notranslate"><span class="pre">User.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.is_active"><code class="docutils literal notranslate"><span class="pre">User.is_active</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.is_staff"><code class="docutils literal notranslate"><span class="pre">User.is_staff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.is_superuser"><code class="docutils literal notranslate"><span class="pre">User.is_superuser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.last_login"><code class="docutils literal notranslate"><span class="pre">User.last_login</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.logentry_set"><code class="docutils literal notranslate"><span class="pre">User.logentry_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.objects"><code class="docutils literal notranslate"><span class="pre">User.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.password"><code class="docutils literal notranslate"><span class="pre">User.password</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.profile_user"><code class="docutils literal notranslate"><span class="pre">User.profile_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.save"><code class="docutils literal notranslate"><span class="pre">User.save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.updated_at"><code class="docutils literal notranslate"><span class="pre">User.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.user_permissions"><code class="docutils literal notranslate"><span class="pre">User.user_permissions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.user.User.username"><code class="docutils literal notranslate"><span class="pre">User.username</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.models.html#module-user_management.models">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.models.html#user_management.models.Profile"><code class="docutils literal notranslate"><span class="pre">Profile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Profile.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Profile.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.created_at"><code class="docutils literal notranslate"><span class="pre">Profile.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.first_name"><code class="docutils literal notranslate"><span class="pre">Profile.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.gender"><code class="docutils literal notranslate"><span class="pre">Profile.gender</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.get_full_name"><code class="docutils literal notranslate"><span class="pre">Profile.get_full_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.get_gender_display"><code class="docutils literal notranslate"><span class="pre">Profile.get_gender_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Profile.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Profile.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Profile.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Profile.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.last_name"><code class="docutils literal notranslate"><span class="pre">Profile.last_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.objects"><code class="docutils literal notranslate"><span class="pre">Profile.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.updated_at"><code class="docutils literal notranslate"><span class="pre">Profile.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.user"><code class="docutils literal notranslate"><span class="pre">Profile.user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.Profile.user_id"><code class="docutils literal notranslate"><span class="pre">Profile.user_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.models.html#user_management.models.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">User.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.EMAIL_FIELD"><code class="docutils literal notranslate"><span class="pre">User.EMAIL_FIELD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">User.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.REQUIRED_FIELDS"><code class="docutils literal notranslate"><span class="pre">User.REQUIRED_FIELDS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.USERNAME_FIELD"><code class="docutils literal notranslate"><span class="pre">User.USERNAME_FIELD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.created_at"><code class="docutils literal notranslate"><span class="pre">User.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">User.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">User.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">User.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">User.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.groups"><code class="docutils literal notranslate"><span class="pre">User.groups</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.id"><code class="docutils literal notranslate"><span class="pre">User.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.is_active"><code class="docutils literal notranslate"><span class="pre">User.is_active</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.is_staff"><code class="docutils literal notranslate"><span class="pre">User.is_staff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.is_superuser"><code class="docutils literal notranslate"><span class="pre">User.is_superuser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.last_login"><code class="docutils literal notranslate"><span class="pre">User.last_login</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.logentry_set"><code class="docutils literal notranslate"><span class="pre">User.logentry_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.objects"><code class="docutils literal notranslate"><span class="pre">User.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.password"><code class="docutils literal notranslate"><span class="pre">User.password</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.profile_user"><code class="docutils literal notranslate"><span class="pre">User.profile_user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.save"><code class="docutils literal notranslate"><span class="pre">User.save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.updated_at"><code class="docutils literal notranslate"><span class="pre">User.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.user_permissions"><code class="docutils literal notranslate"><span class="pre">User.user_permissions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html#user_management.models.User.username"><code class="docutils literal notranslate"><span class="pre">User.username</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_management.serializers.html">user_management.serializers package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_management.serializers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.serializers.html#module-user_management.serializers.group">user_management.serializers.group module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.group.CreateGroupSerializer"><code class="docutils literal notranslate"><span class="pre">CreateGroupSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.group.CreateGroupSerializer.create"><code class="docutils literal notranslate"><span class="pre">CreateGroupSerializer.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.group.CreateGroupSerializer.update"><code class="docutils literal notranslate"><span class="pre">CreateGroupSerializer.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.group.GroupSerializer"><code class="docutils literal notranslate"><span class="pre">GroupSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.serializers.html#module-user_management.serializers.permission">user_management.serializers.permission module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.permission.PermissionSerializer"><code class="docutils literal notranslate"><span class="pre">PermissionSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.serializers.html#module-user_management.serializers.profile">user_management.serializers.profile module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.profile.ProfileSerializer"><code class="docutils literal notranslate"><span class="pre">ProfileSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.profile.ProfileSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">ProfileSerializer.to_representation()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.serializers.html#module-user_management.serializers.user">user_management.serializers.user module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.user.UserPasswordChangeSerializer"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.user.UserPasswordChangeSerializer.save"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer.save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.user.UserPasswordChangeSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer.to_representation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.user.UserPasswordChangeSerializer.validate"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer.validate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.user.UserPasswordChangeSerializer.validate_new_password1"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer.validate_new_password1()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.user.UserPasswordChangeSerializer.validate_new_password2"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer.validate_new_password2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.user.UserPasswordChangeSerializer.validate_old_password"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer.validate_old_password()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.user.UserSerializer"><code class="docutils literal notranslate"><span class="pre">UserSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.user.UserSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">UserSerializer.to_representation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.user.UserSerializer.validate_password"><code class="docutils literal notranslate"><span class="pre">UserSerializer.validate_password()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.serializers.html#module-user_management.serializers">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.CreateGroupSerializer"><code class="docutils literal notranslate"><span class="pre">CreateGroupSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.CreateGroupSerializer.create"><code class="docutils literal notranslate"><span class="pre">CreateGroupSerializer.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.CreateGroupSerializer.update"><code class="docutils literal notranslate"><span class="pre">CreateGroupSerializer.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.GroupSerializer"><code class="docutils literal notranslate"><span class="pre">GroupSerializer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.PermissionSerializer"><code class="docutils literal notranslate"><span class="pre">PermissionSerializer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.ProfileSerializer"><code class="docutils literal notranslate"><span class="pre">ProfileSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.ProfileSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">ProfileSerializer.to_representation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.UserPasswordChangeSerializer"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.UserPasswordChangeSerializer.save"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer.save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.UserPasswordChangeSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer.to_representation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.UserPasswordChangeSerializer.validate"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer.validate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.UserPasswordChangeSerializer.validate_new_password1"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer.validate_new_password1()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.UserPasswordChangeSerializer.validate_new_password2"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer.validate_new_password2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.UserPasswordChangeSerializer.validate_old_password"><code class="docutils literal notranslate"><span class="pre">UserPasswordChangeSerializer.validate_old_password()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.UserSerializer"><code class="docutils literal notranslate"><span class="pre">UserSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.UserSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">UserSerializer.to_representation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.serializers.html#user_management.serializers.UserSerializer.validate_password"><code class="docutils literal notranslate"><span class="pre">UserSerializer.validate_password()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_management.tests.html">user_management.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_management.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.tests.html#module-user_management.tests.common_functions">user_management.tests.common_functions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.tests.html#user_management.tests.common_functions.sample_group"><code class="docutils literal notranslate"><span class="pre">sample_group()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.tests.html#user_management.tests.common_functions.sample_superuser"><code class="docutils literal notranslate"><span class="pre">sample_superuser()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.tests.html#user_management.tests.common_functions.sample_user"><code class="docutils literal notranslate"><span class="pre">sample_user()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.tests.html#module-user_management.tests.test_group_model">user_management.tests.test_group_model module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.tests.html#user_management.tests.test_group_model.GroupModelTest"><code class="docutils literal notranslate"><span class="pre">GroupModelTest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#user_management.tests.test_group_model.GroupModelTest.test_create_group_successful"><code class="docutils literal notranslate"><span class="pre">GroupModelTest.test_create_group_successful()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#user_management.tests.test_group_model.GroupModelTest.test_create_group_with_permissions_successful"><code class="docutils literal notranslate"><span class="pre">GroupModelTest.test_create_group_with_permissions_successful()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#user_management.tests.test_group_model.GroupModelTest.test_create_new_group_with_duplicate_name_unsuccessful"><code class="docutils literal notranslate"><span class="pre">GroupModelTest.test_create_new_group_with_duplicate_name_unsuccessful()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#user_management.tests.test_group_model.GroupModelTest.test_creating_group_with_none_name"><code class="docutils literal notranslate"><span class="pre">GroupModelTest.test_creating_group_with_none_name()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.tests.html#module-user_management.tests.test_user_model">user_management.tests.test_user_model module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.tests.html#user_management.tests.test_user_model.UserModelTest"><code class="docutils literal notranslate"><span class="pre">UserModelTest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#user_management.tests.test_user_model.UserModelTest.test_create_new_superuser_with_duplicate_username_unsuccessful"><code class="docutils literal notranslate"><span class="pre">UserModelTest.test_create_new_superuser_with_duplicate_username_unsuccessful()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#user_management.tests.test_user_model.UserModelTest.test_create_new_user_with_duplicate_username_unsuccessful"><code class="docutils literal notranslate"><span class="pre">UserModelTest.test_create_new_user_with_duplicate_username_unsuccessful()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#user_management.tests.test_user_model.UserModelTest.test_create_user_with_username_successful"><code class="docutils literal notranslate"><span class="pre">UserModelTest.test_create_user_with_username_successful()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#user_management.tests.test_user_model.UserModelTest.test_creating_new_superuser"><code class="docutils literal notranslate"><span class="pre">UserModelTest.test_creating_new_superuser()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#user_management.tests.test_user_model.UserModelTest.test_creating_user_with_invalid_username"><code class="docutils literal notranslate"><span class="pre">UserModelTest.test_creating_user_with_invalid_username()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html#user_management.tests.test_user_model.UserModelTest.test_creating_user_with_none_username"><code class="docutils literal notranslate"><span class="pre">UserModelTest.test_creating_user_with_none_username()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.tests.html#module-user_management.tests">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_management.views.html">user_management.views package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_management.views.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.views.html#module-user_management.views.group">user_management.views.group module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet"><code class="docutils literal notranslate"><span class="pre">GroupViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet.basename"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet.description"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet.destroy"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.destroy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet.detail"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet.get_serializer_class"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.get_serializer_class()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet.name"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.group.GroupViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.views.html#module-user_management.views.permission">user_management.views.permission module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.views.html#user_management.views.permission.PermissionViewSet"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.permission.PermissionViewSet.basename"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.permission.PermissionViewSet.description"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.permission.PermissionViewSet.detail"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.permission.PermissionViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.permission.PermissionViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.permission.PermissionViewSet.name"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.permission.PermissionViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.permission.PermissionViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.permission.PermissionViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.permission.PermissionViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.permission.PermissionViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.views.html#module-user_management.views.user">user_management.views.user module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet"><code class="docutils literal notranslate"><span class="pre">UserViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.basename"><code class="docutils literal notranslate"><span class="pre">UserViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.change_password"><code class="docutils literal notranslate"><span class="pre">UserViewSet.change_password()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.description"><code class="docutils literal notranslate"><span class="pre">UserViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.detail"><code class="docutils literal notranslate"><span class="pre">UserViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">UserViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">UserViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.name"><code class="docutils literal notranslate"><span class="pre">UserViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">UserViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">UserViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">UserViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">UserViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">UserViewSet.suffix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.update_user_profile"><code class="docutils literal notranslate"><span class="pre">UserViewSet.update_user_profile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.user.UserViewSet.user_profile"><code class="docutils literal notranslate"><span class="pre">UserViewSet.user_profile()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.views.html#module-user_management.views">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet"><code class="docutils literal notranslate"><span class="pre">GroupViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet.basename"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet.description"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet.destroy"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.destroy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet.detail"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet.get_serializer_class"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.get_serializer_class()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet.name"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.GroupViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">GroupViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.views.html#user_management.views.PermissionViewSet"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.PermissionViewSet.basename"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.PermissionViewSet.description"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.PermissionViewSet.detail"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.PermissionViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.PermissionViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.PermissionViewSet.name"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.PermissionViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.PermissionViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.PermissionViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.PermissionViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.PermissionViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">PermissionViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet"><code class="docutils literal notranslate"><span class="pre">UserViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.basename"><code class="docutils literal notranslate"><span class="pre">UserViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.change_password"><code class="docutils literal notranslate"><span class="pre">UserViewSet.change_password()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.description"><code class="docutils literal notranslate"><span class="pre">UserViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.detail"><code class="docutils literal notranslate"><span class="pre">UserViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">UserViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">UserViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.name"><code class="docutils literal notranslate"><span class="pre">UserViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">UserViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">UserViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">UserViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">UserViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">UserViewSet.suffix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.update_user_profile"><code class="docutils literal notranslate"><span class="pre">UserViewSet.update_user_profile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html#user_management.views.UserViewSet.user_profile"><code class="docutils literal notranslate"><span class="pre">UserViewSet.user_profile()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-user_management.admin">
+<span id="user-management-admin-module"></span><h2>user_management.admin module<a class="headerlink" href="#module-user_management.admin" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.admin.ProfileInlineAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.admin.</span></span><span class="sig-name descname"><span class="pre">ProfileInlineAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/admin.html#ProfileInlineAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.admin.ProfileInlineAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TabularInline</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="user_management.admin.ProfileInlineAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#user_management.admin.ProfileInlineAdmin.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.admin.ProfileInlineAdmin.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#user_management.admin.ProfileInlineAdmin.model" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="user_management.models.html#user_management.models.profile.Profile" title="user_management.models.profile.Profile"><code class="xref py py-class docutils literal notranslate"><span class="pre">Profile</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.admin.UserAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.admin.</span></span><span class="sig-name descname"><span class="pre">UserAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/admin.html#UserAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.admin.UserAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.admin.UserAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['delete_selected']</span></em><a class="headerlink" href="#user_management.admin.UserAdmin.actions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.admin.UserAdmin.add_fieldsets">
+<span class="sig-name descname"><span class="pre">add_fieldsets</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">((None,</span> <span class="pre">{'classes':</span> <span class="pre">('wide',),</span> <span class="pre">'fields':</span> <span class="pre">('username',</span> <span class="pre">'password1',</span> <span class="pre">'password2')}),</span> <span class="pre">('کنترل</span> <span class="pre">دسترسی',</span> <span class="pre">{'fields':</span> <span class="pre">('is_active',</span> <span class="pre">'is_superuser',</span> <span class="pre">'is_staff',</span> <span class="pre">'groups')}))</span></em><a class="headerlink" href="#user_management.admin.UserAdmin.add_fieldsets" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.admin.UserAdmin.get_full_name">
+<span class="sig-name descname"><span class="pre">get_full_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/admin.html#UserAdmin.get_full_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.admin.UserAdmin.get_full_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.admin.UserAdmin.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/admin.html#UserAdmin.get_queryset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.admin.UserAdmin.get_queryset" title="Permalink to this definition"></a></dt>
+<dd><p>Return a QuerySet of all model instances that can be edited by the
+admin site. This is used by changelist_view.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.admin.UserAdmin.inlines">
+<span class="sig-name descname"><span class="pre">inlines</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;class</span> <span class="pre">'user_management.admin.ProfileInlineAdmin'&gt;,)</span></em><a class="headerlink" href="#user_management.admin.UserAdmin.inlines" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.admin.UserAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['username',</span> <span class="pre">'get_full_name',</span> <span class="pre">'is_active',</span> <span class="pre">'is_superuser',</span> <span class="pre">'is_staff',</span> <span class="pre">'created_at',</span> <span class="pre">'updated_at',</span> <span class="pre">'last_login']</span></em><a class="headerlink" href="#user_management.admin.UserAdmin.list_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.admin.UserAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['is_active',</span> <span class="pre">'is_superuser',</span> <span class="pre">'is_staff',</span> <span class="pre">'created_at',</span> <span class="pre">'updated_at',</span> <span class="pre">'last_login']</span></em><a class="headerlink" href="#user_management.admin.UserAdmin.list_filter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="user_management.admin.UserAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#user_management.admin.UserAdmin.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.admin.UserAdmin.readonly_fields">
+<span class="sig-name descname"><span class="pre">readonly_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['created_at',</span> <span class="pre">'updated_at',</span> <span class="pre">'last_login']</span></em><a class="headerlink" href="#user_management.admin.UserAdmin.readonly_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.admin.UserAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['username']</span></em><a class="headerlink" href="#user_management.admin.UserAdmin.search_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-user_management.apps">
+<span id="user-management-apps-module"></span><h2>user_management.apps module<a class="headerlink" href="#module-user_management.apps" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.apps.UserManagementConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.apps.</span></span><span class="sig-name descname"><span class="pre">UserManagementConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/apps.html#UserManagementConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.apps.UserManagementConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/applications/#django.apps.AppConfig" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.apps.UserManagementConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#user_management.apps.UserManagementConfig.default_auto_field" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.apps.UserManagementConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'user_management'</span></em><a class="headerlink" href="#user_management.apps.UserManagementConfig.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.apps.UserManagementConfig.ready">
+<span class="sig-name descname"><span class="pre">ready</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/apps.html#UserManagementConfig.ready"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.apps.UserManagementConfig.ready" title="Permalink to this definition"></a></dt>
+<dd><p>Override this method in subclasses to run code when Django starts.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.apps.UserManagementConfig.verbose_name">
+<span class="sig-name descname"><span class="pre">verbose_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'مدیریت</span> <span class="pre">کاربر'</span></em><a class="headerlink" href="#user_management.apps.UserManagementConfig.verbose_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-user_management.managers">
+<span id="user-management-managers-module"></span><h2>user_management.managers module<a class="headerlink" href="#module-user_management.managers" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.managers.UserManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.managers.</span></span><span class="sig-name descname"><span class="pre">UserManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/managers.html#UserManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.managers.UserManager" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseUserManager</span></code></p>
+<p>Manager class for the ‘user’ model</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.managers.UserManager.create_staff">
+<span class="sig-name descname"><span class="pre">create_staff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">extra_fields</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/managers.html#UserManager.create_staff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.managers.UserManager.create_staff" title="Permalink to this definition"></a></dt>
+<dd><p>This will create a new staff user</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.managers.UserManager.create_superuser">
+<span class="sig-name descname"><span class="pre">create_superuser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">extra_fields</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/managers.html#UserManager.create_superuser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.managers.UserManager.create_superuser" title="Permalink to this definition"></a></dt>
+<dd><p>This will create a new super admin user</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.managers.UserManager.create_user">
+<span class="sig-name descname"><span class="pre">create_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">extra_fields</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/managers.html#UserManager.create_user"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.managers.UserManager.create_user" title="Permalink to this definition"></a></dt>
+<dd><p>This will create a new regular user</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.managers.UserManager.use_in_migrations">
+<span class="sig-name descname"><span class="pre">use_in_migrations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#user_management.managers.UserManager.use_in_migrations" title="Permalink to this definition"></a></dt>
+<dd><p>If set to True the manager will be serialized into migrations and will
+thus be available in e.g. RunPython operations.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-user_management.signals">
+<span id="user-management-signals-module"></span><h2>user_management.signals module<a class="headerlink" href="#module-user_management.signals" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="user_management.signals.creating_profile">
+<span class="sig-prename descclassname"><span class="pre">user_management.signals.</span></span><span class="sig-name descname"><span class="pre">creating_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sender</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">using</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/signals.html#creating_profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.signals.creating_profile" title="Permalink to this definition"></a></dt>
+<dd><p>It will create a new profile instance for the user</p>
+</dd></dl>
+
+</section>
+<section id="module-user_management.urls">
+<span id="user-management-urls-module"></span><h2>user_management.urls module<a class="headerlink" href="#module-user_management.urls" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-user_management">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-user_management" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="manage.html" class="btn btn-neutral float-left" title="manage module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="user_management.models.html" class="btn btn-neutral float-right" title="user_management.models package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mahdi Namaki.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
