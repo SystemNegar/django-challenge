@@ -14,6 +14,8 @@ from django.utils.translation import gettext_lazy as _
 
 from pathlib import Path
 
+from datetime import timedelta
+
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -167,6 +169,13 @@ REST_FRAMEWORK = {
         'user': '30/second'
     },
     'PAGE_SIZE': 20,
+}
+
+# Simple JWT
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "UPDATE_LAST_LOGIN": True,
 }
 
 # security configs for production
