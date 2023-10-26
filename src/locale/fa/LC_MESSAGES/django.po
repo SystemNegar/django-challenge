@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-26 09:11+0330\n"
+"PO-Revision-Date: 2023-10-26 09:13+0330\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: Mahdi Namaki <mavenium@gmail.com>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3\n"
+
+#: core/settings.py:121
+msgid "Persian"
+msgstr "فارسی"
+
+#: core/settings.py:122
+msgid "English"
+msgstr "English"
+
+#: extensions/abstract_models.py:7
+msgid "Created At"
+msgstr "ایجاد شده در"
+
+#: extensions/abstract_models.py:12
+msgid "Updated At"
+msgstr "به روز شده در"
+
+#: extensions/choices.py:7
+msgid "Male"
+msgstr "مرد"
+
+#: extensions/choices.py:8
+msgid "Female"
+msgstr "زن"
+
+#: user_management/apps.py:8
+msgid "User Management"
+msgstr "مدیریت کاربر"
+
+#: user_management/models/profile.py:12 user_management/models/user.py:35
+msgid "User"
+msgstr "کاربر"
+
+#: user_management/models/profile.py:18
+msgid "First Name"
+msgstr "نام"
+
+#: user_management/models/profile.py:22
+msgid "Last Name"
+msgstr "نام خانوادگی"
+
+#: user_management/models/profile.py:26
+msgid "Gender"
+msgstr "جنسیت"
+
+#: user_management/models/profile.py:33
+msgid "Profile"
+msgstr "پروفایل"
+
+#: user_management/models/profile.py:34
+msgid "Profiles"
+msgstr "پروفایل ها"
+
+#: user_management/models/user.py:12
+msgid "Username"
+msgstr "نام کاربری"
+
+#: user_management/models/user.py:17
+msgid "Is Staff"
+msgstr "دسترسی به بخش مدیریت"
+
+#: user_management/models/user.py:22
+msgid "Is Active"
+msgstr "فعال بودن"
+
+#: user_management/models/user.py:36
+msgid "Users"
+msgstr "کاربران"
