@@ -143,6 +143,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Auth Settings
+AUTH_USER_MODEL = 'user_management.User'
 
 # security configs for production
 if not DEBUG:
