@@ -16,15 +16,18 @@ class Profile(AbstractCreatAtUpdateAt, models.Model):
     )
     first_name = models.CharField(
         verbose_name=_('First Name'),
-        max_length=200
+        max_length=200,
+        blank=True
     )
     last_name = models.CharField(
         verbose_name=_('Last Name'),
-        max_length=200
+        max_length=200,
+        blank=True
     )
     gender = models.PositiveSmallIntegerField(
         verbose_name=_('Gender'),
-        choices=GenderChoices.choices
+        choices=GenderChoices.choices,
+        blank=True
     )
 
     class Meta:
