@@ -10,7 +10,11 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from extensions.custom_permissions import CustomDjangoModelPermission, UnauthenticatedPost
-from user_management.serializers import UserSerializer, UserPasswordChangeSerializer
+from user_management.serializers import (
+    UserSerializer,
+    UserPasswordChangeSerializer,
+    ProfileSerializer
+)
 
 
 class UserViewSet(ModelViewSet):
@@ -55,3 +59,11 @@ class UserViewSet(ModelViewSet):
             serializer.is_valid(raise_exception=True)
             user = serializer.save()
             return Response(self.serializer_class(user).data, status=status.HTTP_200_OK)
+
+    @action(detail=False, methods=["get"], url_path='user_profile', url_name='user_profile')
+    def user_profile(self, request):
+        """
+        This will use for getting the current user profile
+        :return: The current user profile
+        """
+        return Response(data=ProfileSerializer(request.user.user_profile_user).data, status=status.HTTP_200_OK)
