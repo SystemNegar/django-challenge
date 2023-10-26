@@ -27,7 +27,7 @@ class Profile(AbstractCreatAtUpdateAt, models.Model):
     gender = models.PositiveSmallIntegerField(
         verbose_name=_('Gender'),
         choices=GenderChoices.choices,
-        blank=True
+        null=True
     )
 
     class Meta:
