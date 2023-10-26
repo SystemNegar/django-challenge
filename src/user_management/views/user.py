@@ -1,5 +1,4 @@
 from django.contrib.auth import get_user_model
-from django.utils.translation import gettext_lazy as _
 
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -9,7 +8,13 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
 
-from extensions.custom_permissions import CustomDjangoModelPermission, UnauthenticatedPost, OwnProfilePermission
+from extensions.custom_permissions import (
+    CustomDjangoModelPermission,
+    UnauthenticatedPost,
+    OwnProfilePermission,
+    OwnUserPermission
+)
+
 from user_management.serializers import (
     UserSerializer,
     UserPasswordChangeSerializer,
@@ -28,37 +33,30 @@ class UserViewSet(ModelViewSet):
     filterset_fields = ['username', 'is_active', 'is_superuser', 'is_staff']
     search_fields = ['username']
 
-    @action(detail=True, methods=["put"], url_path='change_password', url_name='change_password')
+    @action(
+        detail=True,
+        methods=["put"],
+        url_path='change_password',
+        url_name='change_password',
+        permission_classes=[OwnUserPermission]
+    )
     def change_password(self, request, pk=None):
         """
         This will use for change the current user password
         :return: The current user information
         """
-        try:
-            pk = int(pk)
-        except ValueError:
-            return Response(
-                {"error": _("It's not a valid pk!")},
-                status=status.HTTP_404_NOT_FOUND
-            )
-
-        if self.request.user.pk != pk:
-            return Response(
-                {"error": _("You can't change another user's password with this method!")},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-        else:
-            serializer = UserPasswordChangeSerializer(
-                self.request.user,
-                data=request.data,
-                many=False,
-                context={
-                    "user": self.request.user
-                }
-            )
-            serializer.is_valid(raise_exception=True)
-            user = serializer.save()
-            return Response(self.serializer_class(user).data, status=status.HTTP_200_OK)
+        user = self.get_object()
+        serializer = UserPasswordChangeSerializer(
+            user,
+            data=request.data,
+            many=False,
+            context={
+                "user": user
+            }
+        )
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        return Response(self.serializer_class(user).data, status=status.HTTP_200_OK)
 
     @action(
         detail=True,
