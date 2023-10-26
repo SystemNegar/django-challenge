@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 10:07+0330\n"
-"PO-Revision-Date: 2023-10-26 10:08+0330\n"
+"POT-Creation-Date: 2023-10-26 14:04+0330\n"
+"PO-Revision-Date: 2023-10-26 14:04+0330\n"
 "Last-Translator: Mahdi Namaki <mavenium@gmail.com>\n"
 "Language-Team: \n"
 "Language: fa\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "Commands"
 msgstr "دستورات"
 
-#: core/settings.py:122
+#: core/settings.py:128
 msgid "Persian"
 msgstr "فارسی"
 
-#: core/settings.py:123
+#: core/settings.py:129
 msgid "English"
 msgstr "English"
 
@@ -57,6 +57,10 @@ msgstr "مرد"
 #: extensions/choices.py:8
 msgid "Female"
 msgstr "زن"
+
+#: extensions/custom_exception_handlers.py:23
+msgid "It is not possible to delete this object."
+msgstr "امکان حذف این شی وجود ندارد."
 
 #: user_management/admin.py:43 user_management/admin.py:52
 msgid "Access Control"
@@ -113,3 +117,17 @@ msgstr "فعال بودن"
 #: user_management/models/user.py:36
 msgid "Users"
 msgstr "کاربران"
+
+#: user_management/serializers/user.py:52
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr "رمز عبور قدیمی شما اشتباه وارد شده است. لطفا دوباره وارد کنید."
+
+#: user_management/serializers/user.py:72
+msgid "The two password fields didn't match."
+msgstr "دو فیلد رمز عبور مطابقت نداشتند."
+
+#~ msgid "It's not a valid pk!"
+#~ msgstr "این یک pk معتبر نیست!"
+
+#~ msgid "You can't change another user's password with this method!"
+#~ msgstr "با این روش نمی توانید پسورد کاربر دیگری را تغییر دهید!"

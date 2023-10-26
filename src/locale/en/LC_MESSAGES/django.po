@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 10:07+0330\n"
+"POT-Creation-Date: 2023-10-26 14:04+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "Commands"
 msgstr ""
 
-#: core/settings.py:122
+#: core/settings.py:128
 msgid "Persian"
 msgstr ""
 
-#: core/settings.py:123
+#: core/settings.py:129
 msgid "English"
 msgstr ""
 
@@ -56,6 +56,10 @@ msgstr ""
 
 #: extensions/choices.py:8
 msgid "Female"
+msgstr ""
+
+#: extensions/custom_exception_handlers.py:23
+msgid "It is not possible to delete this object."
 msgstr ""
 
 #: user_management/admin.py:43 user_management/admin.py:52
@@ -112,4 +116,12 @@ msgstr ""
 
 #: user_management/models/user.py:36
 msgid "Users"
+msgstr ""
+
+#: user_management/serializers/user.py:52
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr ""
+
+#: user_management/serializers/user.py:72
+msgid "The two password fields didn't match."
 msgstr ""
