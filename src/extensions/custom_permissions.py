@@ -20,3 +20,10 @@ class OwnProfilePermission(BasePermission):
     def has_object_permission(self, request, view, obj):
         # obj here is a Profile instance
         return obj.user_profile_user.user_id == request.user.id
+
+
+class OwnUserPermission(BasePermission):
+    """Object-level permission to only allow updating his own user"""
+    def has_object_permission(self, request, view, obj):
+        # obj here is a User instance
+        return obj.id == request.user.id
