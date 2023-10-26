@@ -66,7 +66,7 @@ class UserAdmin(BaseUserAdmin):
         return self.model.objects.select_related('profile_user')
 
     def get_full_name(self, obj):
-        return obj.user_profile_user.get_full_name
+        return obj.profile_user.get_full_name
 
     get_full_name.short_description = _('Full Name')
 
