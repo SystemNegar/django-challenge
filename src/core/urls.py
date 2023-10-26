@@ -14,9 +14,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.utils.translation import gettext_lazy as _
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+admin.autodiscover()
+admin.site.site_header = _('site_header')
+admin.site.site_title = _('site_title')
+admin.site.index_title = _('index_title')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('api/v1/', include(('api.urls', 'api'), namespace='api')),
+    path('', admin.site.urls),
 ]

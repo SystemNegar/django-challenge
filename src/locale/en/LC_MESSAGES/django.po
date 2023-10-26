@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-26 14:04+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: commands/apps.py:8
+msgid "Commands"
+msgstr ""
+
+#: core/settings.py:128
+msgid "Persian"
+msgstr ""
+
+#: core/settings.py:129
+msgid "English"
+msgstr ""
+
+#: core/urls.py:22
+msgid "site_header"
+msgstr ""
+
+#: core/urls.py:23
+msgid "site_title"
+msgstr ""
+
+#: core/urls.py:24
+msgid "index_title"
+msgstr ""
+
+#: extensions/abstract_models.py:7
+msgid "Created At"
+msgstr ""
+
+#: extensions/abstract_models.py:12
+msgid "Updated At"
+msgstr ""
+
+#: extensions/choices.py:7
+msgid "Male"
+msgstr ""
+
+#: extensions/choices.py:8
+msgid "Female"
+msgstr ""
+
+#: extensions/custom_exception_handlers.py:23
+msgid "It is not possible to delete this object."
+msgstr ""
+
+#: user_management/admin.py:43 user_management/admin.py:52
+msgid "Access Control"
+msgstr ""
+
+#: user_management/admin.py:44
+msgid "Important Date"
+msgstr ""
+
+#: user_management/admin.py:71
+msgid "Full Name"
+msgstr ""
+
+#: user_management/apps.py:8
+msgid "User Management"
+msgstr ""
+
+#: user_management/models/profile.py:12 user_management/models/user.py:35
+msgid "User"
+msgstr ""
+
+#: user_management/models/profile.py:18
+msgid "First Name"
+msgstr ""
+
+#: user_management/models/profile.py:23
+msgid "Last Name"
+msgstr ""
+
+#: user_management/models/profile.py:28
+msgid "Gender"
+msgstr ""
+
+#: user_management/models/profile.py:37
+msgid "Profile"
+msgstr ""
+
+#: user_management/models/profile.py:38
+msgid "Profiles"
+msgstr ""
+
+#: user_management/models/user.py:12
+msgid "Username"
+msgstr ""
+
+#: user_management/models/user.py:17
+msgid "Is Staff"
+msgstr ""
+
+#: user_management/models/user.py:22
+msgid "Is Active"
+msgstr ""
+
+#: user_management/models/user.py:36
+msgid "Users"
+msgstr ""
+
+#: user_management/serializers/user.py:52
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr ""
+
+#: user_management/serializers/user.py:72
+msgid "The two password fields didn't match."
+msgstr ""
