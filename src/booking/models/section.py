@@ -19,6 +19,11 @@ class Section(AbstractCreatAtUpdateAt, models.Model):
     capacity = models.PositiveSmallIntegerField(
         verbose_name=_('Capacity')
     )
+    price = models.DecimalField(
+        verbose_name=_('Price'),
+        decimal_places=2,
+        max_digits=14
+    )
 
     class Meta:
         app_label = 'booking'

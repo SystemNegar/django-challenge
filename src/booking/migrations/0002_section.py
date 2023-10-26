@@ -20,6 +20,7 @@ class Migration(migrations.Migration):
                 ('location', models.PositiveSmallIntegerField(choices=[(0, 'A'), (1, 'B'), (2, 'C'), (3, 'VIP')], verbose_name='Location')),
                 ('capacity', models.PositiveSmallIntegerField(verbose_name='Capacity')),
                 ('stadium', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='section_stadiums', to='booking.stadium', verbose_name='Stadium')),
+                ('price', models.DecimalField(decimal_places=2, max_digits=14, verbose_name='Price')),
             ],
             options={
                 'verbose_name': 'Section',
