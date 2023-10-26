@@ -74,7 +74,7 @@ class UserPasswordChangeSerializer(serializers.Serializer):
 
     def save(self, **kwargs):
         user = self.context['user']
-        user.set_password(self.validated_data['new_password'])
+        user.set_password(self.validated_data['new_password2'])
         user.save()
         return user
 
