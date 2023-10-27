@@ -44,5 +44,6 @@ class Ticket(AbstractCreatAtUpdateAt, models.Model):
         return f"Ticket {self.id}"
 
     def set_as_sold(self) -> None:
+        """It will change the status field and save the object"""
         self.status = TicketStatusChoices.SOLD
         self.save()

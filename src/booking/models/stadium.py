@@ -42,4 +42,5 @@ class Stadium(AbstractCreatAtUpdateAt, models.Model):
 
     @property
     def get_section_ids(self) -> list:
+        """It returns a list of section ids"""
         return list(self.section_stadiums.values_list('id', flat=True))

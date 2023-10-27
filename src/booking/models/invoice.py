@@ -32,6 +32,7 @@ class Invoice(AbstractCreatAtUpdateAt, models.Model):
         return f"{self.user} - {self.id}"
 
     def set_as_paid(self) -> None:
+        """It will change the status field and save the object and tickets"""
         self.status = InvoiceStatusChoices.PAID
         self.save()
 
@@ -41,4 +42,5 @@ class Invoice(AbstractCreatAtUpdateAt, models.Model):
 
     @property
     def get_total_amount(self) -> Decimal:
+        """It returns total price based on price of the section price"""
         return sum(list(self.ticket_invoices.values_list('section__price', flat=True)))

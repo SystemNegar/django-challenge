@@ -38,4 +38,5 @@ class Section(AbstractCreatAtUpdateAt, models.Model):
 
     @property
     def get_list_of_seat_numbers(self) -> list:
+        """It returns a list of seat numbers"""
         return [*range(1, self.capacity + 1)]
