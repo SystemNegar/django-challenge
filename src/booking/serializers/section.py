@@ -12,3 +12,8 @@ class SectionSerializer(ModelSerializer):
         model = Section
         fields = '__all__'
         read_only_fields = ('created_at', 'updated_at')
+
+    def to_representation(self, obj):
+        data = super(SectionSerializer, self).to_representation(obj)
+        data['location'] = obj.get_location_display()
+        return data
