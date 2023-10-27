@@ -103,6 +103,7 @@
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
 
 <div class="viewcode-block" id="Invoice.set_as_paid"><a class="viewcode-back" href="../../../_rst/booking.models.html#booking.models.invoice.Invoice.set_as_paid">[docs]</a>    <span class="k">def</span> <span class="nf">set_as_paid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;It will change the status field and save the object and tickets&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">InvoiceStatusChoices</span><span class="o">.</span><span class="n">PAID</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
 
@@ -112,6 +113,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">get_total_amount</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Decimal</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;It returns total price based on price of the section price&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ticket_invoices</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s1">&#39;section__price&#39;</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">True</span><span class="p">)))</span></div>
 </pre></div>
 
