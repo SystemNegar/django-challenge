@@ -33,4 +33,4 @@ class Invoice(AbstractCreatAtUpdateAt, models.Model):
 
     @property
     def get_total_amount(self) -> Decimal:
-        return sum([item['section__price'] for item in self.ticket_invoices.values('section__price')])
+        return sum(list(self.ticket_invoices.values_list('section__price', flat=True)))
