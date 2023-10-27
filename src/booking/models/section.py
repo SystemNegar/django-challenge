@@ -34,7 +34,7 @@ class Section(AbstractCreatAtUpdateAt, models.Model):
         unique_together = ['stadium', 'location']
 
     def __str__(self) -> str:
-        return f"{self.stadium} - {self.location}"
+        return f"{self.stadium} - {self.get_location_display()}"
 
     @property
     def get_list_of_seat_numbers(self) -> list:
