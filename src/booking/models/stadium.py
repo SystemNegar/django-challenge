@@ -39,3 +39,7 @@ class Stadium(AbstractCreatAtUpdateAt, models.Model):
 
     def __str__(self) -> str:
         return f"{self.province} - {self.city} - {self.name}"
+
+    @property
+    def get_section_ids(self) -> list:
+        return list(self.section_stadiums.values_list('id', flat=True))
