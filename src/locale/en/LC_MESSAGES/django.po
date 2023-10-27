@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 09:17+0330\n"
+"POT-Creation-Date: 2023-10-27 15:17+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,22 +22,22 @@ msgstr ""
 msgid "Booking"
 msgstr ""
 
-#: booking/models/invoice.py:12 user_management/models/profile.py:12
+#: booking/models/invoice.py:14 user_management/models/profile.py:12
 #: user_management/models/user.py:39
 msgid "User"
 msgstr ""
 
-#: booking/models/invoice.py:17 booking/models/payment.py:21
+#: booking/models/invoice.py:19 booking/models/payment.py:21
 #: booking/models/ticket.py:31
 msgid "Status"
 msgstr ""
 
-#: booking/models/invoice.py:25 booking/models/payment.py:11
+#: booking/models/invoice.py:27 booking/models/payment.py:11
 #: booking/models/ticket.py:11
 msgid "Invoice"
 msgstr ""
 
-#: booking/models/invoice.py:26
+#: booking/models/invoice.py:28
 msgid "Invoices"
 msgstr ""
 
@@ -146,6 +146,47 @@ msgstr ""
 msgid "Tickets"
 msgstr ""
 
+#: booking/serializers/payment.py:38
+msgid "This invoice does not belong to you!"
+msgstr ""
+
+#: booking/serializers/payment.py:43
+msgid "This invoice has already been paid!"
+msgstr ""
+
+#: booking/serializers/payment.py:48
+msgid "The entered amount is not equal to the invoice amount!"
+msgstr ""
+
+#: booking/serializers/ticket.py:39
+msgid "The time for this match has passed!"
+msgstr ""
+
+#: booking/serializers/ticket.py:44 booking/serializers/ticket.py:45
+msgid "The stadium is not the same!"
+msgstr ""
+
+#: booking/serializers/ticket.py:50
+msgid "It does not belong to the stadium of this match!"
+msgstr ""
+
+#: booking/serializers/ticket.py:55
+msgid "There is no such seat in the selected section!"
+msgstr ""
+
+#: booking/serializers/ticket.py:67
+msgid "You have already purchased this seat number!"
+msgstr ""
+
+#: booking/serializers/ticket.py:71
+msgid ""
+"You have already reserved this seat number, check your invoices section!"
+msgstr ""
+
+#: booking/serializers/ticket.py:81
+msgid "This seat number cannot be purchased!"
+msgstr ""
+
 #: commands/apps.py:8
 msgid "Commands"
 msgstr ""
@@ -211,18 +252,14 @@ msgid "Sold"
 msgstr ""
 
 #: extensions/choices.py:30
-msgid "Unsold"
-msgstr ""
-
-#: extensions/choices.py:31
 msgid "Reserved"
 msgstr ""
 
-#: extensions/choices.py:36
+#: extensions/choices.py:35
 msgid "Successful"
 msgstr ""
 
-#: extensions/choices.py:37
+#: extensions/choices.py:36
 msgid "Unsuccessful"
 msgstr ""
 

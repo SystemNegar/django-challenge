@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 09:17+0330\n"
-"PO-Revision-Date: 2023-10-27 09:21+0330\n"
+"POT-Creation-Date: 2023-10-27 15:17+0330\n"
+"PO-Revision-Date: 2023-10-27 15:21+0330\n"
 "Last-Translator: Mahdi Namaki <mavenium@gmail.com>\n"
 "Language-Team: \n"
 "Language: fa\n"
@@ -22,22 +22,22 @@ msgstr ""
 msgid "Booking"
 msgstr "رزرو"
 
-#: booking/models/invoice.py:12 user_management/models/profile.py:12
+#: booking/models/invoice.py:14 user_management/models/profile.py:12
 #: user_management/models/user.py:39
 msgid "User"
 msgstr "کاربر"
 
-#: booking/models/invoice.py:17 booking/models/payment.py:21
+#: booking/models/invoice.py:19 booking/models/payment.py:21
 #: booking/models/ticket.py:31
 msgid "Status"
 msgstr "وضعیت"
 
-#: booking/models/invoice.py:25 booking/models/payment.py:11
+#: booking/models/invoice.py:27 booking/models/payment.py:11
 #: booking/models/ticket.py:11
 msgid "Invoice"
 msgstr "فاکتور"
 
-#: booking/models/invoice.py:26
+#: booking/models/invoice.py:28
 msgid "Invoices"
 msgstr "فاکتورها"
 
@@ -146,6 +146,46 @@ msgstr "بلیط"
 msgid "Tickets"
 msgstr "بلیط ها"
 
+#: booking/serializers/payment.py:38
+msgid "This invoice does not belong to you!"
+msgstr "این فاکتور متعلق به شما نیست!"
+
+#: booking/serializers/payment.py:43
+msgid "This invoice has already been paid!"
+msgstr "این فاکتور قبلا پرداخت شده است!"
+
+#: booking/serializers/payment.py:48
+msgid "The entered amount is not equal to the invoice amount!"
+msgstr "مبلغ وارد شده با مبلغ فاکتور برابر نیست!"
+
+#: booking/serializers/ticket.py:39
+msgid "The time for this match has passed!"
+msgstr "زمان این مسابقه گذشت!"
+
+#: booking/serializers/ticket.py:44 booking/serializers/ticket.py:45
+msgid "The stadium is not the same!"
+msgstr "استادیوم یکسان نیست!"
+
+#: booking/serializers/ticket.py:50
+msgid "It does not belong to the stadium of this match!"
+msgstr "به ورزشگاه این مسابقه تعلق ندارد!"
+
+#: booking/serializers/ticket.py:55
+msgid "There is no such seat in the selected section!"
+msgstr "در بخش انتخاب شده چنین صندلی وجود ندارد!"
+
+#: booking/serializers/ticket.py:67
+msgid "You have already purchased this seat number!"
+msgstr "شما قبلاً این شماره صندلی را خریداری کرده اید!"
+
+#: booking/serializers/ticket.py:71
+msgid "You have already reserved this seat number, check your invoices section!"
+msgstr "شما قبلاً این شماره صندلی را رزرو کرده اید، بخش فاکتورهای خود را بررسی کنید!"
+
+#: booking/serializers/ticket.py:81
+msgid "This seat number cannot be purchased!"
+msgstr "این شماره صندلی را نمی توان خرید!"
+
 #: commands/apps.py:8
 msgid "Commands"
 msgstr "دستورات"
@@ -211,18 +251,14 @@ msgid "Sold"
 msgstr "فروخته شده"
 
 #: extensions/choices.py:30
-msgid "Unsold"
-msgstr "فروخته نشده"
-
-#: extensions/choices.py:31
 msgid "Reserved"
 msgstr "رزرو شده"
 
-#: extensions/choices.py:36
+#: extensions/choices.py:35
 msgid "Successful"
 msgstr "موفق"
 
-#: extensions/choices.py:37
+#: extensions/choices.py:36
 msgid "Unsuccessful"
 msgstr "ناموفق"
 
@@ -289,6 +325,9 @@ msgstr "رمز عبور قدیمی شما اشتباه وارد شده است. �
 #: user_management/serializers/user.py:72
 msgid "The two password fields didn't match."
 msgstr "دو فیلد رمز عبور مطابقت نداشتند."
+
+#~ msgid "Unsold"
+#~ msgstr "فروخته نشده"
 
 #~ msgid "It's not a valid pk!"
 #~ msgstr "این یک pk معتبر نیست!"
