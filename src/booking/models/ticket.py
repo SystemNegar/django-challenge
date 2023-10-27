@@ -42,3 +42,7 @@ class Ticket(AbstractCreatAtUpdateAt, models.Model):
 
     def __str__(self) -> str:
         return f"Ticket {self.id}"
+
+    def set_as_sold(self) -> None:
+        self.status = TicketStatusChoices.SOLD
+        self.save()
