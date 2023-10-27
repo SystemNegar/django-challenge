@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 14:04+0330\n"
+"POT-Creation-Date: 2023-10-27 09:17+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,143 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: booking/apps.py:8
+msgid "Booking"
+msgstr ""
+
+#: booking/models/invoice.py:12 user_management/models/profile.py:12
+#: user_management/models/user.py:39
+msgid "User"
+msgstr ""
+
+#: booking/models/invoice.py:17 booking/models/payment.py:21
+#: booking/models/ticket.py:31
+msgid "Status"
+msgstr ""
+
+#: booking/models/invoice.py:25 booking/models/payment.py:11
+#: booking/models/ticket.py:11
+msgid "Invoice"
+msgstr ""
+
+#: booking/models/invoice.py:26
+msgid "Invoices"
+msgstr ""
+
+#: booking/models/match.py:10 booking/models/section.py:11
+#: booking/models/stadium.py:35
+msgid "Stadium"
+msgstr ""
+
+#: booking/models/match.py:16
+msgid "Host Team"
+msgstr ""
+
+#: booking/models/match.py:22
+msgid "Guest Team"
+msgstr ""
+
+#: booking/models/match.py:27
+msgid "Start Time"
+msgstr ""
+
+#: booking/models/match.py:33 booking/models/ticket.py:17
+msgid "Match"
+msgstr ""
+
+#: booking/models/match.py:34
+msgid "Matches"
+msgstr ""
+
+#: booking/models/payment.py:16
+msgid "Amount"
+msgstr ""
+
+#: booking/models/payment.py:25 extensions/abstract_models.py:7
+msgid "Created At"
+msgstr ""
+
+#: booking/models/payment.py:33
+msgid "Payment"
+msgstr ""
+
+#: booking/models/payment.py:34
+msgid "Payments"
+msgstr ""
+
+#: booking/models/section.py:16
+msgid "Location"
+msgstr ""
+
+#: booking/models/section.py:20
+msgid "Capacity"
+msgstr ""
+
+#: booking/models/section.py:23
+msgid "Price"
+msgstr ""
+
+#: booking/models/section.py:31 booking/models/ticket.py:23
+msgid "Section"
+msgstr ""
+
+#: booking/models/section.py:32
+msgid "Sections"
+msgstr ""
+
+#: booking/models/stadium.py:9 booking/models/team.py:9
+msgid "Name"
+msgstr ""
+
+#: booking/models/stadium.py:14
+msgid "Province"
+msgstr ""
+
+#: booking/models/stadium.py:19
+msgid "City"
+msgstr ""
+
+#: booking/models/stadium.py:24
+msgid "Address"
+msgstr ""
+
+#: booking/models/stadium.py:28
+msgid "Map URL"
+msgstr ""
+
+#: booking/models/stadium.py:36
+msgid "Stadiums"
+msgstr ""
+
+#: booking/models/team.py:18
+msgid "Team"
+msgstr ""
+
+#: booking/models/team.py:19
+msgid "Teams"
+msgstr ""
+
+#: booking/models/ticket.py:28
+msgid "Seat Number"
+msgstr ""
+
+#: booking/models/ticket.py:39
+msgid "Ticket"
+msgstr ""
+
+#: booking/models/ticket.py:40
+msgid "Tickets"
+msgstr ""
+
 #: commands/apps.py:8
 msgid "Commands"
 msgstr ""
 
-#: core/settings.py:128
+#: core/settings.py:129
 msgid "Persian"
 msgstr ""
 
-#: core/settings.py:129
+#: core/settings.py:130
 msgid "English"
 msgstr ""
 
@@ -42,10 +170,6 @@ msgstr ""
 msgid "index_title"
 msgstr ""
 
-#: extensions/abstract_models.py:7
-msgid "Created At"
-msgstr ""
-
 #: extensions/abstract_models.py:12
 msgid "Updated At"
 msgstr ""
@@ -56,6 +180,50 @@ msgstr ""
 
 #: extensions/choices.py:8
 msgid "Female"
+msgstr ""
+
+#: extensions/choices.py:15
+msgid "A"
+msgstr ""
+
+#: extensions/choices.py:16
+msgid "B"
+msgstr ""
+
+#: extensions/choices.py:17
+msgid "C"
+msgstr ""
+
+#: extensions/choices.py:18
+msgid "VIP"
+msgstr ""
+
+#: extensions/choices.py:23
+msgid "Paid"
+msgstr ""
+
+#: extensions/choices.py:24
+msgid "Unpaid"
+msgstr ""
+
+#: extensions/choices.py:29
+msgid "Sold"
+msgstr ""
+
+#: extensions/choices.py:30
+msgid "Unsold"
+msgstr ""
+
+#: extensions/choices.py:31
+msgid "Reserved"
+msgstr ""
+
+#: extensions/choices.py:36
+msgid "Successful"
+msgstr ""
+
+#: extensions/choices.py:37
+msgid "Unsuccessful"
 msgstr ""
 
 #: extensions/custom_exception_handlers.py:23
@@ -78,10 +246,6 @@ msgstr ""
 msgid "User Management"
 msgstr ""
 
-#: user_management/models/profile.py:12 user_management/models/user.py:35
-msgid "User"
-msgstr ""
-
 #: user_management/models/profile.py:18
 msgid "First Name"
 msgstr ""
@@ -102,19 +266,19 @@ msgstr ""
 msgid "Profiles"
 msgstr ""
 
-#: user_management/models/user.py:12
+#: user_management/models/user.py:16
 msgid "Username"
 msgstr ""
 
-#: user_management/models/user.py:17
+#: user_management/models/user.py:21
 msgid "Is Staff"
 msgstr ""
 
-#: user_management/models/user.py:22
+#: user_management/models/user.py:26
 msgid "Is Active"
 msgstr ""
 
-#: user_management/models/user.py:36
+#: user_management/models/user.py:40
 msgid "Users"
 msgstr ""
 
