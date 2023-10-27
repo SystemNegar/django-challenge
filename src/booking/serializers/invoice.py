@@ -16,4 +16,5 @@ class InvoiceSerializer(ModelSerializer):
     def to_representation(self, obj):
         data = super(InvoiceSerializer, self).to_representation(obj)
         data['status'] = obj.get_status_display()
+        data['total_amount'] = obj.get_total_amount
         return data
