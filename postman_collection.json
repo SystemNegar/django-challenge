@@ -1,0 +1,2372 @@
+{
+	"info": {
+		"_postman_id": "1c12d306-e1e6-4c2e-a1c1-396a9e065dce",
+		"name": "Ticketing System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28955453",
+		"_collection_link": "https://grey-robot-946514.postman.co/workspace/New-Team-Workspace~6a989cae-37cc-459b-b1e1-164cd99b7ee4/collection/28955453-1c12d306-e1e6-4c2e-a1c1-396a9e065dce?action=share&source=collection_link&creator=28955453"
+	},
+	"item": [
+		{
+			"name": "JWT Authentication",
+			"item": [
+				{
+					"name": "Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.globals.set(\"access_token\", jsonData.access);",
+									"pm.globals.set(\"refresh_token\", jsonData.refresh);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin@ticketing.sample\",\n    \"password\": \"admin@control*987\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{service_url}}/api/v1/token/",
+							"host": [
+								"{{service_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"token",
+								""
+							]
+						},
+						"description": "To log in and get the `access_token`"
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.globals.set(\"access_token\", jsonData.access);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5ODM5MDk1NiwiaWF0IjoxNjk4MzA0NTU2LCJqdGkiOiI5MzY3MDQyMTA5ZTE0MmQ5OGYxZGFkZjk3NTEwNzE3ZCIsInVzZXJfaWQiOjF9.OuuJSPurX2vaotnyfn7sKgXA5RLwxG5hjg4vmm7RgE0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{service_url}}/api/v1/token/refresh/",
+							"host": [
+								"{{service_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"token",
+								"refresh",
+								""
+							]
+						},
+						"description": "To log in and get the `access_token`"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.globals.set(\"access_token\", jsonData.access);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4MzA2MzczLCJpYXQiOjE2OTgzMDQ1NTYsImp0aSI6IjY5NzJmYWE4MWZkOTQ5M2Y5YTUzZjM5YTBhNTdlZmFiIiwidXNlcl9pZCI6MX0.dtTaZNptlR55WZWyg6xAIeJh1RjW0hURhAPQtGKACUc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{service_url}}/api/v1/token/verify/",
+							"host": [
+								"{{service_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"token",
+								"verify",
+								""
+							]
+						},
+						"description": "To log in and get the `access_token`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Management",
+			"item": [
+				{
+					"name": "Permissions",
+					"item": [
+						{
+							"name": "Permissions - List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/permissions/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"permissions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Permissions - Filter",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/permissions/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"permissions",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Can add group",
+											"disabled": true
+										},
+										{
+											"key": "codename",
+											"value": "add_group",
+											"disabled": true
+										},
+										{
+											"key": "content_type",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "group",
+											"description": "By 'name' field",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Permission - Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/permissions/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"permissions",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Groups",
+					"item": [
+						{
+							"name": "Groups - List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/groups/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"groups",
+										""
+									]
+								},
+								"description": "To fetch the partner objects"
+							},
+							"response": []
+						},
+						{
+							"name": "Groups - Filter",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/groups/?search=test",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"groups",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "test",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "test",
+											"description": "By 'name' field"
+										}
+									]
+								},
+								"description": "To filter the partner objects by all model fields"
+							},
+							"response": []
+						},
+						{
+							"name": "Group - Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"test\",\n    \"permission_ids\": [1, 2, 3]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/groups/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"groups",
+										""
+									]
+								},
+								"description": "To create a new partner object"
+							},
+							"response": []
+						},
+						{
+							"name": "Group - Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"permission_ids\": [1, 2, 3, 5, 6]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/groups/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"groups",
+										"1",
+										""
+									]
+								},
+								"description": "To update the partner object by id field"
+							},
+							"response": []
+						},
+						{
+							"name": "Group - Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/groups/3/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"groups",
+										"3",
+										""
+									]
+								},
+								"description": "To delete the partner object by id field"
+							},
+							"response": []
+						},
+						{
+							"name": "Group - Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/groups/2/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"groups",
+										"2",
+										""
+									]
+								},
+								"description": "To fetch a single partner object besd id field"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Users - List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/users/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								},
+								"description": "To fetch the partner objects"
+							},
+							"response": []
+						},
+						{
+							"name": "Users - Filter",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/users/?is_staff=true",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "admin@ticketing.sample",
+											"disabled": true
+										},
+										{
+											"key": "is_active",
+											"value": "true",
+											"disabled": true
+										},
+										{
+											"key": "is_superuser",
+											"value": "true",
+											"disabled": true
+										},
+										{
+											"key": "is_staff",
+											"value": "true"
+										},
+										{
+											"key": "search",
+											"value": "",
+											"description": "By 'username'  field",
+											"disabled": true
+										}
+									]
+								},
+								"description": "To filter the partner objects by all model fields"
+							},
+							"response": []
+						},
+						{
+							"name": "User - Create",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"@strong#password\",\n    \"is_superuser\": false,\n    \"is_staff\": false,\n    \"username\": \"user@ticketing.sample\",\n    \"is_active\": true,\n    \"groups\": [],\n    \"user_permissions\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/users/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										""
+									]
+								},
+								"description": "To create a new partner object"
+							},
+							"response": []
+						},
+						{
+							"name": "User - Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"is_active\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/users/2/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"2",
+										""
+									]
+								},
+								"description": "To update the partner object by id field"
+							},
+							"response": []
+						},
+						{
+							"name": "User - Changing The Current User's Password",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "old_password",
+											"value": "admin@control*123",
+											"type": "text"
+										},
+										{
+											"key": "new_password1",
+											"value": "admin@control*222",
+											"type": "text"
+										},
+										{
+											"key": "new_password2",
+											"value": "admin@control*222",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/users/2/change_password/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"2",
+										"change_password",
+										""
+									]
+								},
+								"description": "To update the partner object by id field"
+							},
+							"response": []
+						},
+						{
+							"name": "User - Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/users/2/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"2",
+										""
+									]
+								},
+								"description": "To delete the partner object by id field"
+							},
+							"response": []
+						},
+						{
+							"name": "User - Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/users/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"1",
+										""
+									]
+								},
+								"description": "To fetch a single partner object besd id field"
+							},
+							"response": []
+						},
+						{
+							"name": "User - Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/users/1/user_profile/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"1",
+										"user_profile",
+										""
+									]
+								},
+								"description": "To fetch a single partner object besd id field"
+							},
+							"response": []
+						},
+						{
+							"name": "User - Changing The Current User's Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "last_name",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "gender",
+											"value": "0",
+											"description": "0 => Male, 1 => Female",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/users/1/update_user_profile/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"1",
+										"update_user_profile",
+										""
+									]
+								},
+								"description": "To update the partner object by id field"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Stadiums",
+					"item": [
+						{
+							"name": "Stadiums - List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/stadiums/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"stadiums",
+										""
+									]
+								},
+								"description": "To fetch the partner objects"
+							},
+							"response": []
+						},
+						{
+							"name": "Stadiums - Filter",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/stadiums/?search=test",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"stadiums",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "test",
+											"disabled": true
+										},
+										{
+											"key": "province",
+											"value": "test",
+											"disabled": true
+										},
+										{
+											"key": "city",
+											"value": "test",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "test",
+											"description": "By 'name', 'province', 'city', 'address' fields\n"
+										}
+									]
+								},
+								"description": "To filter the partner objects by all model fields"
+							},
+							"response": []
+						},
+						{
+							"name": "Stadium - Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Azadi\",\n    \"province\": \"Tehran\",\n    \"city\": \"Tehran\",\n    \"address\": \"Sample address\",\n    \"map_url\": \"https://maps.app.goo.gl/2t5nqYLTf8TEzFBx5\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/stadiums/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"stadiums",
+										""
+									]
+								},
+								"description": "To create a new partner object"
+							},
+							"response": []
+						},
+						{
+							"name": "Stadium - Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"name\": \"Azadi\",\n    // \"province\": \"Tehran\",\n    // \"city\": \"Tehran\",\n    \"address\": \"District 22, Azadi Stadium Blvd\"\n    // \"map_url\": \"https://maps.app.goo.gl/2t5nqYLTf8TEzFBx5\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/stadiums/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"stadiums",
+										"1",
+										""
+									]
+								},
+								"description": "To update the partner object by id field"
+							},
+							"response": []
+						},
+						{
+							"name": "Stadium - Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/stadiums/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"stadiums",
+										"1",
+										""
+									]
+								},
+								"description": "To delete the partner object by id field"
+							},
+							"response": []
+						},
+						{
+							"name": "Stadium - Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/stadiums/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"stadiums",
+										"1",
+										""
+									]
+								},
+								"description": "To fetch a single partner object besd id field"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sections",
+					"item": [
+						{
+							"name": "Sections - List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/sections/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sections",
+										""
+									]
+								},
+								"description": "To fetch the partner objects"
+							},
+							"response": []
+						},
+						{
+							"name": "Sections - Filter",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/sections/?search=azadi",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sections",
+										""
+									],
+									"query": [
+										{
+											"key": "stadium",
+											"value": "test",
+											"disabled": true
+										},
+										{
+											"key": "location",
+											"value": "test",
+											"disabled": true
+										},
+										{
+											"key": "capacity",
+											"value": "test",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "test",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "azadi",
+											"description": "By 'stadium__name', 'location', 'capacity', 'price' fields"
+										}
+									]
+								},
+								"description": "To filter the partner objects by all model fields"
+							},
+							"response": []
+						},
+						{
+							"name": "Section - Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"stadium\": 1,\n    // Location Enums (0 => A, 1 => B, 2 => C, 3 => VIP)\n    \"location\": 0,\n    \"capacity\": 50,\n    \"price\": 5000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/sections/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sections",
+										""
+									]
+								},
+								"description": "To create a new partner object"
+							},
+							"response": []
+						},
+						{
+							"name": "Section - Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"stadium\": 1,\n    // Location Enums (0 => A, 1 => B, 2 => C, 3 => VIP)\n    // \"location\": 0,\n    \"capacity\": 70\n    // \"price\": 5000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/sections/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sections",
+										"1",
+										""
+									]
+								},
+								"description": "To update the partner object by id field"
+							},
+							"response": []
+						},
+						{
+							"name": "Section - Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/sections/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sections",
+										"1",
+										""
+									]
+								},
+								"description": "To delete the partner object by id field"
+							},
+							"response": []
+						},
+						{
+							"name": "Section - Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/sections/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sections",
+										"1",
+										""
+									]
+								},
+								"description": "To fetch a single partner object besd id field"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Teams",
+					"item": [
+						{
+							"name": "Teams - List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/teams/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"teams",
+										""
+									]
+								},
+								"description": "To fetch the partner objects"
+							},
+							"response": []
+						},
+						{
+							"name": "Teams - Filter",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/teams/?search=",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"teams",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "test",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "",
+											"description": "By 'name' field"
+										}
+									]
+								},
+								"description": "To filter the partner objects by all model fields"
+							},
+							"response": []
+						},
+						{
+							"name": "Team - Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Perspolis\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/teams/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"teams",
+										""
+									]
+								},
+								"description": "To create a new partner object"
+							},
+							"response": []
+						},
+						{
+							"name": "Team - Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Perspolis FC\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/teams/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"teams",
+										"1",
+										""
+									]
+								},
+								"description": "To update the partner object by id field"
+							},
+							"response": []
+						},
+						{
+							"name": "Team - Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/teams/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"teams",
+										"1",
+										""
+									]
+								},
+								"description": "To delete the partner object by id field"
+							},
+							"response": []
+						},
+						{
+							"name": "Team - Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/teams/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"teams",
+										"1",
+										""
+									]
+								},
+								"description": "To fetch a single partner object besd id field"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Matches",
+					"item": [
+						{
+							"name": "Matches - List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/matches/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches",
+										""
+									]
+								},
+								"description": "To fetch the partner objects"
+							},
+							"response": []
+						},
+						{
+							"name": "Matches - Filter",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/matches/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches",
+										""
+									],
+									"query": [
+										{
+											"key": "stadium",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "host_team",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "guest_team",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "start_time",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "",
+											"description": "By 'stadium__name', 'host_team__name', 'guest_team__name', 'start_time' fields",
+											"disabled": true
+										}
+									]
+								},
+								"description": "To filter the partner objects by all model fields"
+							},
+							"response": []
+						},
+						{
+							"name": "Match - Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"stadium\": 1,\n    \"host_team\": 1,\n    \"guest_team\": 2,\n    \"start_time\": \"2023-10-30T16:00:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/matches/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches",
+										""
+									]
+								},
+								"description": "To create a new partner object"
+							},
+							"response": []
+						},
+						{
+							"name": "Match - Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"stadium\": 1,\n    \"host_team\": 1,\n    \"guest_team\": 2,\n    \"start_time\": \"2023-10-30T16:00:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/matches/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches",
+										"1",
+										""
+									]
+								},
+								"description": "To update the partner object by id field"
+							},
+							"response": []
+						},
+						{
+							"name": "Match - Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/matches/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches",
+										"1",
+										""
+									]
+								},
+								"description": "To delete the partner object by id field"
+							},
+							"response": []
+						},
+						{
+							"name": "Match - Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/matches/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches",
+										"1",
+										""
+									]
+								},
+								"description": "To fetch a single partner object besd id field"
+							},
+							"response": []
+						},
+						{
+							"name": "Match - Seats",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/matches/1/seats/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"matches",
+										"1",
+										"seats",
+										""
+									]
+								},
+								"description": "To fetch a single partner object besd id field"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Invoices",
+					"item": [
+						{
+							"name": "Invoices - List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/invoices/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"invoices",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Invoices - Filter",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/invoices/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"invoices",
+										""
+									],
+									"query": [
+										{
+											"key": "user",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "",
+											"description": "0 => Paid, 1 => Unpaid",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "admin@ticketing.sample",
+											"description": "By 'user__username' field",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Invoice - Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/invoices/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"invoices",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tickets",
+					"item": [
+						{
+							"name": "Tickets - List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/tickets/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tickets - Filter",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/tickets/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										""
+									],
+									"query": [
+										{
+											"key": "invoice",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "match",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "section",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "seat_number",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "",
+											"description": "0 => Sold, 1 => Unsold, 2 => Reserved",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "admin@ticketing.sample",
+											"description": "By 'invoice', 'invoice__user__username', 'match', 'section', 'seat_number' fields",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ticket - Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "match",
+											"value": "1",
+											"description": "ID of the 'Match' object",
+											"type": "text"
+										},
+										{
+											"key": "section",
+											"value": "1",
+											"description": "ID of the 'Section' object",
+											"type": "text"
+										},
+										{
+											"key": "seat_number",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/tickets/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ticket - Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/tickets/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Payments",
+					"item": [
+						{
+							"name": "Payments - List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/payments/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payments",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Payments - Filter",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/payments/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payments",
+										""
+									],
+									"query": [
+										{
+											"key": "invoice",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "amount",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "",
+											"description": "0 => Successful, 1 => Unsuccessful",
+											"disabled": true
+										},
+										{
+											"key": "created_at",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "admin@ticketing.sample",
+											"description": "By 'invoice', 'invoice__user__username', 'amount', 'created_at' fields",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Payment - Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "invoice",
+											"value": "1",
+											"description": "ID of the 'Invoice' object",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "15000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{service_url}}/api/v1/payments/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payments",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Payment - Detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service_url}}/api/v1/payments/1/",
+									"host": [
+										"{{service_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payments",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.globals.set(\"service_url\", \"http://127.0.0.1:8000\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
