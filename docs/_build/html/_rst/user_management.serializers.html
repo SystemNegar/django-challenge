@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>user_management.serializers package &mdash; Ticketing system 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="user_management.tests package" href="user_management.tests.html" />
+    <link rel="prev" title="user_management.models package" href="user_management.models.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ticketing system
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api.html">api package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">commands package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html">core package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">extensions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="user_management.html">user_management package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="user_management.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="user_management.models.html">user_management.models package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">user_management.serializers package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.tests.html">user_management.tests package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_management.views.html">user_management.views package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#module-user_management.admin">user_management.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#module-user_management.apps">user_management.apps module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#module-user_management.managers">user_management.managers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#module-user_management.signals">user_management.signals module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#module-user_management.urls">user_management.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_management.html#module-user_management">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ticketing system</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+          <li class="breadcrumb-item"><a href="user_management.html">user_management package</a></li>
+      <li class="breadcrumb-item active">user_management.serializers package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_rst/user_management.serializers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="user-management-serializers-package">
+<h1>user_management.serializers package<a class="headerlink" href="#user-management-serializers-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-user_management.serializers.group">
+<span id="user-management-serializers-group-module"></span><h2>user_management.serializers.group module<a class="headerlink" href="#module-user_management.serializers.group" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.serializers.group.CreateGroupSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.serializers.group.</span></span><span class="sig-name descname"><span class="pre">CreateGroupSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/group.html#CreateGroupSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.group.CreateGroupSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for creating a new ‘Group’ instance</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.group.CreateGroupSerializer.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">validated_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/group.html#CreateGroupSerializer.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.group.CreateGroupSerializer.create" title="Permalink to this definition"></a></dt>
+<dd><p>Create a new instance
+:param validated_data: A dict of fields
+:return: A new instance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.group.CreateGroupSerializer.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validated_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/group.html#CreateGroupSerializer.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.group.CreateGroupSerializer.update" title="Permalink to this definition"></a></dt>
+<dd><p>Update exists instance
+:param instance: Current instance
+:param validated_data: A dict of fields
+:return: Current instance with changes</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.serializers.group.GroupSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.serializers.group.</span></span><span class="sig-name descname"><span class="pre">GroupSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/group.html#GroupSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.group.GroupSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for the ‘Group’ model</p>
+</dd></dl>
+
+</section>
+<section id="module-user_management.serializers.permission">
+<span id="user-management-serializers-permission-module"></span><h2>user_management.serializers.permission module<a class="headerlink" href="#module-user_management.serializers.permission" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.serializers.permission.PermissionSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.serializers.permission.</span></span><span class="sig-name descname"><span class="pre">PermissionSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/permission.html#PermissionSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.permission.PermissionSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for the ‘Permission’ model</p>
+</dd></dl>
+
+</section>
+<section id="module-user_management.serializers.profile">
+<span id="user-management-serializers-profile-module"></span><h2>user_management.serializers.profile module<a class="headerlink" href="#module-user_management.serializers.profile" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.serializers.profile.ProfileSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.serializers.profile.</span></span><span class="sig-name descname"><span class="pre">ProfileSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/profile.html#ProfileSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.profile.ProfileSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for the ‘Profile’ model</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.profile.ProfileSerializer.to_representation">
+<span class="sig-name descname"><span class="pre">to_representation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/profile.html#ProfileSerializer.to_representation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.profile.ProfileSerializer.to_representation" title="Permalink to this definition"></a></dt>
+<dd><p>Object instance -&gt; Dict of primitive datatypes.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-user_management.serializers.user">
+<span id="user-management-serializers-user-module"></span><h2>user_management.serializers.user module<a class="headerlink" href="#module-user_management.serializers.user" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.serializers.user.UserPasswordChangeSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.serializers.user.</span></span><span class="sig-name descname"><span class="pre">UserPasswordChangeSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.user.UserPasswordChangeSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Serializer</span></code></p>
+<p>Serializer for user model password change</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.user.UserPasswordChangeSerializer.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.user.UserPasswordChangeSerializer.save" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.user.UserPasswordChangeSerializer.to_representation">
+<span class="sig-name descname"><span class="pre">to_representation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer.to_representation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.user.UserPasswordChangeSerializer.to_representation" title="Permalink to this definition"></a></dt>
+<dd><p>Object instance -&gt; Dict of primitive datatypes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.user.UserPasswordChangeSerializer.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.user.UserPasswordChangeSerializer.validate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.user.UserPasswordChangeSerializer.validate_new_password1">
+<span class="sig-name descname"><span class="pre">validate_new_password1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer.validate_new_password1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.user.UserPasswordChangeSerializer.validate_new_password1" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.user.UserPasswordChangeSerializer.validate_new_password2">
+<span class="sig-name descname"><span class="pre">validate_new_password2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer.validate_new_password2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.user.UserPasswordChangeSerializer.validate_new_password2" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.user.UserPasswordChangeSerializer.validate_old_password">
+<span class="sig-name descname"><span class="pre">validate_old_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer.validate_old_password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.user.UserPasswordChangeSerializer.validate_old_password" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.serializers.user.UserSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.serializers.user.</span></span><span class="sig-name descname"><span class="pre">UserSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.user.UserSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for the ‘User’ model</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.user.UserSerializer.to_representation">
+<span class="sig-name descname"><span class="pre">to_representation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserSerializer.to_representation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.user.UserSerializer.to_representation" title="Permalink to this definition"></a></dt>
+<dd><p>Object instance -&gt; Dict of primitive datatypes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.user.UserSerializer.validate_password">
+<span class="sig-name descname"><span class="pre">validate_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserSerializer.validate_password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.user.UserSerializer.validate_password" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-user_management.serializers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-user_management.serializers" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.serializers.CreateGroupSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.serializers.</span></span><span class="sig-name descname"><span class="pre">CreateGroupSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/group.html#CreateGroupSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.CreateGroupSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for creating a new ‘Group’ instance</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.CreateGroupSerializer.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">validated_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/group.html#CreateGroupSerializer.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.CreateGroupSerializer.create" title="Permalink to this definition"></a></dt>
+<dd><p>Create a new instance
+:param validated_data: A dict of fields
+:return: A new instance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.CreateGroupSerializer.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validated_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/group.html#CreateGroupSerializer.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.CreateGroupSerializer.update" title="Permalink to this definition"></a></dt>
+<dd><p>Update exists instance
+:param instance: Current instance
+:param validated_data: A dict of fields
+:return: Current instance with changes</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.serializers.GroupSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.serializers.</span></span><span class="sig-name descname"><span class="pre">GroupSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/group.html#GroupSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.GroupSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for the ‘Group’ model</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.serializers.PermissionSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.serializers.</span></span><span class="sig-name descname"><span class="pre">PermissionSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/permission.html#PermissionSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.PermissionSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for the ‘Permission’ model</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.serializers.ProfileSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.serializers.</span></span><span class="sig-name descname"><span class="pre">ProfileSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/profile.html#ProfileSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.ProfileSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for the ‘Profile’ model</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.ProfileSerializer.to_representation">
+<span class="sig-name descname"><span class="pre">to_representation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/profile.html#ProfileSerializer.to_representation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.ProfileSerializer.to_representation" title="Permalink to this definition"></a></dt>
+<dd><p>Object instance -&gt; Dict of primitive datatypes.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.serializers.UserPasswordChangeSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.serializers.</span></span><span class="sig-name descname"><span class="pre">UserPasswordChangeSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.UserPasswordChangeSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Serializer</span></code></p>
+<p>Serializer for user model password change</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.UserPasswordChangeSerializer.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.UserPasswordChangeSerializer.save" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.UserPasswordChangeSerializer.to_representation">
+<span class="sig-name descname"><span class="pre">to_representation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer.to_representation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.UserPasswordChangeSerializer.to_representation" title="Permalink to this definition"></a></dt>
+<dd><p>Object instance -&gt; Dict of primitive datatypes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.UserPasswordChangeSerializer.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.UserPasswordChangeSerializer.validate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.UserPasswordChangeSerializer.validate_new_password1">
+<span class="sig-name descname"><span class="pre">validate_new_password1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer.validate_new_password1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.UserPasswordChangeSerializer.validate_new_password1" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.UserPasswordChangeSerializer.validate_new_password2">
+<span class="sig-name descname"><span class="pre">validate_new_password2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer.validate_new_password2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.UserPasswordChangeSerializer.validate_new_password2" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.UserPasswordChangeSerializer.validate_old_password">
+<span class="sig-name descname"><span class="pre">validate_old_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserPasswordChangeSerializer.validate_old_password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.UserPasswordChangeSerializer.validate_old_password" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="user_management.serializers.UserSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">user_management.serializers.</span></span><span class="sig-name descname"><span class="pre">UserSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserSerializer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.UserSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for the ‘User’ model</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.UserSerializer.to_representation">
+<span class="sig-name descname"><span class="pre">to_representation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserSerializer.to_representation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.UserSerializer.to_representation" title="Permalink to this definition"></a></dt>
+<dd><p>Object instance -&gt; Dict of primitive datatypes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="user_management.serializers.UserSerializer.validate_password">
+<span class="sig-name descname"><span class="pre">validate_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../_modules/user_management/serializers/user.html#UserSerializer.validate_password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#user_management.serializers.UserSerializer.validate_password" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="user_management.models.html" class="btn btn-neutral float-left" title="user_management.models package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="user_management.tests.html" class="btn btn-neutral float-right" title="user_management.tests package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mahdi Namaki.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

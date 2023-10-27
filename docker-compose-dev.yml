@@ -1,0 +1,57 @@
+version: '3.3'
+
+services:
+  postgresql:
+    image: postgres:latest
+    hostname: postgresql
+    container_name: postgresql
+    volumes:
+      - postgresql_volume:/data
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - project_network
+
+  project:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sh -c '
+      python manage.py wait_for_db &&
+      python manage.py migrate &&
+      python manage.py migrate --run-syncdb &&
+      python manage.py collectstatic --noinput &&
+      python manage.py initialize_admin &&
+      python manage.py runserver 0.0.0.0:8000'
+    hostname: project
+    container_name: project
+    volumes:
+      - ./src:/project
+      - statics_volume:/project/statics
+    restart: always
+    environment:
+      - DB_NAME=postgres
+      - DB_HOST=postgresql
+      - DB_USER=postgres
+      - DB_PASS=postgres
+    ports:
+      - "8000:8000"
+    networks:
+      - project_network
+    depends_on:
+      - postgresql
+
+volumes:
+  postgresql_volume:
+    external: false
+  statics_volume:
+    external: false
+
+networks:
+  project_network:
+    external: false
