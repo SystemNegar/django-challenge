@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>booking package &mdash; Ticketing system 0.0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="booking.models package" href="booking.models.html" />
+    <link rel="prev" title="api.tests package" href="api.tests.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ticketing system
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api.html">api package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">booking package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html">booking.models package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html">booking.serializers package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html">booking.views package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-booking.admin">booking.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#booking.admin.InvoiceAdmin"><code class="docutils literal notranslate"><span class="pre">InvoiceAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#booking.admin.MatchAdmin"><code class="docutils literal notranslate"><span class="pre">MatchAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#booking.admin.PaymentAdmin"><code class="docutils literal notranslate"><span class="pre">PaymentAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#booking.admin.SectionInlineAdmin"><code class="docutils literal notranslate"><span class="pre">SectionInlineAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#booking.admin.StadiumAdmin"><code class="docutils literal notranslate"><span class="pre">StadiumAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#booking.admin.TeamAdmin"><code class="docutils literal notranslate"><span class="pre">TeamAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#booking.admin.TicketAdmin"><code class="docutils literal notranslate"><span class="pre">TicketAdmin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-booking.apps">booking.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#booking.apps.BookingConfig"><code class="docutils literal notranslate"><span class="pre">BookingConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-booking.urls">booking.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-booking">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">commands package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html">core package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extensions.html">extensions package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_management.html">user_management package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ticketing system</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+      <li class="breadcrumb-item active">booking package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_rst/booking.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="booking-package">
+<h1>booking package<a class="headerlink" href="#booking-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="booking.models.html">booking.models package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="booking.models.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="booking.models.html#module-booking.models.invoice">booking.models.invoice module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice"><code class="docutils literal notranslate"><span class="pre">Invoice</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Invoice.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Invoice.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.created_at"><code class="docutils literal notranslate"><span class="pre">Invoice.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Invoice.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Invoice.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Invoice.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Invoice.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.get_status_display"><code class="docutils literal notranslate"><span class="pre">Invoice.get_status_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.get_total_amount"><code class="docutils literal notranslate"><span class="pre">Invoice.get_total_amount</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.id"><code class="docutils literal notranslate"><span class="pre">Invoice.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.objects"><code class="docutils literal notranslate"><span class="pre">Invoice.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.payment_invoices"><code class="docutils literal notranslate"><span class="pre">Invoice.payment_invoices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.set_as_paid"><code class="docutils literal notranslate"><span class="pre">Invoice.set_as_paid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.status"><code class="docutils literal notranslate"><span class="pre">Invoice.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.ticket_invoices"><code class="docutils literal notranslate"><span class="pre">Invoice.ticket_invoices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.updated_at"><code class="docutils literal notranslate"><span class="pre">Invoice.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.user"><code class="docutils literal notranslate"><span class="pre">Invoice.user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.user_id"><code class="docutils literal notranslate"><span class="pre">Invoice.user_id</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.models.html#module-booking.models.match">booking.models.match module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.match.Match"><code class="docutils literal notranslate"><span class="pre">Match</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Match.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Match.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.created_at"><code class="docutils literal notranslate"><span class="pre">Match.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Match.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.get_next_by_start_time"><code class="docutils literal notranslate"><span class="pre">Match.get_next_by_start_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Match.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Match.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.get_previous_by_start_time"><code class="docutils literal notranslate"><span class="pre">Match.get_previous_by_start_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Match.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.guest_team"><code class="docutils literal notranslate"><span class="pre">Match.guest_team</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.guest_team_id"><code class="docutils literal notranslate"><span class="pre">Match.guest_team_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.host_team"><code class="docutils literal notranslate"><span class="pre">Match.host_team</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.host_team_id"><code class="docutils literal notranslate"><span class="pre">Match.host_team_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.id"><code class="docutils literal notranslate"><span class="pre">Match.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.objects"><code class="docutils literal notranslate"><span class="pre">Match.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.stadium"><code class="docutils literal notranslate"><span class="pre">Match.stadium</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.stadium_id"><code class="docutils literal notranslate"><span class="pre">Match.stadium_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.start_time"><code class="docutils literal notranslate"><span class="pre">Match.start_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.ticket_matches"><code class="docutils literal notranslate"><span class="pre">Match.ticket_matches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.match.Match.updated_at"><code class="docutils literal notranslate"><span class="pre">Match.updated_at</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.models.html#module-booking.models.payment">booking.models.payment module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.payment.Payment"><code class="docutils literal notranslate"><span class="pre">Payment</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.payment.Payment.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Payment.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.payment.Payment.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Payment.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.payment.Payment.amount"><code class="docutils literal notranslate"><span class="pre">Payment.amount</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.payment.Payment.created_at"><code class="docutils literal notranslate"><span class="pre">Payment.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.payment.Payment.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Payment.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.payment.Payment.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Payment.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.payment.Payment.get_status_display"><code class="docutils literal notranslate"><span class="pre">Payment.get_status_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.payment.Payment.id"><code class="docutils literal notranslate"><span class="pre">Payment.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.payment.Payment.invoice"><code class="docutils literal notranslate"><span class="pre">Payment.invoice</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.payment.Payment.invoice_id"><code class="docutils literal notranslate"><span class="pre">Payment.invoice_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.payment.Payment.objects"><code class="docutils literal notranslate"><span class="pre">Payment.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.payment.Payment.status"><code class="docutils literal notranslate"><span class="pre">Payment.status</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.models.html#module-booking.models.section">booking.models.section module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.section.Section"><code class="docutils literal notranslate"><span class="pre">Section</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Section.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Section.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.capacity"><code class="docutils literal notranslate"><span class="pre">Section.capacity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.created_at"><code class="docutils literal notranslate"><span class="pre">Section.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.get_list_of_seat_numbers"><code class="docutils literal notranslate"><span class="pre">Section.get_list_of_seat_numbers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.get_location_display"><code class="docutils literal notranslate"><span class="pre">Section.get_location_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Section.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Section.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Section.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Section.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.id"><code class="docutils literal notranslate"><span class="pre">Section.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.location"><code class="docutils literal notranslate"><span class="pre">Section.location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.objects"><code class="docutils literal notranslate"><span class="pre">Section.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.price"><code class="docutils literal notranslate"><span class="pre">Section.price</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.stadium"><code class="docutils literal notranslate"><span class="pre">Section.stadium</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.stadium_id"><code class="docutils literal notranslate"><span class="pre">Section.stadium_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.ticket_sections"><code class="docutils literal notranslate"><span class="pre">Section.ticket_sections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.section.Section.updated_at"><code class="docutils literal notranslate"><span class="pre">Section.updated_at</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.models.html#module-booking.models.stadium">booking.models.stadium module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium"><code class="docutils literal notranslate"><span class="pre">Stadium</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Stadium.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Stadium.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.address"><code class="docutils literal notranslate"><span class="pre">Stadium.address</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.city"><code class="docutils literal notranslate"><span class="pre">Stadium.city</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.created_at"><code class="docutils literal notranslate"><span class="pre">Stadium.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Stadium.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Stadium.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Stadium.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Stadium.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.get_section_ids"><code class="docutils literal notranslate"><span class="pre">Stadium.get_section_ids</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.id"><code class="docutils literal notranslate"><span class="pre">Stadium.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.map_url"><code class="docutils literal notranslate"><span class="pre">Stadium.map_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.match_stadiums"><code class="docutils literal notranslate"><span class="pre">Stadium.match_stadiums</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.name"><code class="docutils literal notranslate"><span class="pre">Stadium.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.objects"><code class="docutils literal notranslate"><span class="pre">Stadium.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.province"><code class="docutils literal notranslate"><span class="pre">Stadium.province</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.section_stadiums"><code class="docutils literal notranslate"><span class="pre">Stadium.section_stadiums</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.stadium.Stadium.updated_at"><code class="docutils literal notranslate"><span class="pre">Stadium.updated_at</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.models.html#module-booking.models.team">booking.models.team module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.team.Team"><code class="docutils literal notranslate"><span class="pre">Team</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.team.Team.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Team.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.team.Team.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Team.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.team.Team.created_at"><code class="docutils literal notranslate"><span class="pre">Team.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.team.Team.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Team.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.team.Team.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Team.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.team.Team.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Team.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.team.Team.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Team.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.team.Team.id"><code class="docutils literal notranslate"><span class="pre">Team.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.team.Team.match_guest_teams"><code class="docutils literal notranslate"><span class="pre">Team.match_guest_teams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.team.Team.match_host_teams"><code class="docutils literal notranslate"><span class="pre">Team.match_host_teams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.team.Team.name"><code class="docutils literal notranslate"><span class="pre">Team.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.team.Team.objects"><code class="docutils literal notranslate"><span class="pre">Team.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.team.Team.updated_at"><code class="docutils literal notranslate"><span class="pre">Team.updated_at</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.models.html#module-booking.models.ticket">booking.models.ticket module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket"><code class="docutils literal notranslate"><span class="pre">Ticket</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Ticket.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Ticket.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.created_at"><code class="docutils literal notranslate"><span class="pre">Ticket.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Ticket.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Ticket.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Ticket.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Ticket.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.get_status_display"><code class="docutils literal notranslate"><span class="pre">Ticket.get_status_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.id"><code class="docutils literal notranslate"><span class="pre">Ticket.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.invoice"><code class="docutils literal notranslate"><span class="pre">Ticket.invoice</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.invoice_id"><code class="docutils literal notranslate"><span class="pre">Ticket.invoice_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.match"><code class="docutils literal notranslate"><span class="pre">Ticket.match</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.match_id"><code class="docutils literal notranslate"><span class="pre">Ticket.match_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.objects"><code class="docutils literal notranslate"><span class="pre">Ticket.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.seat_number"><code class="docutils literal notranslate"><span class="pre">Ticket.seat_number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.section"><code class="docutils literal notranslate"><span class="pre">Ticket.section</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.section_id"><code class="docutils literal notranslate"><span class="pre">Ticket.section_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.set_as_sold"><code class="docutils literal notranslate"><span class="pre">Ticket.set_as_sold()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.status"><code class="docutils literal notranslate"><span class="pre">Ticket.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.ticket.Ticket.updated_at"><code class="docutils literal notranslate"><span class="pre">Ticket.updated_at</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.models.html#module-booking.models">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.Invoice"><code class="docutils literal notranslate"><span class="pre">Invoice</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Invoice.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Invoice.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.created_at"><code class="docutils literal notranslate"><span class="pre">Invoice.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Invoice.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Invoice.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Invoice.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Invoice.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.get_status_display"><code class="docutils literal notranslate"><span class="pre">Invoice.get_status_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.get_total_amount"><code class="docutils literal notranslate"><span class="pre">Invoice.get_total_amount</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.id"><code class="docutils literal notranslate"><span class="pre">Invoice.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.objects"><code class="docutils literal notranslate"><span class="pre">Invoice.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.payment_invoices"><code class="docutils literal notranslate"><span class="pre">Invoice.payment_invoices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.set_as_paid"><code class="docutils literal notranslate"><span class="pre">Invoice.set_as_paid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.status"><code class="docutils literal notranslate"><span class="pre">Invoice.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.ticket_invoices"><code class="docutils literal notranslate"><span class="pre">Invoice.ticket_invoices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.updated_at"><code class="docutils literal notranslate"><span class="pre">Invoice.updated_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.user"><code class="docutils literal notranslate"><span class="pre">Invoice.user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Invoice.user_id"><code class="docutils literal notranslate"><span class="pre">Invoice.user_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.Match"><code class="docutils literal notranslate"><span class="pre">Match</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Match.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Match.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.created_at"><code class="docutils literal notranslate"><span class="pre">Match.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Match.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.get_next_by_start_time"><code class="docutils literal notranslate"><span class="pre">Match.get_next_by_start_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Match.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Match.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.get_previous_by_start_time"><code class="docutils literal notranslate"><span class="pre">Match.get_previous_by_start_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Match.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.guest_team"><code class="docutils literal notranslate"><span class="pre">Match.guest_team</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.guest_team_id"><code class="docutils literal notranslate"><span class="pre">Match.guest_team_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.host_team"><code class="docutils literal notranslate"><span class="pre">Match.host_team</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.host_team_id"><code class="docutils literal notranslate"><span class="pre">Match.host_team_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.id"><code class="docutils literal notranslate"><span class="pre">Match.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.objects"><code class="docutils literal notranslate"><span class="pre">Match.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.stadium"><code class="docutils literal notranslate"><span class="pre">Match.stadium</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.stadium_id"><code class="docutils literal notranslate"><span class="pre">Match.stadium_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.start_time"><code class="docutils literal notranslate"><span class="pre">Match.start_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.ticket_matches"><code class="docutils literal notranslate"><span class="pre">Match.ticket_matches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Match.updated_at"><code class="docutils literal notranslate"><span class="pre">Match.updated_at</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.Payment"><code class="docutils literal notranslate"><span class="pre">Payment</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Payment.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Payment.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Payment.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Payment.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Payment.amount"><code class="docutils literal notranslate"><span class="pre">Payment.amount</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Payment.created_at"><code class="docutils literal notranslate"><span class="pre">Payment.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Payment.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Payment.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Payment.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Payment.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Payment.get_status_display"><code class="docutils literal notranslate"><span class="pre">Payment.get_status_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Payment.id"><code class="docutils literal notranslate"><span class="pre">Payment.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Payment.invoice"><code class="docutils literal notranslate"><span class="pre">Payment.invoice</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Payment.invoice_id"><code class="docutils literal notranslate"><span class="pre">Payment.invoice_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Payment.objects"><code class="docutils literal notranslate"><span class="pre">Payment.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Payment.status"><code class="docutils literal notranslate"><span class="pre">Payment.status</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.Section"><code class="docutils literal notranslate"><span class="pre">Section</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Section.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Section.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.capacity"><code class="docutils literal notranslate"><span class="pre">Section.capacity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.created_at"><code class="docutils literal notranslate"><span class="pre">Section.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.get_list_of_seat_numbers"><code class="docutils literal notranslate"><span class="pre">Section.get_list_of_seat_numbers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.get_location_display"><code class="docutils literal notranslate"><span class="pre">Section.get_location_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Section.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Section.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Section.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Section.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.id"><code class="docutils literal notranslate"><span class="pre">Section.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.location"><code class="docutils literal notranslate"><span class="pre">Section.location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.objects"><code class="docutils literal notranslate"><span class="pre">Section.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.price"><code class="docutils literal notranslate"><span class="pre">Section.price</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.stadium"><code class="docutils literal notranslate"><span class="pre">Section.stadium</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.stadium_id"><code class="docutils literal notranslate"><span class="pre">Section.stadium_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.ticket_sections"><code class="docutils literal notranslate"><span class="pre">Section.ticket_sections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Section.updated_at"><code class="docutils literal notranslate"><span class="pre">Section.updated_at</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.Stadium"><code class="docutils literal notranslate"><span class="pre">Stadium</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Stadium.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Stadium.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.address"><code class="docutils literal notranslate"><span class="pre">Stadium.address</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.city"><code class="docutils literal notranslate"><span class="pre">Stadium.city</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.created_at"><code class="docutils literal notranslate"><span class="pre">Stadium.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Stadium.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Stadium.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Stadium.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Stadium.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.get_section_ids"><code class="docutils literal notranslate"><span class="pre">Stadium.get_section_ids</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.id"><code class="docutils literal notranslate"><span class="pre">Stadium.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.map_url"><code class="docutils literal notranslate"><span class="pre">Stadium.map_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.match_stadiums"><code class="docutils literal notranslate"><span class="pre">Stadium.match_stadiums</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.name"><code class="docutils literal notranslate"><span class="pre">Stadium.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.objects"><code class="docutils literal notranslate"><span class="pre">Stadium.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.province"><code class="docutils literal notranslate"><span class="pre">Stadium.province</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.section_stadiums"><code class="docutils literal notranslate"><span class="pre">Stadium.section_stadiums</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Stadium.updated_at"><code class="docutils literal notranslate"><span class="pre">Stadium.updated_at</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.Team"><code class="docutils literal notranslate"><span class="pre">Team</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Team.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Team.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Team.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Team.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Team.created_at"><code class="docutils literal notranslate"><span class="pre">Team.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Team.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Team.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Team.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Team.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Team.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Team.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Team.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Team.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Team.id"><code class="docutils literal notranslate"><span class="pre">Team.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Team.match_guest_teams"><code class="docutils literal notranslate"><span class="pre">Team.match_guest_teams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Team.match_host_teams"><code class="docutils literal notranslate"><span class="pre">Team.match_host_teams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Team.name"><code class="docutils literal notranslate"><span class="pre">Team.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Team.objects"><code class="docutils literal notranslate"><span class="pre">Team.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Team.updated_at"><code class="docutils literal notranslate"><span class="pre">Team.updated_at</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.models.html#booking.models.Ticket"><code class="docutils literal notranslate"><span class="pre">Ticket</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Ticket.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Ticket.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.created_at"><code class="docutils literal notranslate"><span class="pre">Ticket.created_at</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.get_next_by_created_at"><code class="docutils literal notranslate"><span class="pre">Ticket.get_next_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.get_next_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Ticket.get_next_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.get_previous_by_created_at"><code class="docutils literal notranslate"><span class="pre">Ticket.get_previous_by_created_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.get_previous_by_updated_at"><code class="docutils literal notranslate"><span class="pre">Ticket.get_previous_by_updated_at()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.get_status_display"><code class="docutils literal notranslate"><span class="pre">Ticket.get_status_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.id"><code class="docutils literal notranslate"><span class="pre">Ticket.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.invoice"><code class="docutils literal notranslate"><span class="pre">Ticket.invoice</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.invoice_id"><code class="docutils literal notranslate"><span class="pre">Ticket.invoice_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.match"><code class="docutils literal notranslate"><span class="pre">Ticket.match</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.match_id"><code class="docutils literal notranslate"><span class="pre">Ticket.match_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.objects"><code class="docutils literal notranslate"><span class="pre">Ticket.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.seat_number"><code class="docutils literal notranslate"><span class="pre">Ticket.seat_number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.section"><code class="docutils literal notranslate"><span class="pre">Ticket.section</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.section_id"><code class="docutils literal notranslate"><span class="pre">Ticket.section_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.set_as_sold"><code class="docutils literal notranslate"><span class="pre">Ticket.set_as_sold()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.status"><code class="docutils literal notranslate"><span class="pre">Ticket.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.models.html#booking.models.Ticket.updated_at"><code class="docutils literal notranslate"><span class="pre">Ticket.updated_at</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="booking.serializers.html">booking.serializers package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="booking.serializers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="booking.serializers.html#module-booking.serializers.invoice">booking.serializers.invoice module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.invoice.InvoiceSerializer"><code class="docutils literal notranslate"><span class="pre">InvoiceSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.invoice.InvoiceSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">InvoiceSerializer.to_representation()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.serializers.html#module-booking.serializers.match">booking.serializers.match module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.match.MatchSerializer"><code class="docutils literal notranslate"><span class="pre">MatchSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.serializers.html#module-booking.serializers.payment">booking.serializers.payment module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.payment.PaymentSerializer"><code class="docutils literal notranslate"><span class="pre">PaymentSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.payment.PaymentSerializer.create"><code class="docutils literal notranslate"><span class="pre">PaymentSerializer.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.payment.PaymentSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">PaymentSerializer.to_representation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.payment.PaymentSerializer.validate"><code class="docutils literal notranslate"><span class="pre">PaymentSerializer.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.serializers.html#module-booking.serializers.section">booking.serializers.section module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.section.SectionSerializer"><code class="docutils literal notranslate"><span class="pre">SectionSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.section.SectionSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">SectionSerializer.to_representation()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.serializers.html#module-booking.serializers.stadium">booking.serializers.stadium module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.stadium.StadiumSerializer"><code class="docutils literal notranslate"><span class="pre">StadiumSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.serializers.html#module-booking.serializers.team">booking.serializers.team module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.team.TeamSerializer"><code class="docutils literal notranslate"><span class="pre">TeamSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.serializers.html#module-booking.serializers.ticket">booking.serializers.ticket module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.ticket.TicketSerializer"><code class="docutils literal notranslate"><span class="pre">TicketSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.ticket.TicketSerializer.create"><code class="docutils literal notranslate"><span class="pre">TicketSerializer.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.ticket.TicketSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">TicketSerializer.to_representation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.ticket.TicketSerializer.validate"><code class="docutils literal notranslate"><span class="pre">TicketSerializer.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.serializers.html#module-booking.serializers">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.InvoiceSerializer"><code class="docutils literal notranslate"><span class="pre">InvoiceSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.InvoiceSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">InvoiceSerializer.to_representation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.MatchSerializer"><code class="docutils literal notranslate"><span class="pre">MatchSerializer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.PaymentSerializer"><code class="docutils literal notranslate"><span class="pre">PaymentSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.PaymentSerializer.create"><code class="docutils literal notranslate"><span class="pre">PaymentSerializer.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.PaymentSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">PaymentSerializer.to_representation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.PaymentSerializer.validate"><code class="docutils literal notranslate"><span class="pre">PaymentSerializer.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.SectionSerializer"><code class="docutils literal notranslate"><span class="pre">SectionSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.SectionSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">SectionSerializer.to_representation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.StadiumSerializer"><code class="docutils literal notranslate"><span class="pre">StadiumSerializer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.TeamSerializer"><code class="docutils literal notranslate"><span class="pre">TeamSerializer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="booking.serializers.html#booking.serializers.TicketSerializer"><code class="docutils literal notranslate"><span class="pre">TicketSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.TicketSerializer.create"><code class="docutils literal notranslate"><span class="pre">TicketSerializer.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.TicketSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">TicketSerializer.to_representation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.serializers.html#booking.serializers.TicketSerializer.validate"><code class="docutils literal notranslate"><span class="pre">TicketSerializer.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="booking.views.html">booking.views package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="booking.views.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="booking.views.html#module-booking.views.invoice">booking.views.invoice module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.invoice.InvoiceViewSet"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.invoice.InvoiceViewSet.basename"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.invoice.InvoiceViewSet.description"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.invoice.InvoiceViewSet.detail"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.invoice.InvoiceViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.invoice.InvoiceViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.invoice.InvoiceViewSet.name"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.invoice.InvoiceViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.invoice.InvoiceViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.invoice.InvoiceViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.invoice.InvoiceViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.invoice.InvoiceViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.views.html#module-booking.views.match">booking.views.match module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.match.MatchViewSet"><code class="docutils literal notranslate"><span class="pre">MatchViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.match.MatchViewSet.basename"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.match.MatchViewSet.description"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.match.MatchViewSet.detail"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.match.MatchViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.match.MatchViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.match.MatchViewSet.name"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.match.MatchViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.match.MatchViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.match.MatchViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.match.MatchViewSet.seats"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.seats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.match.MatchViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.match.MatchViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.views.html#module-booking.views.payment">booking.views.payment module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.payment.PaymentViewSet"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.payment.PaymentViewSet.basename"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.payment.PaymentViewSet.description"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.payment.PaymentViewSet.detail"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.payment.PaymentViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.payment.PaymentViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.payment.PaymentViewSet.name"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.payment.PaymentViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.payment.PaymentViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.payment.PaymentViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.payment.PaymentViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.payment.PaymentViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.views.html#module-booking.views.section">booking.views.section module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.section.SectionViewSet"><code class="docutils literal notranslate"><span class="pre">SectionViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.section.SectionViewSet.basename"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.section.SectionViewSet.description"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.section.SectionViewSet.detail"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.section.SectionViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.section.SectionViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.section.SectionViewSet.name"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.section.SectionViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.section.SectionViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.section.SectionViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.section.SectionViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.section.SectionViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.views.html#module-booking.views.stadium">booking.views.stadium module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.stadium.StadiumViewSet"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.stadium.StadiumViewSet.basename"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.stadium.StadiumViewSet.description"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.stadium.StadiumViewSet.detail"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.stadium.StadiumViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.stadium.StadiumViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.stadium.StadiumViewSet.name"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.stadium.StadiumViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.stadium.StadiumViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.stadium.StadiumViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.stadium.StadiumViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.stadium.StadiumViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.views.html#module-booking.views.team">booking.views.team module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.team.TeamViewSet"><code class="docutils literal notranslate"><span class="pre">TeamViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.team.TeamViewSet.basename"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.team.TeamViewSet.description"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.team.TeamViewSet.detail"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.team.TeamViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.team.TeamViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.team.TeamViewSet.name"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.team.TeamViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.team.TeamViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.team.TeamViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.team.TeamViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.team.TeamViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.views.html#module-booking.views.ticket">booking.views.ticket module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.ticket.TicketViewSet"><code class="docutils literal notranslate"><span class="pre">TicketViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.ticket.TicketViewSet.basename"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.ticket.TicketViewSet.description"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.ticket.TicketViewSet.detail"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.ticket.TicketViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.ticket.TicketViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.ticket.TicketViewSet.name"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.ticket.TicketViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.ticket.TicketViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.ticket.TicketViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.ticket.TicketViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.ticket.TicketViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="booking.views.html#module-booking.views">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.InvoiceViewSet"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.InvoiceViewSet.basename"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.InvoiceViewSet.description"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.InvoiceViewSet.detail"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.InvoiceViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.InvoiceViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.InvoiceViewSet.name"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.InvoiceViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.InvoiceViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.InvoiceViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.InvoiceViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.InvoiceViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">InvoiceViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.MatchViewSet"><code class="docutils literal notranslate"><span class="pre">MatchViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.MatchViewSet.basename"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.MatchViewSet.description"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.MatchViewSet.detail"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.MatchViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.MatchViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.MatchViewSet.name"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.MatchViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.MatchViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.MatchViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.MatchViewSet.seats"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.seats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.MatchViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.MatchViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">MatchViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.PaymentViewSet"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.PaymentViewSet.basename"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.PaymentViewSet.description"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.PaymentViewSet.detail"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.PaymentViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.PaymentViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.PaymentViewSet.name"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.PaymentViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.PaymentViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.PaymentViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.PaymentViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.PaymentViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">PaymentViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.SectionViewSet"><code class="docutils literal notranslate"><span class="pre">SectionViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.SectionViewSet.basename"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.SectionViewSet.description"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.SectionViewSet.detail"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.SectionViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.SectionViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.SectionViewSet.name"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.SectionViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.SectionViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.SectionViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.SectionViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.SectionViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">SectionViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.StadiumViewSet"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.StadiumViewSet.basename"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.StadiumViewSet.description"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.StadiumViewSet.detail"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.StadiumViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.StadiumViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.StadiumViewSet.name"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.StadiumViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.StadiumViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.StadiumViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.StadiumViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.StadiumViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">StadiumViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.TeamViewSet"><code class="docutils literal notranslate"><span class="pre">TeamViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TeamViewSet.basename"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TeamViewSet.description"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TeamViewSet.detail"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TeamViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TeamViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TeamViewSet.name"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TeamViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TeamViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TeamViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TeamViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TeamViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">TeamViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="booking.views.html#booking.views.TicketViewSet"><code class="docutils literal notranslate"><span class="pre">TicketViewSet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TicketViewSet.basename"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.basename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TicketViewSet.description"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TicketViewSet.detail"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.detail</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TicketViewSet.filter_backends"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TicketViewSet.filterset_fields"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.filterset_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TicketViewSet.name"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TicketViewSet.permission_classes"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TicketViewSet.queryset"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TicketViewSet.search_fields"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TicketViewSet.serializer_class"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.serializer_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="booking.views.html#booking.views.TicketViewSet.suffix"><code class="docutils literal notranslate"><span class="pre">TicketViewSet.suffix</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-booking.admin">
+<span id="booking-admin-module"></span><h2>booking.admin module<a class="headerlink" href="#module-booking.admin" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="booking.admin.InvoiceAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">booking.admin.</span></span><span class="sig-name descname"><span class="pre">InvoiceAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#InvoiceAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.InvoiceAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.InvoiceAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['delete_selected']</span></em><a class="headerlink" href="#booking.admin.InvoiceAdmin.actions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.InvoiceAdmin.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#InvoiceAdmin.get_queryset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.InvoiceAdmin.get_queryset" title="Permalink to this definition"></a></dt>
+<dd><p>Return a QuerySet of all model instances that can be edited by the
+admin site. This is used by changelist_view.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.InvoiceAdmin.has_add_permission">
+<span class="sig-name descname"><span class="pre">has_add_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#InvoiceAdmin.has_add_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.InvoiceAdmin.has_add_permission" title="Permalink to this definition"></a></dt>
+<dd><p>Return True if the given request has permission to add an object.
+Can be overridden by the user in subclasses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.InvoiceAdmin.has_change_permission">
+<span class="sig-name descname"><span class="pre">has_change_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#InvoiceAdmin.has_change_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.InvoiceAdmin.has_change_permission" title="Permalink to this definition"></a></dt>
+<dd><p>Return True if the given request has permission to change the given
+Django model instance, the default implementation doesn’t examine the
+<cite>obj</cite> parameter.</p>
+<p>Can be overridden by the user in subclasses. In such case it should
+return True if the given request has permission to change the <cite>obj</cite>
+model instance. If <cite>obj</cite> is None, this should return True if the given
+request has permission to change <em>any</em> object of the given type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.InvoiceAdmin.has_delete_permission">
+<span class="sig-name descname"><span class="pre">has_delete_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#InvoiceAdmin.has_delete_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.InvoiceAdmin.has_delete_permission" title="Permalink to this definition"></a></dt>
+<dd><p>Return True if the given request has permission to delete the given
+Django model instance, the default implementation doesn’t examine the
+<cite>obj</cite> parameter.</p>
+<p>Can be overridden by the user in subclasses. In such case it should
+return True if the given request has permission to delete the <cite>obj</cite>
+model instance. If <cite>obj</cite> is None, this should return True if the given
+request has permission to delete <em>any</em> object of the given type.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.InvoiceAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['user',</span> <span class="pre">'status',</span> <span class="pre">'created_at',</span> <span class="pre">'updated_at']</span></em><a class="headerlink" href="#booking.admin.InvoiceAdmin.list_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.InvoiceAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['status',</span> <span class="pre">'created_at',</span> <span class="pre">'updated_at']</span></em><a class="headerlink" href="#booking.admin.InvoiceAdmin.list_filter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="booking.admin.InvoiceAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#booking.admin.InvoiceAdmin.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.InvoiceAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['user']</span></em><a class="headerlink" href="#booking.admin.InvoiceAdmin.search_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="booking.admin.MatchAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">booking.admin.</span></span><span class="sig-name descname"><span class="pre">MatchAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#MatchAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.MatchAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.MatchAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['delete_selected']</span></em><a class="headerlink" href="#booking.admin.MatchAdmin.actions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.MatchAdmin.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#MatchAdmin.get_queryset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.MatchAdmin.get_queryset" title="Permalink to this definition"></a></dt>
+<dd><p>Return a QuerySet of all model instances that can be edited by the
+admin site. This is used by changelist_view.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.MatchAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['stadium',</span> <span class="pre">'host_team',</span> <span class="pre">'guest_team',</span> <span class="pre">'start_time',</span> <span class="pre">'created_at',</span> <span class="pre">'updated_at']</span></em><a class="headerlink" href="#booking.admin.MatchAdmin.list_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.MatchAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['stadium',</span> <span class="pre">'host_team',</span> <span class="pre">'guest_team',</span> <span class="pre">'start_time',</span> <span class="pre">'created_at',</span> <span class="pre">'updated_at']</span></em><a class="headerlink" href="#booking.admin.MatchAdmin.list_filter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="booking.admin.MatchAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#booking.admin.MatchAdmin.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.MatchAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['stadium',</span> <span class="pre">'host_team',</span> <span class="pre">'guest_team']</span></em><a class="headerlink" href="#booking.admin.MatchAdmin.search_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="booking.admin.PaymentAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">booking.admin.</span></span><span class="sig-name descname"><span class="pre">PaymentAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#PaymentAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.PaymentAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.PaymentAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['delete_selected']</span></em><a class="headerlink" href="#booking.admin.PaymentAdmin.actions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.PaymentAdmin.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#PaymentAdmin.get_queryset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.PaymentAdmin.get_queryset" title="Permalink to this definition"></a></dt>
+<dd><p>Return a QuerySet of all model instances that can be edited by the
+admin site. This is used by changelist_view.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.PaymentAdmin.has_add_permission">
+<span class="sig-name descname"><span class="pre">has_add_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#PaymentAdmin.has_add_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.PaymentAdmin.has_add_permission" title="Permalink to this definition"></a></dt>
+<dd><p>Return True if the given request has permission to add an object.
+Can be overridden by the user in subclasses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.PaymentAdmin.has_change_permission">
+<span class="sig-name descname"><span class="pre">has_change_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#PaymentAdmin.has_change_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.PaymentAdmin.has_change_permission" title="Permalink to this definition"></a></dt>
+<dd><p>Return True if the given request has permission to change the given
+Django model instance, the default implementation doesn’t examine the
+<cite>obj</cite> parameter.</p>
+<p>Can be overridden by the user in subclasses. In such case it should
+return True if the given request has permission to change the <cite>obj</cite>
+model instance. If <cite>obj</cite> is None, this should return True if the given
+request has permission to change <em>any</em> object of the given type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.PaymentAdmin.has_delete_permission">
+<span class="sig-name descname"><span class="pre">has_delete_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#PaymentAdmin.has_delete_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.PaymentAdmin.has_delete_permission" title="Permalink to this definition"></a></dt>
+<dd><p>Return True if the given request has permission to delete the given
+Django model instance, the default implementation doesn’t examine the
+<cite>obj</cite> parameter.</p>
+<p>Can be overridden by the user in subclasses. In such case it should
+return True if the given request has permission to delete the <cite>obj</cite>
+model instance. If <cite>obj</cite> is None, this should return True if the given
+request has permission to delete <em>any</em> object of the given type.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.PaymentAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['invoice',</span> <span class="pre">'amount',</span> <span class="pre">'status',</span> <span class="pre">'created_at']</span></em><a class="headerlink" href="#booking.admin.PaymentAdmin.list_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.PaymentAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['invoice',</span> <span class="pre">'status',</span> <span class="pre">'created_at']</span></em><a class="headerlink" href="#booking.admin.PaymentAdmin.list_filter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="booking.admin.PaymentAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#booking.admin.PaymentAdmin.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.PaymentAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['invoice',</span> <span class="pre">'amount']</span></em><a class="headerlink" href="#booking.admin.PaymentAdmin.search_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="booking.admin.SectionInlineAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">booking.admin.</span></span><span class="sig-name descname"><span class="pre">SectionInlineAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#SectionInlineAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.SectionInlineAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TabularInline</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.SectionInlineAdmin.extra">
+<span class="sig-name descname"><span class="pre">extra</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#booking.admin.SectionInlineAdmin.extra" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="booking.admin.SectionInlineAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#booking.admin.SectionInlineAdmin.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.SectionInlineAdmin.min_num">
+<span class="sig-name descname"><span class="pre">min_num</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#booking.admin.SectionInlineAdmin.min_num" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.SectionInlineAdmin.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#booking.admin.SectionInlineAdmin.model" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="booking.models.html#booking.models.section.Section" title="booking.models.section.Section"><code class="xref py py-class docutils literal notranslate"><span class="pre">Section</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="booking.admin.StadiumAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">booking.admin.</span></span><span class="sig-name descname"><span class="pre">StadiumAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#StadiumAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.StadiumAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.StadiumAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['delete_selected']</span></em><a class="headerlink" href="#booking.admin.StadiumAdmin.actions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.StadiumAdmin.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#StadiumAdmin.get_queryset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.StadiumAdmin.get_queryset" title="Permalink to this definition"></a></dt>
+<dd><p>Return a QuerySet of all model instances that can be edited by the
+admin site. This is used by changelist_view.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.StadiumAdmin.inlines">
+<span class="sig-name descname"><span class="pre">inlines</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;class</span> <span class="pre">'booking.admin.SectionInlineAdmin'&gt;,)</span></em><a class="headerlink" href="#booking.admin.StadiumAdmin.inlines" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.StadiumAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['name',</span> <span class="pre">'province',</span> <span class="pre">'city',</span> <span class="pre">'created_at',</span> <span class="pre">'updated_at']</span></em><a class="headerlink" href="#booking.admin.StadiumAdmin.list_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.StadiumAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['province',</span> <span class="pre">'city',</span> <span class="pre">'created_at',</span> <span class="pre">'updated_at']</span></em><a class="headerlink" href="#booking.admin.StadiumAdmin.list_filter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="booking.admin.StadiumAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#booking.admin.StadiumAdmin.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.StadiumAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['name',</span> <span class="pre">'province',</span> <span class="pre">'city']</span></em><a class="headerlink" href="#booking.admin.StadiumAdmin.search_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="booking.admin.TeamAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">booking.admin.</span></span><span class="sig-name descname"><span class="pre">TeamAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#TeamAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.TeamAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.TeamAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['delete_selected']</span></em><a class="headerlink" href="#booking.admin.TeamAdmin.actions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.TeamAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['name',</span> <span class="pre">'created_at',</span> <span class="pre">'updated_at']</span></em><a class="headerlink" href="#booking.admin.TeamAdmin.list_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.TeamAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['created_at',</span> <span class="pre">'updated_at']</span></em><a class="headerlink" href="#booking.admin.TeamAdmin.list_filter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="booking.admin.TeamAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#booking.admin.TeamAdmin.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.TeamAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['name']</span></em><a class="headerlink" href="#booking.admin.TeamAdmin.search_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="booking.admin.TicketAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">booking.admin.</span></span><span class="sig-name descname"><span class="pre">TicketAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#TicketAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.TicketAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.TicketAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['delete_selected']</span></em><a class="headerlink" href="#booking.admin.TicketAdmin.actions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.TicketAdmin.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#TicketAdmin.get_queryset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.TicketAdmin.get_queryset" title="Permalink to this definition"></a></dt>
+<dd><p>Return a QuerySet of all model instances that can be edited by the
+admin site. This is used by changelist_view.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.TicketAdmin.has_add_permission">
+<span class="sig-name descname"><span class="pre">has_add_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#TicketAdmin.has_add_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.TicketAdmin.has_add_permission" title="Permalink to this definition"></a></dt>
+<dd><p>Return True if the given request has permission to add an object.
+Can be overridden by the user in subclasses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.TicketAdmin.has_change_permission">
+<span class="sig-name descname"><span class="pre">has_change_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#TicketAdmin.has_change_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.TicketAdmin.has_change_permission" title="Permalink to this definition"></a></dt>
+<dd><p>Return True if the given request has permission to change the given
+Django model instance, the default implementation doesn’t examine the
+<cite>obj</cite> parameter.</p>
+<p>Can be overridden by the user in subclasses. In such case it should
+return True if the given request has permission to change the <cite>obj</cite>
+model instance. If <cite>obj</cite> is None, this should return True if the given
+request has permission to change <em>any</em> object of the given type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="booking.admin.TicketAdmin.has_delete_permission">
+<span class="sig-name descname"><span class="pre">has_delete_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/admin.html#TicketAdmin.has_delete_permission"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.admin.TicketAdmin.has_delete_permission" title="Permalink to this definition"></a></dt>
+<dd><p>Return True if the given request has permission to delete the given
+Django model instance, the default implementation doesn’t examine the
+<cite>obj</cite> parameter.</p>
+<p>Can be overridden by the user in subclasses. In such case it should
+return True if the given request has permission to delete the <cite>obj</cite>
+model instance. If <cite>obj</cite> is None, this should return True if the given
+request has permission to delete <em>any</em> object of the given type.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.TicketAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['match',</span> <span class="pre">'section',</span> <span class="pre">'seat_number',</span> <span class="pre">'status',</span> <span class="pre">'created_at',</span> <span class="pre">'updated_at']</span></em><a class="headerlink" href="#booking.admin.TicketAdmin.list_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.TicketAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['match',</span> <span class="pre">'section',</span> <span class="pre">'status',</span> <span class="pre">'created_at',</span> <span class="pre">'updated_at']</span></em><a class="headerlink" href="#booking.admin.TicketAdmin.list_filter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="booking.admin.TicketAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#booking.admin.TicketAdmin.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.admin.TicketAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['match',</span> <span class="pre">'section',</span> <span class="pre">'seat_number']</span></em><a class="headerlink" href="#booking.admin.TicketAdmin.search_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-booking.apps">
+<span id="booking-apps-module"></span><h2>booking.apps module<a class="headerlink" href="#module-booking.apps" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="booking.apps.BookingConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">booking.apps.</span></span><span class="sig-name descname"><span class="pre">BookingConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/booking/apps.html#BookingConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#booking.apps.BookingConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/applications/#django.apps.AppConfig" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.apps.BookingConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#booking.apps.BookingConfig.default_auto_field" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.apps.BookingConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'booking'</span></em><a class="headerlink" href="#booking.apps.BookingConfig.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="booking.apps.BookingConfig.verbose_name">
+<span class="sig-name descname"><span class="pre">verbose_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'رزرو'</span></em><a class="headerlink" href="#booking.apps.BookingConfig.verbose_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-booking.urls">
+<span id="booking-urls-module"></span><h2>booking.urls module<a class="headerlink" href="#module-booking.urls" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-booking">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-booking" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api.tests.html" class="btn btn-neutral float-left" title="api.tests package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="booking.models.html" class="btn btn-neutral float-right" title="booking.models package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Mahdi Namaki.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
