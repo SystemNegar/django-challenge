@@ -5,6 +5,8 @@ from django.db import models
 from extensions.abstract_models import AbstractCreatAtUpdateAt
 from extensions.choices import InvoiceStatusChoices
 
+from decimal import Decimal
+
 
 class Invoice(AbstractCreatAtUpdateAt, models.Model):
     user = models.ForeignKey(
@@ -28,3 +30,7 @@ class Invoice(AbstractCreatAtUpdateAt, models.Model):
 
     def __str__(self) -> str:
         return f"{self.user} - {self.id}"
+
+    @property
+    def get_total_amount(self) -> Decimal:
+        return sum([item['section__price'] for item in self.ticket_invoices.values('section__price')])
