@@ -35,3 +35,7 @@ class Section(AbstractCreatAtUpdateAt, models.Model):
 
     def __str__(self) -> str:
         return f"{self.stadium} - {self.location}"
+
+    @property
+    def get_list_of_seat_numbers(self) -> list:
+        return [*range(1, self.capacity + 1)]
