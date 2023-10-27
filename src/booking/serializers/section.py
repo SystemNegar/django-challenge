@@ -16,4 +16,5 @@ class SectionSerializer(ModelSerializer):
     def to_representation(self, obj):
         data = super(SectionSerializer, self).to_representation(obj)
         data['location'] = obj.get_location_display()
+        data['seat_numbers'] = obj.get_list_of_seat_numbers
         return data
