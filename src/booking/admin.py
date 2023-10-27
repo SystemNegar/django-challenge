@@ -191,7 +191,6 @@ class PaymentAdmin(admin.ModelAdmin):
     ]
 
     list_filter = [
-        'invoice',
         'status',
         'created_at',
     ]
