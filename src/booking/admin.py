@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from booking.models import Stadium, Section, Team, Match
+from booking.models import Stadium, Section, Team, Match, Invoice
 
 
 class SectionInlineAdmin(admin.TabularInline):
@@ -97,6 +97,39 @@ class MatchAdmin(admin.ModelAdmin):
         return self.model.objects.select_related('stadium', 'host_team', 'guest_team')
 
 
+class InvoiceAdmin(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+    list_display = [
+        'user',
+        'status',
+        'created_at',
+        'updated_at',
+    ]
+
+    list_filter = [
+        'status',
+        'created_at',
+        'updated_at',
+    ]
+
+    search_fields = [
+        'user',
+    ]
+
+    actions = [
+        'delete_selected',
+    ]
+
+    def get_queryset(self, request):
+        return self.model.objects.select_related('user')
+
+
 admin.site.register(Stadium, StadiumAdmin)
 admin.site.register(Team, TeamAdmin)
 admin.site.register(Match, MatchAdmin)
+admin.site.register(Invoice, InvoiceAdmin)
