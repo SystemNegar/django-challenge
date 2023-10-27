@@ -27,8 +27,7 @@ class InvoiceStatusChoices(IntegerChoices):
 class TicketStatusChoices(IntegerChoices):
     """Enum class for the ticket status fields"""
     SOLD = 0, _('Sold')
-    UNSOLD = 1, _('Unsold')
-    RESERVED = 2, _('Reserved')
+    RESERVED = 1, _('Reserved')
 
 
 class PaymentStatusChoices(IntegerChoices):

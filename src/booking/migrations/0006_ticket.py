@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Created At')),
                 ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Updated At')),
                 ('seat_number', models.PositiveSmallIntegerField(verbose_name='Seat Number')),
-                ('status', models.PositiveSmallIntegerField(choices=[(0, 'Sold'), (1, 'Unsold'), (2, 'Reserved')], default=1, verbose_name='Status')),
+                ('status', models.PositiveSmallIntegerField(choices=[(0, 'Sold'), (1, 'Reserved')], default=1, verbose_name='Status')),
                 ('invoice', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='ticket_invoices', to='booking.invoice', verbose_name='Invoice')),
                 ('match', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='ticket_matches', to='booking.match', verbose_name='Match')),
                 ('section', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='ticket_sections', to='booking.section', verbose_name='Section')),
