@@ -4,6 +4,7 @@ from .team import Team
 from .match import Match
 from .invoice import Invoice
 from .ticket import Ticket
+from .payment import Payment
 
 __all__ = [
     'Stadium',
@@ -12,4 +13,5 @@ __all__ = [
     'Match',
     'Invoice',
     'Ticket',
+    'Payment',
 ]
