@@ -30,7 +30,7 @@ class Ticket(AbstractCreatAtUpdateAt, models.Model):
     status = models.PositiveSmallIntegerField(
         verbose_name=_('Status'),
         choices=TicketStatusChoices.choices,
-        default=TicketStatusChoices.UNSOLD
+        default=TicketStatusChoices.RESERVED
     )
 
     class Meta:
