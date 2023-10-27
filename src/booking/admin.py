@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from booking.models import Stadium, Section
+from booking.models import Stadium, Section, Team
 
 
 class SectionInlineAdmin(admin.TabularInline):
@@ -43,4 +43,26 @@ class StadiumAdmin(admin.ModelAdmin):
         return self.model.objects.prefetch_related('section_stadiums')
 
 
+class TeamAdmin(admin.ModelAdmin):
+    list_display = [
+        'name',
+        'created_at',
+        'updated_at',
+    ]
+
+    list_filter = [
+        'created_at',
+        'updated_at',
+    ]
+
+    search_fields = [
+        'name',
+    ]
+
+    actions = [
+        'delete_selected',
+    ]
+
+
 admin.site.register(Stadium, StadiumAdmin)
+admin.site.register(Team, TeamAdmin)
