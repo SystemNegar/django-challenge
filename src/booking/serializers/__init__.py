@@ -4,6 +4,7 @@ from .team import TeamSerializer
 from .match import MatchSerializer
 from .invoice import InvoiceSerializer
 from .ticket import TicketSerializer
+from .payment import PaymentSerializer
 
 __all__ = [
     'StadiumSerializer',
@@ -12,4 +13,5 @@ __all__ = [
     'MatchSerializer',
     'InvoiceSerializer',
     'TicketSerializer',
+    'PaymentSerializer',
 ]
