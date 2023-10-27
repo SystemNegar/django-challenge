@@ -29,3 +29,9 @@ class TicketStatusChoices(IntegerChoices):
     SOLD = 0, _('Sold')
     UNSOLD = 1, _('Unsold')
     RESERVED = 2, _('Reserved')
+
+
+class PaymentStatusChoices(IntegerChoices):
+    """Enum class for the payment status fields"""
+    SUCCESSFUL = 0, _('Successful')
+    UNSUCCESSFUL = 1, _('Unsuccessful')
