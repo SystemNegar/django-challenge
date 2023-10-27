@@ -97,9 +97,7 @@ class TicketSerializer(ModelSerializer):
 
                 invoice, created = Invoice.objects.get_or_create(
                     user=self.context['request'].user,
-                    defaults={
-                        'status': InvoiceStatusChoices.UNPAID
-                    }
+                    status=InvoiceStatusChoices.UNPAID
                 )
 
                 reserved_ticket = self.Meta.model.objects.create(
