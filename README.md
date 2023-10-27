@@ -35,3 +35,4 @@
 - A scheduled task system is not developed due to the experimental of the project
 - There are 44 tests in the project. Those are not enough, but they show my ability to write tests on two levels.
 - A caching system is needed in production mode, it has not been implemented due to the experimental of the project
+- The project has been implemented with the ability to translate into other languages
