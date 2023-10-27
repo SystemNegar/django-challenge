@@ -46,6 +46,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="api.html">api package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="booking.html">booking package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html">commands package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html">core package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extensions.html">extensions package</a></li>
@@ -274,6 +275,7 @@ Verification of users by sending an activation link to their email is not implem
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>logentry</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogEntry</span></code></a>) – All موارد اتفاقات of this کاربر (related name of <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry.user" title="(in Django v4.2)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p></li>
 <li><p><strong>profile_user</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> from <a class="reference internal" href="#user_management.models.profile.Profile" title="user_management.models.profile.Profile"><code class="xref py py-class docutils literal notranslate"><span class="pre">Profile</span></code></a>) – The profile user of this کاربر (related name of <a class="reference internal" href="#user_management.models.profile.Profile.user" title="user_management.models.profile.Profile.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p></li>
+<li><p><strong>invoice_users</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice" title="booking.models.invoice.Invoice"><code class="xref py py-class docutils literal notranslate"><span class="pre">Invoice</span></code></a>) – All invoice users of this کاربر (related name of <a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.user" title="booking.models.invoice.Invoice.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -347,6 +349,13 @@ Verification of users by sending an activation link to their email is not implem
 <span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#user_management.models.user.User.id" title="Permalink to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
 <p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.user.User.invoice_users">
+<span class="sig-name descname"><span class="pre">invoice_users</span></span><a class="headerlink" href="#user_management.models.user.User.invoice_users" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice" title="booking.models.invoice.Invoice"><code class="xref py py-class docutils literal notranslate"><span class="pre">Invoice</span></code></a></p>
+<p>All invoice users of this کاربر (related name of <a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.user" title="booking.models.invoice.Invoice.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -606,6 +615,7 @@ Verification of users by sending an activation link to their email is not implem
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>logentry</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogEntry</span></code></a>) – All موارد اتفاقات of this کاربر (related name of <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry.user" title="(in Django v4.2)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p></li>
 <li><p><strong>profile_user</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> from <a class="reference internal" href="#user_management.models.profile.Profile" title="user_management.models.profile.Profile"><code class="xref py py-class docutils literal notranslate"><span class="pre">Profile</span></code></a>) – The profile user of this کاربر (related name of <a class="reference internal" href="#user_management.models.profile.Profile.user" title="user_management.models.profile.Profile.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p></li>
+<li><p><strong>invoice_users</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice" title="booking.models.invoice.Invoice"><code class="xref py py-class docutils literal notranslate"><span class="pre">Invoice</span></code></a>) – All invoice users of this کاربر (related name of <a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.user" title="booking.models.invoice.Invoice.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -679,6 +689,13 @@ Verification of users by sending an activation link to their email is not implem
 <span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#user_management.models.User.id" title="Permalink to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
 <p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="user_management.models.User.invoice_users">
+<span class="sig-name descname"><span class="pre">invoice_users</span></span><a class="headerlink" href="#user_management.models.User.invoice_users" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice" title="booking.models.invoice.Invoice"><code class="xref py py-class docutils literal notranslate"><span class="pre">Invoice</span></code></a></p>
+<p>All invoice users of this کاربر (related name of <a class="reference internal" href="booking.models.html#booking.models.invoice.Invoice.user" title="booking.models.invoice.Invoice.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p>
 </dd></dl>
 
 <dl class="py attribute">

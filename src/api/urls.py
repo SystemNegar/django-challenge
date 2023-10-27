@@ -28,6 +28,7 @@ urlpatterns = [
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('token/verify/', TokenVerifyView.as_view(), name='token_verify'),
     path('', include(('user_management.urls', 'user_management'), namespace='user_management')),
+    path('', include(('booking.urls', 'booking'), namespace='booking')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema_swagger_ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema_redoc'),
 ]

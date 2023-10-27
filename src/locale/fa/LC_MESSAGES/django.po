@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 14:04+0330\n"
-"PO-Revision-Date: 2023-10-26 14:04+0330\n"
+"POT-Creation-Date: 2023-10-27 15:17+0330\n"
+"PO-Revision-Date: 2023-10-27 15:21+0330\n"
 "Last-Translator: Mahdi Namaki <mavenium@gmail.com>\n"
 "Language-Team: \n"
 "Language: fa\n"
@@ -18,15 +18,183 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 2.3\n"
 
+#: booking/apps.py:8
+msgid "Booking"
+msgstr "رزرو"
+
+#: booking/models/invoice.py:14 user_management/models/profile.py:12
+#: user_management/models/user.py:39
+msgid "User"
+msgstr "کاربر"
+
+#: booking/models/invoice.py:19 booking/models/payment.py:21
+#: booking/models/ticket.py:31
+msgid "Status"
+msgstr "وضعیت"
+
+#: booking/models/invoice.py:27 booking/models/payment.py:11
+#: booking/models/ticket.py:11
+msgid "Invoice"
+msgstr "فاکتور"
+
+#: booking/models/invoice.py:28
+msgid "Invoices"
+msgstr "فاکتورها"
+
+#: booking/models/match.py:10 booking/models/section.py:11
+#: booking/models/stadium.py:35
+msgid "Stadium"
+msgstr "استادیوم"
+
+#: booking/models/match.py:16
+msgid "Host Team"
+msgstr "تیم میزبان"
+
+#: booking/models/match.py:22
+msgid "Guest Team"
+msgstr "تیم مهمان"
+
+#: booking/models/match.py:27
+msgid "Start Time"
+msgstr "تاریخ آغاز"
+
+#: booking/models/match.py:33 booking/models/ticket.py:17
+msgid "Match"
+msgstr "مسابقه"
+
+#: booking/models/match.py:34
+msgid "Matches"
+msgstr "مسابقه ها"
+
+#: booking/models/payment.py:16
+msgid "Amount"
+msgstr "مبلغ"
+
+#: booking/models/payment.py:25 extensions/abstract_models.py:7
+msgid "Created At"
+msgstr "ایجاد شده در"
+
+#: booking/models/payment.py:33
+msgid "Payment"
+msgstr "پرداخت"
+
+#: booking/models/payment.py:34
+msgid "Payments"
+msgstr "پرداخت ها"
+
+#: booking/models/section.py:16
+msgid "Location"
+msgstr "موقعیت"
+
+#: booking/models/section.py:20
+msgid "Capacity"
+msgstr "ظرفیت"
+
+#: booking/models/section.py:23
+msgid "Price"
+msgstr "قیمت"
+
+#: booking/models/section.py:31 booking/models/ticket.py:23
+msgid "Section"
+msgstr "جایگاه"
+
+#: booking/models/section.py:32
+msgid "Sections"
+msgstr "جایگاه ها"
+
+#: booking/models/stadium.py:9 booking/models/team.py:9
+msgid "Name"
+msgstr "نام"
+
+#: booking/models/stadium.py:14
+msgid "Province"
+msgstr "استان"
+
+#: booking/models/stadium.py:19
+msgid "City"
+msgstr "شهر"
+
+#: booking/models/stadium.py:24
+msgid "Address"
+msgstr "آدرس"
+
+#: booking/models/stadium.py:28
+msgid "Map URL"
+msgstr "آدرس نقشه"
+
+#: booking/models/stadium.py:36
+msgid "Stadiums"
+msgstr "استادیوم ها"
+
+#: booking/models/team.py:18
+msgid "Team"
+msgstr "تیم"
+
+#: booking/models/team.py:19
+msgid "Teams"
+msgstr "تیم ها"
+
+#: booking/models/ticket.py:28
+msgid "Seat Number"
+msgstr "شماره صندلی"
+
+#: booking/models/ticket.py:39
+msgid "Ticket"
+msgstr "بلیط"
+
+#: booking/models/ticket.py:40
+msgid "Tickets"
+msgstr "بلیط ها"
+
+#: booking/serializers/payment.py:38
+msgid "This invoice does not belong to you!"
+msgstr "این فاکتور متعلق به شما نیست!"
+
+#: booking/serializers/payment.py:43
+msgid "This invoice has already been paid!"
+msgstr "این فاکتور قبلا پرداخت شده است!"
+
+#: booking/serializers/payment.py:48
+msgid "The entered amount is not equal to the invoice amount!"
+msgstr "مبلغ وارد شده با مبلغ فاکتور برابر نیست!"
+
+#: booking/serializers/ticket.py:39
+msgid "The time for this match has passed!"
+msgstr "زمان این مسابقه گذشت!"
+
+#: booking/serializers/ticket.py:44 booking/serializers/ticket.py:45
+msgid "The stadium is not the same!"
+msgstr "استادیوم یکسان نیست!"
+
+#: booking/serializers/ticket.py:50
+msgid "It does not belong to the stadium of this match!"
+msgstr "به ورزشگاه این مسابقه تعلق ندارد!"
+
+#: booking/serializers/ticket.py:55
+msgid "There is no such seat in the selected section!"
+msgstr "در بخش انتخاب شده چنین صندلی وجود ندارد!"
+
+#: booking/serializers/ticket.py:67
+msgid "You have already purchased this seat number!"
+msgstr "شما قبلاً این شماره صندلی را خریداری کرده اید!"
+
+#: booking/serializers/ticket.py:71
+msgid "You have already reserved this seat number, check your invoices section!"
+msgstr "شما قبلاً این شماره صندلی را رزرو کرده اید، بخش فاکتورهای خود را بررسی کنید!"
+
+#: booking/serializers/ticket.py:81
+msgid "This seat number cannot be purchased!"
+msgstr "این شماره صندلی را نمی توان خرید!"
+
 #: commands/apps.py:8
 msgid "Commands"
 msgstr "دستورات"
 
-#: core/settings.py:128
+#: core/settings.py:129
 msgid "Persian"
 msgstr "فارسی"
 
-#: core/settings.py:129
+#: core/settings.py:130
 msgid "English"
 msgstr "English"
 
@@ -42,10 +210,6 @@ msgstr "مدیریت پرتال فروش بلیط"
 msgid "index_title"
 msgstr "به مدیریت پرتال فروش بلیط خوش آمدید"
 
-#: extensions/abstract_models.py:7
-msgid "Created At"
-msgstr "ایجاد شده در"
-
 #: extensions/abstract_models.py:12
 msgid "Updated At"
 msgstr "به روز شده در"
@@ -57,6 +221,46 @@ msgstr "مرد"
 #: extensions/choices.py:8
 msgid "Female"
 msgstr "زن"
+
+#: extensions/choices.py:15
+msgid "A"
+msgstr ""
+
+#: extensions/choices.py:16
+msgid "B"
+msgstr ""
+
+#: extensions/choices.py:17
+msgid "C"
+msgstr ""
+
+#: extensions/choices.py:18
+msgid "VIP"
+msgstr ""
+
+#: extensions/choices.py:23
+msgid "Paid"
+msgstr "پرداخت شده"
+
+#: extensions/choices.py:24
+msgid "Unpaid"
+msgstr "پرداخت نشده"
+
+#: extensions/choices.py:29
+msgid "Sold"
+msgstr "فروخته شده"
+
+#: extensions/choices.py:30
+msgid "Reserved"
+msgstr "رزرو شده"
+
+#: extensions/choices.py:35
+msgid "Successful"
+msgstr "موفق"
+
+#: extensions/choices.py:36
+msgid "Unsuccessful"
+msgstr "ناموفق"
 
 #: extensions/custom_exception_handlers.py:23
 msgid "It is not possible to delete this object."
@@ -78,10 +282,6 @@ msgstr "نام و نام خانوادگی"
 msgid "User Management"
 msgstr "مدیریت کاربر"
 
-#: user_management/models/profile.py:12 user_management/models/user.py:35
-msgid "User"
-msgstr "کاربر"
-
 #: user_management/models/profile.py:18
 msgid "First Name"
 msgstr "نام"
@@ -102,19 +302,19 @@ msgstr "پروفایل"
 msgid "Profiles"
 msgstr "پروفایل ها"
 
-#: user_management/models/user.py:12
+#: user_management/models/user.py:16
 msgid "Username"
 msgstr "نام کاربری"
 
-#: user_management/models/user.py:17
+#: user_management/models/user.py:21
 msgid "Is Staff"
 msgstr "دسترسی به بخش مدیریت"
 
-#: user_management/models/user.py:22
+#: user_management/models/user.py:26
 msgid "Is Active"
 msgstr "فعال بودن"
 
-#: user_management/models/user.py:36
+#: user_management/models/user.py:40
 msgid "Users"
 msgstr "کاربران"
 
@@ -125,6 +325,9 @@ msgstr "رمز عبور قدیمی شما اشتباه وارد شده است. �
 #: user_management/serializers/user.py:72
 msgid "The two password fields didn't match."
 msgstr "دو فیلد رمز عبور مطابقت نداشتند."
+
+#~ msgid "Unsold"
+#~ msgstr "فروخته نشده"
 
 #~ msgid "It's not a valid pk!"
 #~ msgstr "این یک pk معتبر نیست!"

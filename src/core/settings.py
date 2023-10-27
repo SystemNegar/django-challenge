@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django_filters',
     'user_management.apps.UserManagementConfig',
     'commands.apps.CommandsConfig',
+    'booking.apps.BookingConfig',
 ]
 
 MIDDLEWARE = [
