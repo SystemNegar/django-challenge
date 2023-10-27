@@ -15,7 +15,6 @@ class Migration(migrations.Migration):
             name='Payment',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Updated At')),
                 ('amount', models.DecimalField(decimal_places=2, max_digits=14, verbose_name='Amount')),
                 ('status', models.PositiveSmallIntegerField(choices=[(0, 'Successful'), (1, 'Unsuccessful')], verbose_name='Status')),
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Created At')),

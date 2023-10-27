@@ -5,7 +5,7 @@ from extensions.abstract_models import AbstractCreatAtUpdateAt
 from extensions.choices import PaymentStatusChoices
 
 
-class Payment(AbstractCreatAtUpdateAt, models.Model):
+class Payment(models.Model):
     invoice = models.ForeignKey(
         'Invoice',
         verbose_name=_('Invoice'),
